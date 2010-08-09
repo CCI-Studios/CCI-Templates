@@ -1,0 +1,141 @@
+<%@ Master language="C#" %>
+<%@ Import Namespace="Microsoft.SharePoint" %>
+<%@ Register Tagprefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register Tagprefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register Tagprefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="wssuc" TagName="Welcome" src="~/_controltemplates/Welcome.ascx" %>
+<%@ Register TagPrefix="wssuc" TagName="DesignModeConsole" src="~/_controltemplates/DesignModeConsole.ascx" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html dir="<%$Resources:wss,multipages_direction_dir_value%>" runat="server" xmlns:o="urn:schemas-microsoft-com:office:office" __expr-val-dir="ltr">
+<head runat="server">
+    <WebPartPages:SPWebPartManager runat="server" />
+    <SharePoint:RobotsMetaTag runat="server" />
+
+    <asp:ContentPlaceHolder runat="server" id="head">
+        <title><asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server" /></title>
+    </asp:ContentPlaceHolder>
+
+    <Sharepoint:CssLink runat="server" />
+    <asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server" />
+    
+    <link rel="stylesheet" type="text/css" href="/Style%20Library/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/Style%20Library/text.css" />
+    <link rel="stylesheet" type="text/css" href="/Style%20Library/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/Style%20Library/elements.css" />
+    <link rel="stylesheet" type="text/css" href="/Style%20Library/styles.css" />
+    
+    <script type="text/javascript" src="/Style%20Library/mootools.js"></script>
+    <script type="text/javascript" src="/Style%20Library/image-spacing.js"></script>
+</head>
+
+<body>
+<form runat="server" onsubmit="return _spFormOnSubmitWrapper();">
+
+<div id="title"><div>
+	<a href="/"><img src="/Style%20Library/images/title.png" alt="The Township of Warwick: A Story Through Time" /></a>
+	
+	<div id="sharepoint_menu">
+	<wssuc:Welcome id="explitLogout" runat="server" />
+	<SharePoint:SiteActions runat="server" AccessKey="<%$Resources:wss,tb_SiteActions_AK%>" id="SiteActionsMenuMain" PrefixHtml="&lt;div&gt;&lt;div&gt;" SuffixHtml="&lt;/div&gt;&lt;/div&gt;" MenuNotVisibleHtml="&amp;nbsp;">
+	    <CustomTemplate>
+	        <SharePoint:featuremenutemplate runat="server"
+	            FeatureScope="Site"
+	            Location="Microsoft.SharePoint.StandardMenu"
+	            GroupId="SiteActions"
+	            UseShortId="true">
+	            <!-- Create Menu Element  -->
+	            <SharePoint:menuitemtemplate runat="server" id="MenuItem_Create"
+	                Text="<%$Resources:wss,viewlsts_pagetitle_create%>"
+	                Description="<%$Resources:wss,siteactions_createdescription%>"
+	                ImageUrl="/_layouts/images/Actionscreate.gif"
+	                MenuGroupId="100"
+	                Sequence="100"
+	                UseShortId="true"
+	                ClientOnClickNavigateUrl="~site/_layouts/create.aspx"
+	                PermissionsString="ManageLists, ManageSubwebs"
+	                PermissionMode="Any" />
+	            <!-- Edit Page Element -->
+	            <SharePoint:menuitemtemplate runat="server" id="MenuItem_EditPage"
+	                Text="<%$Resources:wss,siteactions_editpage%>"
+	                Description="<%$Resources:wss,siteactions_editpagedescription%>"
+	                ImageUrl="/_layouts/images/ActionsEditPage.gif"
+	                MenuGroupId="100"
+	                Sequence="200"
+	                ClientOnClickNavigateUrl="javascript:MSOLayout_ChangeLayoutMode(false);" />
+	            <!-- Settings Page Element -->
+	            <SharePoint:menuitemtemplate runat="server" id="MenuItem_Settings"
+	                Text="<%$Resources:wss,settings_pagetitle%>"
+	                Description="<%$Resources:wss,siteactions_sitesettingsdescription%>"
+	                ImageUrl="/_layouts/images/ActionsSettings.gif"
+	                MenuGroupId="100"
+	                Sequence="300"
+	                UseShortId="true"
+	                ClientOnClickNavigateUrl="~site/_layouts/settings.aspx"
+	                PermissionsString="EnumeratePermissions,ManageWeb,ManageSubwebs,AddAndCustomizePages,ApplyThemeAndBorder,ManageAlerts,ManageLists,ViewUsageData"
+	                PermissionMode="Any" />
+	        </SharePoint:featuremenutemplate>
+	    </CustomTemplate>
+	</SharePoint:SiteActions>
+	</div>
+</div></div>
+
+<div id="wrapper">    
+    <div id="menu"><div>
+		<ul class="menu">
+			<li><a href="">About</a></li>
+			<li><a href="">Archives</a></li>
+			<li><a href="">Photo Albums</a></li>
+			<li><a href="">Blog</a></li>
+			<li><a href="">Forums</a></li>
+			<li><a href="">Maps</a></li>
+			<li><a href="">Libraries</a></li>
+		</ul>
+   	</div></div>
+    
+   	<div id="header"><div>
+   	</div></div>
+
+    <div id="content">
+    	<div id="search">
+    		<asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server"/>
+    	</div>
+    
+        <asp:ContentPlaceHolder id="PlaceHolderMain" runat="server" />
+    </div>
+</div>
+
+<div id="footer"><div>
+	<ul class="menu">
+		<li><a href="">About</a></li>
+		<li>|</li>
+		<li><a href="">Site Map</a></li>
+		<li>|</li>
+		<li><a href="">Contact</a></li>
+	</ul>
+</div></div>
+
+<div id="copyright"><div>
+	<p>Site By CCI Studios</p>
+	<p>&copy; The Corporation of the County of Lambton 2010</p>
+</div></div>
+
+
+<asp:Panel visible="false" runat="server">
+    <asp:ContentPlaceHolder id="PlaceHolderTitleBreadcrumb" runat="server"/>
+    <asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea"  runat="server"/>
+    <asp:ContentPlaceHolder id="PlaceHolderLeftNavBar" runat="server"/>
+    <asp:ContentPlaceHolder ID="PlaceHolderPageImage" runat="server"/>
+    <asp:ContentPlaceHolder ID="PlaceHolderBodyLeftBorder" runat="server"/>
+    <asp:ContentPlaceHolder ID="PlaceHolderNavSpacer" runat="server"/>
+    <asp:ContentPlaceHolder ID="PlaceHolderTitleLeftBorder" runat="server"/>
+    <asp:ContentPlaceHolder ID="PlaceHolderTitleAreaSeparator" runat="server"/>
+    <asp:ContentPlaceHolder ID="PlaceHolderMiniConsole" runat="server"/>
+    <asp:ContentPlaceHolder id="PlaceHolderCalendarNavigator" runat ="server" />
+    <asp:ContentPlaceHolder id="PlaceHolderLeftActions" runat ="server"/>
+    <asp:ContentPlaceHolder id="PlaceHolderPageDescription" runat ="server"/>
+    <asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" runat ="server"/>
+    <asp:ContentPlaceHolder id="PlaceHolderTitleAreaClass" runat ="server"/>
+</asp:Panel>
+</form>
+</body>
+</html>

@@ -1,0 +1,44 @@
+ul.menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	
+	text-align: center;
+}
+
+ul.menu > li {
+	margin: 0;
+	padding: 0 10px;
+	display: inline;
+	
+	line-height: 36px;
+}
+
+ul.menu a:hover {
+	text-decoration: none;
+}
+
+#footer ul.menu > li {
+	padding: 0 2px;
+}
+
+/* @group Search */
+#search {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.ms-searchform {
+	margin-right: 0;
+	position: static;
+	top:  auto;
+}
+select.ms-searchbox { display: none; }
+.ms-searchimage { display:  none; }
+/* @end */
+
+/* @group Breadcrumbs */
+.ms-pagebreadcrumb { display: none; }
+
+/* @end */

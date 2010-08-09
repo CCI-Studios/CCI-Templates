@@ -1,0 +1,77 @@
+body {
+	background: url(./images/background.jpg);
+	font-family: Times New Roman, Times, serif;
+}
+
+#sharepoint_menu {
+	position: absolute;
+	top: 0;
+	right: 0;
+	
+	color: white;
+}
+
+#title {
+	background: url(./images/header.png) repeat-x;
+	height: 103px;
+	margin-bottom: -3px;
+	
+	position: relative;
+	z-index: 4;
+}
+#title > div {
+	width: 883px;
+	padding: 12px 60px 0 45px;
+	margin: 0 auto;
+	
+	text-align: center;
+	position: relative;
+}
+
+#wrapper {
+	width: 980px;
+	margin: 0 auto;
+	
+	position: relative;
+	z-index: 2;
+}
+
+#menu {
+	margin: 0 60px 0 45px;
+
+	background: url(./images/menu.jpg) repeat-x;
+}
+
+#content {
+	padding: 1px 60px 1px 45px;
+
+	background: url(./images/body_bg.png) 0 0 repeat-y;
+	
+	position: relative;
+}
+
+#footer {
+	width: 980px;
+	margin: 0 auto;
+
+	background: url(./images/body_bg_bottom.png) no-repeat;
+	line-height: 50px;
+}
+#footer > div {
+	padding: 0 90px 0 115px;	
+}
+
+#copyright {
+	width: 980px;
+	margin: 0 auto;
+}
+#copyright > div {
+	padding: 0 90px 0 115px;
+}
+
+
+
+
+#content {
+	min-height: 600px;
+}
