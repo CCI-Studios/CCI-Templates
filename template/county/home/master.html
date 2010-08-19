@@ -18,11 +18,17 @@
     <Sharepoint:CssLink runat="server" />
     <asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server" />
     
-    <link rel="stylesheet" type="text/css" href="/Style%20Library/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/Style%20Library/text.css" />
-    <link rel="stylesheet" type="text/css" href="/Style%20Library/layout.css" />
-    <link rel="stylesheet" type="text/css" href="/Style%20Library/elements.css" />
-    <link rel="stylesheet" type="text/css" href="/Style%20Library/styles.css" />
+    <SharePoint:Theme runat="server"/>
+    <SharePoint:ScriptLink language="javascript" name="core.js" Defer="true" runat="server"/>
+    <SharePoint:CustomJSUrl runat="server"/>
+    <SharePoint:SoapDiscoveryLink runat="server"/>
+    
+    
+    <link rel="stylesheet" type="text/css" href="/Styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/text.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/layout.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/elements.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/styles.css" />
     
     <script type="text/javascript" src="/Style%20Library/mootools.js"></script>
     <script type="text/javascript" src="/Style%20Library/image-spacing.js"></script>
@@ -32,7 +38,7 @@
 <form runat="server" onsubmit="return _spFormOnSubmitWrapper();">
 
 <div id="title"><div>
-	<a href="/"><img src="/Style%20Library/images/title.png" alt="The Township of Warwick: A Story Through Time" /></a>
+	<a href="/"><img src="/Styles/images/title.png" alt="The Township of Warwick: A Story Through Time" /></a>
 	
 	<div id="sharepoint_menu">
 	<wssuc:Welcome id="explitLogout" runat="server" />
@@ -81,6 +87,7 @@
 
 <div id="wrapper">    
     <div id="menu"><div>
+    	<asp:ContentPlaceHolder id="MainMenu" runat="server" />
 		<ul class="menu">
 			<li><a href="">About</a></li>
 			<li><a href="">Archives</a></li>
@@ -95,13 +102,13 @@
    	<div id="header"><div>
    	</div></div>
 
-    <div id="content">
+    <div id="content"><div>
     	<div id="search">
     		<asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server"/>
     	</div>
     
         <asp:ContentPlaceHolder id="PlaceHolderMain" runat="server" />
-    </div>
+    </div></div>
 </div>
 
 <div id="footer"><div>
@@ -115,9 +122,55 @@
 </div></div>
 
 <div id="copyright"><div>
-	<p>Site By CCI Studios</p>
-	<p>&copy; The Corporation of the County of Lambton 2010</p>
+	<p class="left">Site By CCI Studios</p>
+	<p class="right">&copy; The Corporation of the County of Lambton 2010</p>
 </div></div>
+
+<div id="quicklaunch">
+	<Sharepoint:SPNavigationManager
+		id="QuickLaunchNavigationManager"
+		runat="server"
+		QuickLaunchControlId="QuickLaunchMenu"
+		ContainedControl="QuickLaunch"
+		EnableViewState="false">
+	<div>
+		<SharePoint:DelegateControl runat="server" ControlId="QuickLaunchDataSource">
+			<Template_Controls>
+				<asp:SiteMapDataSource
+					SiteMapProvider="SPNavigationProvider"
+					ShowStartingNode="False"
+					id="QuickLaunchSiteMap"
+					StartingNodeUrl="sid:1025"
+					runat="server"/>
+			</Template_Controls>
+		</SharePoint:DelegateControl>
+		<SharePoint:AspMenu
+			id="QuickLaunchMenu"
+			DataSourceId="QuickLaunchSiteMap"
+			runat="server"
+			Orientation="horizontal"
+			StaticDisplayLevels="2"
+			ItemWrap="true"
+			MaximumDynamicDisplayLevels="0"
+			StaticSubMenuIndent="0"
+			SkipLinkText="">
+		
+			<LevelMenuItemStyles>
+				<asp:MenuItemStyle CssClass="ms-navheader"/>
+				<asp:MenuItemStyle CssClass="ms-navitem"/>
+			</LevelMenuItemStyles>
+			<LevelSubMenuStyles>
+				<asp:SubMenuStyle CssClass="ms-navSubMenu1"/>
+				<asp:SubMenuStyle CssClass="ms-navSubMenu2"/>
+			</LevelSubMenuStyles>
+			<LevelSelectedStyles>
+				<asp:MenuItemStyle CssClass="ms-selectednavheader"/>
+				<asp:MenuItemStyle CssClass="ms-selectednav"/>
+			</LevelSelectedStyles>
+		</SharePoint:AspMenu>
+	</div>
+	</Sharepoint:SPNavigationManager>
+</div>
 
 
 <asp:Panel visible="false" runat="server">
@@ -126,8 +179,8 @@
     <asp:ContentPlaceHolder id="PlaceHolderLeftNavBar" runat="server"/>
     <asp:ContentPlaceHolder ID="PlaceHolderPageImage" runat="server"/>
     <asp:ContentPlaceHolder ID="PlaceHolderBodyLeftBorder" runat="server"/>
-    <asp:ContentPlaceHolder ID="PlaceHolderNavSpacer" runat="server"/>
     <asp:ContentPlaceHolder ID="PlaceHolderTitleLeftBorder" runat="server"/>
+   	<asp:ContentPlaceHolder ID="PlaceHolderNavSpacer" runat="server"/>
     <asp:ContentPlaceHolder ID="PlaceHolderTitleAreaSeparator" runat="server"/>
     <asp:ContentPlaceHolder ID="PlaceHolderMiniConsole" runat="server"/>
     <asp:ContentPlaceHolder id="PlaceHolderCalendarNavigator" runat ="server" />

@@ -42,3 +42,46 @@ select.ms-searchbox { display: none; }
 .ms-pagebreadcrumb { display: none; }
 
 /* @end */
+
+
+/* @group Frills */
+.frill1, .frill2, .frill3, .frill4, .frill5, .frill6 { position: absolute; }
+
+.frill1, .frill2 {
+	top: -80px;
+	z-index: 3;
+	
+	width: 426px;
+	height: 342px;
+}
+.frill1 { left: -250px; background: url(../images/frills/topleft.png) no-repeat; }
+.frill2 { right: -250px; background: url(../images/frills/topright.png) no-repeat; }
+
+.frill3, .frill4 { 
+	top: 140px;
+	z-index: -1;
+	
+	width: 264px;
+	height: 236px;	
+}
+.frill3 { left: -130px; background: url(../images/frills/bottomleft.png) no-repeat; }
+.frill4 { right: -130px; background: url(../images/frills/bottomright.png) no-repeat; }
+
+.frill5, .frill6 {
+	z-index: -1;
+	
+	width: 247px;
+	height: 126px;
+}
+.frill5 { bottom: -100px; left: -150px; background: url(../images/frills/footerleft.png) no-repeat; }
+.frill6 { bottom: -130px; right: -150px; background: url(../images/frills/footerright.png) no-repeat; }
+
+.logos {
+	clear: both;
+	margin: 0 auto;
+	width: 209px;
+	height: 63px;
+	
+	background: url(../images/logos.png) no-repeat;
+}
+/* @end */

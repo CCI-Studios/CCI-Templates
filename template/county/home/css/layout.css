@@ -1,6 +1,7 @@
 body {
-	background: url(./images/background.jpg);
+	background: url(../images/background.jpg);
 	font-family: Times New Roman, Times, serif;
+	overflow-x: hidden;
 }
 
 #sharepoint_menu {
@@ -12,7 +13,7 @@ body {
 }
 
 #title {
-	background: url(./images/header.png) repeat-x;
+	background: url(../images/header.png) repeat-x;
 	height: 103px;
 	margin-bottom: -3px;
 	
@@ -39,22 +40,22 @@ body {
 #menu {
 	margin: 0 60px 0 45px;
 
-	background: url(./images/menu.jpg) repeat-x;
+	background: url(../images/menu.jpg) repeat-x;
 }
 
 #content {
-	padding: 1px 60px 1px 45px;
-
-	background: url(./images/body_bg.png) 0 0 repeat-y;
-	
-	position: relative;
+	padding: 20px 60px 1px 45px;
+	background: url(../images/body_bg.png) 0 0 repeat-y;
 }
+#content > div { position: relative; }
 
 #footer {
 	width: 980px;
 	margin: 0 auto;
+	position: relative;
+	z-index: 2;
 
-	background: url(./images/body_bg_bottom.png) no-repeat;
+	background: url(../images/body_bg_bottom.png) no-repeat;
 	line-height: 50px;
 }
 #footer > div {
@@ -63,15 +64,15 @@ body {
 
 #copyright {
 	width: 980px;
-	margin: 0 auto;
+	margin: 0 auto 15px;
 }
 #copyright > div {
-	padding: 0 90px 0 115px;
+	padding: 0 100px;
 }
 
 
 
 
 #content {
-	min-height: 600px;
+	min-height: 500px;
 }
