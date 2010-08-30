@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+ - $Id$
+ -->
+<install version="1.5" type="template">
+    <name>cci_wb</name>
+    <version>1.0</version>
+    <creationDate>July 19, 2010</creationDate>
+    <author>Jonathan Bennett</author>
+    <authorEmail>jbennett@ccistudios.com</authorEmail>
+    <authorUrl>http://www.ccistudios.com</authorUrl>
+    <copyright>Copyright 2010 - ccistudios.com</copyright>
+    <license>Proprietary</license>
+    <description>
+        <![CDATA[
+        ]]>
+    </description>
+    <files>
+        <filename>index.html</filename>
+        <filename>index.php</filename>
+        <filename>params.ini</filename>
+        <folder>html</folder>
+        <folder>css</folder>
+        <folder>images</folder>
+        <folder>scripts</folder>
+    </files>
+
+    <positions>
+    	<position>header</position>
+    	<position>menu</position>
+    	<position>sidebar</position>
+    </positions>
+
+    <params>
+    </params>
+</install>
