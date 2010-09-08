@@ -8,30 +8,30 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html dir="<%$Resources:wss,multipages_direction_dir_value%>" runat="server" xmlns:o="urn:schemas-microsoft-com:office:office" __expr-val-dir="ltr">
 <head runat="server">
-    <WebPartPages:SPWebPartManager runat="server" />
-    <SharePoint:RobotsMetaTag runat="server" />
+	<WebPartPages:SPWebPartManager runat="server"/>
+	<SharePoint:RobotsMetaTag runat="server"/>
 
-    <asp:ContentPlaceHolder runat="server" id="head">
-        <title><asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server" /></title>
-    </asp:ContentPlaceHolder>
+	<asp:ContentPlaceHolder runat="server" id="head">
+		<title><asp:ContentPlaceHolder id="PlaceHolderPageTitle" runat="server" /></title>
+	</asp:ContentPlaceHolder>
 
-    <Sharepoint:CssLink runat="server" />
-    <asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server" />
-    
-    <SharePoint:Theme runat="server"/>
-    <SharePoint:ScriptLink language="javascript" name="core.js" Defer="true" runat="server"/>
-    <SharePoint:CustomJSUrl runat="server"/>
-    <SharePoint:SoapDiscoveryLink runat="server"/>
-    
-    
-    <link rel="stylesheet" type="text/css" href="/Styles/reset.css" />
-    <link rel="stylesheet" type="text/css" href="/Styles/text.css" />
-    <link rel="stylesheet" type="text/css" href="/Styles/layout.css" />
-    <link rel="stylesheet" type="text/css" href="/Styles/elements.css" />
-    <link rel="stylesheet" type="text/css" href="/Styles/styles.css" />
-    
-    <script type="text/javascript" src="/Style%20Library/mootools.js"></script>
-    <script type="text/javascript" src="/Style%20Library/image-spacing.js"></script>
+	<Sharepoint:CssLink runat="server"/>
+	<asp:ContentPlaceHolder id="PlaceHolderAdditionalPageHead" runat="server" />
+		
+	<SharePoint:Theme runat="server"/>
+	<SharePoint:ScriptLink language="javascript" name="core.js" Defer="true" runat="server"/>
+	<SharePoint:CustomJSUrl runat="server"/>
+	<SharePoint:SoapDiscoveryLink runat="server"/>
+		
+		
+	<link rel="stylesheet" type="text/css" href="/Styles/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="/Styles/css/text.css" />
+	<link rel="stylesheet" type="text/css" href="/Styles/css/layout.css" />
+	<link rel="stylesheet" type="text/css" href="/Styles/css/elements.css" />
+	<link rel="stylesheet" type="text/css" href="/Styles/css/styles.css" />
+		
+	<script type="text/javascript" src="/Styles/js/mootools.js"></script>
+	<script type="text/javascript" src="/Styles/js/image-spacing.js"></script>
 </head>
 
 <body>
@@ -41,154 +41,279 @@
 	<a href="/"><img src="/Styles/images/title.png" alt="The Township of Warwick: A Story Through Time" /></a>
 	
 	<div id="sharepoint_menu">
-	<wssuc:Welcome id="explitLogout" runat="server" />
+	<wssuc:Welcome id="explitLogout" runat="server"/>
 	<SharePoint:SiteActions runat="server" AccessKey="<%$Resources:wss,tb_SiteActions_AK%>" id="SiteActionsMenuMain" PrefixHtml="&lt;div&gt;&lt;div&gt;" SuffixHtml="&lt;/div&gt;&lt;/div&gt;" MenuNotVisibleHtml="&amp;nbsp;">
-	    <CustomTemplate>
-	        <SharePoint:featuremenutemplate runat="server"
-	            FeatureScope="Site"
-	            Location="Microsoft.SharePoint.StandardMenu"
-	            GroupId="SiteActions"
-	            UseShortId="true">
-	            <!-- Create Menu Element  -->
-	            <SharePoint:menuitemtemplate runat="server" id="MenuItem_Create"
-	                Text="<%$Resources:wss,viewlsts_pagetitle_create%>"
-	                Description="<%$Resources:wss,siteactions_createdescription%>"
-	                ImageUrl="/_layouts/images/Actionscreate.gif"
-	                MenuGroupId="100"
-	                Sequence="100"
-	                UseShortId="true"
-	                ClientOnClickNavigateUrl="~site/_layouts/create.aspx"
-	                PermissionsString="ManageLists, ManageSubwebs"
-	                PermissionMode="Any" />
-	            <!-- Edit Page Element -->
-	            <SharePoint:menuitemtemplate runat="server" id="MenuItem_EditPage"
-	                Text="<%$Resources:wss,siteactions_editpage%>"
-	                Description="<%$Resources:wss,siteactions_editpagedescription%>"
-	                ImageUrl="/_layouts/images/ActionsEditPage.gif"
-	                MenuGroupId="100"
-	                Sequence="200"
-	                ClientOnClickNavigateUrl="javascript:MSOLayout_ChangeLayoutMode(false);" />
-	            <!-- Settings Page Element -->
-	            <SharePoint:menuitemtemplate runat="server" id="MenuItem_Settings"
-	                Text="<%$Resources:wss,settings_pagetitle%>"
-	                Description="<%$Resources:wss,siteactions_sitesettingsdescription%>"
-	                ImageUrl="/_layouts/images/ActionsSettings.gif"
-	                MenuGroupId="100"
-	                Sequence="300"
-	                UseShortId="true"
-	                ClientOnClickNavigateUrl="~site/_layouts/settings.aspx"
-	                PermissionsString="EnumeratePermissions,ManageWeb,ManageSubwebs,AddAndCustomizePages,ApplyThemeAndBorder,ManageAlerts,ManageLists,ViewUsageData"
-	                PermissionMode="Any" />
-	        </SharePoint:featuremenutemplate>
-	    </CustomTemplate>
+		<CustomTemplate>
+			<SharePoint:featuremenutemplate runat="server"
+				FeatureScope="Site"
+				Location="Microsoft.SharePoint.StandardMenu"
+				GroupId="SiteActions"
+				UseShortId="true">
+				<!-- Create Menu Element	-->
+				<SharePoint:menuitemtemplate runat="server" id="MenuItem_Create"
+					Text="<%$Resources:wss,viewlsts_pagetitle_create%>"
+					Description="<%$Resources:wss,siteactions_createdescription%>"
+					ImageUrl="/_layouts/images/Actionscreate.gif"
+					MenuGroupId="100"
+					Sequence="100"
+					UseShortId="true"
+					ClientOnClickNavigateUrl="~site/_layouts/create.aspx"
+					PermissionsString="ManageLists, ManageSubwebs"
+					PermissionMode="Any" />
+				<!-- Edit Page Element -->
+				<SharePoint:menuitemtemplate runat="server" id="MenuItem_EditPage"
+					Text="<%$Resources:wss,siteactions_editpage%>"
+					Description="<%$Resources:wss,siteactions_editpagedescription%>"
+					ImageUrl="/_layouts/images/ActionsEditPage.gif"
+					MenuGroupId="100"
+					Sequence="200"
+					ClientOnClickNavigateUrl="javascript:MSOLayout_ChangeLayoutMode(false);" />
+				<!-- Settings Page Element -->
+				<SharePoint:menuitemtemplate runat="server" id="MenuItem_Settings"
+					Text="<%$Resources:wss,settings_pagetitle%>"
+					Description="<%$Resources:wss,siteactions_sitesettingsdescription%>"
+					ImageUrl="/_layouts/images/ActionsSettings.gif"
+					MenuGroupId="100"
+					Sequence="300"
+					UseShortId="true"
+					ClientOnClickNavigateUrl="~site/_layouts/settings.aspx"
+					PermissionsString="EnumeratePermissions,ManageWeb,ManageSubwebs,AddAndCustomizePages,ApplyThemeAndBorder,ManageAlerts,ManageLists,ViewUsageData"
+					PermissionMode="Any" />
+			</SharePoint:featuremenutemplate>
+		</CustomTemplate>
 	</SharePoint:SiteActions>
 	</div>
 </div></div>
 
-<div id="wrapper">    
-    <div id="menu"><div>
-    	<asp:ContentPlaceHolder id="MainMenu" runat="server" />
-		<ul class="menu">
-			<li><a href="">About</a></li>
-			<li><a href="">Archives</a></li>
-			<li><a href="">Photo Albums</a></li>
-			<li><a href="">Blog</a></li>
-			<li><a href="">Forums</a></li>
-			<li><a href="">Maps</a></li>
-			<li><a href="">Libraries</a></li>
-		</ul>
-   	</div></div>
-    
-   	<div id="header"><div>
-   	</div></div>
+<div id="wrapper">
+		<div id="menu"><div>
+		<WebPartPages:DataFormWebPart runat="server" IsIncluded="True" FrameType="None" NoDefaultStyle="TRUE" ViewFlag="0" Title="Menu Links" ListName="{883946A6-89D5-4D3C-809E-AC39CFF76B44}" Default="FALSE" DisplayName="Menu Links" __markuptype="vsattributemarkup" __WebPartId="{3FD6C011-0B00-464C-9ABC-2C8F382464FC}" id="g_3fd6c011_0b00_464c_9abc_2c8f382464fc" __AllowXSLTEditing="true" WebPart="true" Height="" Width="">
+			<DataSources>
+				<SharePoint:SPDataSource runat="server" DataSourceMode="List" UseInternalName="true" selectcommand="&lt;View&gt;&lt;Query&gt;&lt;Where&gt;&lt;Eq&gt;&lt;FieldRef Name=&quot;_Category&quot;/&gt;&lt;Value Type=&quot;Text&quot;&gt;Main Menu&lt;/Value&gt;&lt;/Eq&gt;&lt;/Where&gt;&lt;/Query&gt;&lt;/View&gt;" id="Menu_x0020_Links1"><SelectParameters><WebPartPages:DataFormParameter Name="ListID" ParameterKey="ListID" PropertyName="ParameterValues" DefaultValue="{883946A6-89D5-4D3C-809E-AC39CFF76B44}"/></SelectParameters><DeleteParameters><WebPartPages:DataFormParameter Name="ListID" ParameterKey="ListID" PropertyName="ParameterValues" DefaultValue="{883946A6-89D5-4D3C-809E-AC39CFF76B44}"/></DeleteParameters><UpdateParameters><WebPartPages:DataFormParameter Name="ListID" ParameterKey="ListID" PropertyName="ParameterValues" DefaultValue="{883946A6-89D5-4D3C-809E-AC39CFF76B44}"/></UpdateParameters><InsertParameters><WebPartPages:DataFormParameter Name="ListID" ParameterKey="ListID" PropertyName="ParameterValues" DefaultValue="{883946A6-89D5-4D3C-809E-AC39CFF76B44}"/></InsertParameters></SharePoint:SPDataSource>
+			</DataSources>
+			<ParameterBindings>
+				<ParameterBinding Name="ListID" Location="None" DefaultValue="{883946A6-89D5-4D3C-809E-AC39CFF76B44}"/>
+				<ParameterBinding Name="dvt_apos" Location="Postback;Connection"/>
+				<ParameterBinding Name="UserID" Location="CAMLVariable" DefaultValue="CurrentUserName"/>
+				<ParameterBinding Name="Today" Location="CAMLVariable" DefaultValue="CurrentDate"/>
+			</ParameterBindings>
+			<datafields>@Title,Title;@Page_x0020_address,Page address;@_Category,Category;@Order0,Order;@ID,ID;@ContentType,Content Type;@Modified,Modified;@Created,Created;@Author,Created By;@Editor,Modified By;@_UIVersionString,Version;@Attachments,Attachments;@File_x0020_Type,File Type;@FileLeafRef,Name (for use in forms);@FileDirRef,Path;@FSObjType,Item Type;@_HasCopyDestinations,Has Copy Destinations;@_CopySource,Copy Source;@ContentTypeId,Content Type ID;@_ModerationStatus,Approval Status;@_UIVersion,UI Version;@Created_x0020_Date,Created;@FileRef,URL Path;</datafields>
+			
+			<XSL>
+				<xsl:stylesheet xmlns:x="http://www.w3.org/2001/XMLSchema" xmlns:d="http://schemas.microsoft.com/sharepoint/dsp" version="1.0" exclude-result-prefixes="xsl msxsl ddwrt" xmlns:ddwrt="http://schemas.microsoft.com/WebParts/v2/DataView/runtime" xmlns:asp="http://schemas.microsoft.com/ASPNET/20" xmlns:__designer="http://schemas.microsoft.com/WebParts/v2/DataView/designer" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:SharePoint="Microsoft.SharePoint.WebControls" xmlns:ddwrt2="urn:frontpage:internal">
+					<xsl:output method="html" indent="no"/>
+					<xsl:decimal-format NaN=""/>
+					<xsl:param name="dvt_apos">'</xsl:param>
+					<xsl:variable name="dvt_1_automode">0</xsl:variable>
+				
+					<xsl:template match="/">
+						<xslw	:call-template name="dvt_1"/>
+					</xsl:template>
+				
+					<xsl:template name="dvt_1">
+						<xsl:variable name="dvt_StyleName">Table</xsl:variable>
+						<xsl:variable name="Rows" select="/dsQueryResponse/Rows/Row"/>
+					
+						<table border="0" width="100%" cellpadding="2" cellspacing="0">
+							<tr valign="top">
+								<xsl:if test="$dvt_1_automode = '1'" ddwrt:cf_ignore="1">
+									<th class="ms-vh" width="1%" nowrap="nowrap"></th>
+								</xsl:if>
+						
+								<th class="ms-vh" nowrap="nowrap">Title</th>
+								<th class="ms-vh" nowrap="nowrap">Page address</th>
+								<th class="ms-vh" nowrap="nowrap">Order</th>
+								<th class="ms-vh" nowrap="nowrap">Modified By</th>
+								<th class="ms-vh" nowrap="nowrap">Modified</th>
+							</tr>
+						
+							<xsl:call-template name="dvt_1.body">
+								<xsl:with-param name="Rows" select="$Rows"/>
+							</xsl:call-template>
+						</table>
+					</xsl:template>
+				
+					<xsl:template name="dvt_1.body">
+						<xsl:param name="Rows"/>
+					
+						<xsl:for-each select="$Rows">
+							<xsl:call-template name="dvt_1.rowview"/>
+						</xsl:for-each>
+					</xsl:template>
+				
+					<xsl:template name="dvt_1.rowview">
+						<tr>
+							<xsl:if test="position() mod 2 = 1">
+								<xsl:attribute name="class">ms-alternating</xsl:attribute>
+							</xsl:if>
+							<xsl:if test="$dvt_1_automode = '1'" ddwrt:cf_ignore="1">
+								<td class="ms-vb" width="1%" nowrap="nowrap">
+									<span ddwrt:amkeyfield="ID" ddwrt:amkeyvalue="ddwrt:EscapeDelims(string(@ID))" ddwrt:ammode="view"></span>
+								</td>
+							</xsl:if>
 
-    <div id="content"><div>
-    	<div id="search">
-    		<asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server"/>
-    	</div>
-    
-        <asp:ContentPlaceHolder id="PlaceHolderMain" runat="server" />
-    </div></div>
-</div>
+							<td class="ms-vb"><xsl:value-of select="@Title"/></td>
+							<td class="ms-vb"><xsl:value-of select="@Page_x0020_address"/></td>
+							<td class="ms-vb"><xsl:value-of select="format-number(@Order0, '#,##0.00;-#,##0.00')"/></td>
+							<td class="ms-vb"><xsl:value-of select="@Editor" disable-output-escaping="yes"/></td>
+							<td class="ms-vb"><xsl:value-of select="ddwrt:FormatDate(string(@Modified), 1033, 5)"/></td>
+						</tr>
+					</xsl:template>
+				</xsl:stylesheet>
+			</XSL>
+			<xsllink>http://warwickhistory.ca/menus.xsl</xsllink>
+		</WebPartPages:DataFormWebPart>
+	</div></div> <!-- /MENU -->
+		
+	<div id="header"><div>
+	</div></div><!-- /header -->
+
+	<div id="content"><div>
+		<div id="search">
+			<asp:ContentPlaceHolder id="PlaceHolderSearchArea" runat="server"/>
+		</div><!-- /search -->
+	
+		<asp:ContentPlaceHolder id="PlaceHolderMain" runat="server" />
+	</div></div><!-- /content -->
+	
+	<div class="frill1"></div>
+	<div class="frill2"></div>
+	<div class="frill3"></div>
+	<div class="frill4"></div>
+	<div class="frill5"></div>
+	<div class="frill6"></div>
+	
+</div><!-- /wrapper -->
 
 <div id="footer"><div>
-	<ul class="menu">
-		<li><a href="">About</a></li>
-		<li>|</li>
-		<li><a href="">Site Map</a></li>
-		<li>|</li>
-		<li><a href="">Contact</a></li>
-	</ul>
+	<WebPartPages:DataFormWebPart runat="server" IsIncluded="True" FrameType="None" NoDefaultStyle="TRUE" ViewFlag="0" Title="Menu Links (1)" ListName="{883946A6-89D5-4D3C-809E-AC39CFF76B44}" Default="FALSE" DisplayName="Menu Links" __markuptype="vsattributemarkup" __WebPartId="{EB538F92-4052-44FD-891F-7A0D218B6EC6}" id="g_eb538f92_4052_44fd_891f_7a0d218b6ec6" __AllowXSLTEditing="true" WebPart="true" Height="" Width="">
+	<DataSources>
+		<SharePoint:SPDataSource runat="server" DataSourceMode="List" UseInternalName="true" selectcommand="&lt;View&gt;&lt;Query&gt;&lt;Where&gt;&lt;Eq&gt;&lt;FieldRef Name=&quot;_Category&quot;/&gt;&lt;Value Type=&quot;Text&quot;&gt;Footer Menu&lt;/Value&gt;&lt;/Eq&gt;&lt;/Where&gt;&lt;OrderBy&gt;&lt;FieldRef Name=&quot;Order0&quot; Ascending=&quot;TRUE&quot;/&gt;&lt;/OrderBy&gt;&lt;/Query&gt;&lt;/View&gt;" id="Menu_x0020_Links2">
+			<SelectParameters><WebPartPages:DataFormParameter Name="ListID" ParameterKey="ListID" PropertyName="ParameterValues" DefaultValue="{883946A6-89D5-4D3C-809E-AC39CFF76B44}"/></SelectParameters>
+			<DeleteParameters><WebPartPages:DataFormParameter Name="ListID" ParameterKey="ListID" PropertyName="ParameterValues" DefaultValue="{883946A6-89D5-4D3C-809E-AC39CFF76B44}"/></DeleteParameters>
+			<UpdateParameters><WebPartPages:DataFormParameter Name="ListID" ParameterKey="ListID" PropertyName="ParameterValues" DefaultValue="{883946A6-89D5-4D3C-809E-AC39CFF76B44}"/></UpdateParameters>
+			<InsertParameters><WebPartPages:DataFormParameter Name="ListID" ParameterKey="ListID" PropertyName="ParameterValues" DefaultValue="{883946A6-89D5-4D3C-809E-AC39CFF76B44}"/></InsertParameters>
+		</SharePoint:SPDataSource>
+	</DataSources>
+	<ParameterBindings>
+			<ParameterBinding Name="ListID" Location="None" DefaultValue="{883946A6-89D5-4D3C-809E-AC39CFF76B44}"/>
+			<ParameterBinding Name="dvt_apos" Location="Postback;Connection"/>
+			<ParameterBinding Name="UserID" Location="CAMLVariable" DefaultValue="CurrentUserName"/>
+			<ParameterBinding Name="Today" Location="CAMLVariable" DefaultValue="CurrentDate"/>
+		</ParameterBindings>
+	<datafields>
+		@Title,Title;@Page_x0020_address,Page address;@_Category,Category;@Order0,Order;@ID,ID;@ContentType,Content Type;@Modified,Modified;@Created,Created;@Author,Created By;@Editor,Modified By;@_UIVersionString,Version;@Attachments,Attachments;@File_x0020_Type,File Type;@FileLeafRef,Name (for use in forms);@FileDirRef,Path;@FSObjType,Item Type;@_HasCopyDestinations,Has Copy Destinations;@_CopySource,Copy Source;@ContentTypeId,Content Type ID;@_ModerationStatus,Approval Status;@_UIVersion,UI Version;@Created_x0020_Date,Created;@FileRef,URL Path;
+	</datafields>
+	<XSL>
+		<xsl:stylesheet xmlns:x="http://www.w3.org/2001/XMLSchema" xmlns:d="http://schemas.microsoft.com/sharepoint/dsp" version="1.0" exclude-result-prefixes="xsl msxsl ddwrt" xmlns:ddwrt="http://schemas.microsoft.com/WebParts/v2/DataView/runtime" xmlns:asp="http://schemas.microsoft.com/ASPNET/20" xmlns:__designer="http://schemas.microsoft.com/WebParts/v2/DataView/designer" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:SharePoint="Microsoft.SharePoint.WebControls" xmlns:ddwrt2="urn:frontpage:internal">
+			<xsl:output method="html" indent="no"/>
+			<xsl:decimal-format NaN=""/>
+			<xsl:param name="dvt_apos">'</xsl:param>
+			<xsl:variable name="dvt_1_automode">0</xsl:variable>
+			
+			<xsl:template match="/">
+				<xsl:call-template name="dvt_1"/>
+			</xsl:template>
+			
+			<xsl:template name="dvt_1">
+				<xsl:variable name="dvt_StyleName">Table</xsl:variable>
+				<xsl:variable name="Rows" select="/dsQueryResponse/Rows/Row"/>
+				<table border="0" width="100%" cellpadding="2" cellspacing="0">
+					<tr valign="top">
+						<xsl:if test="$dvt_1_automode = '1'" ddwrt:cf_ignore="1">
+							<th class="ms-vh" width="1%" nowrap="nowrap"></th>
+						</xsl:if>
+						<th class="ms-vh" nowrap="nowrap">Title</th>
+						<th class="ms-vh" nowrap="nowrap">Page address</th>
+						<th class="ms-vh" nowrap="nowrap">Order</th><th class="ms-vh" nowrap="nowrap">Category</th>
+					</tr>
+			
+					<xsl:call-template name="dvt_1.body">
+						<xsl:with-param name="Rows" select="$Rows"/>
+					</xsl:call-template>
+				</table>
+			</xsl:template>
+
+			<xsl:template name="dvt_1.body">
+				<xsl:param name="Rows"/>
+				<xsl:for-each select="$Rows">
+					<xsl:call-template name="dvt_1.rowview"/>
+				</xsl:for-each>
+			</xsl:template>
+			
+			<xsl:template name="dvt_1.rowview">
+				<tr>
+					<xsl:if test="position() mod 2 = 1">
+						<xsl:attribute name="class">ms-alternating</xsl:attribute>
+					</xsl:if>
+
+					<xsl:if test="$dvt_1_automode = '1'" ddwrt:cf_ignore="1">
+						<td class="ms-vb" width="1%" nowrap="nowrap">
+							<span ddwrt:amkeyfield="ID" ddwrt:amkeyvalue="ddwrt:EscapeDelims(string(@ID))" ddwrt:ammode="view"></span>
+						</td>
+					</xsl:if>
+					
+					<td class="ms-vb">
+						<xsl:value-of select="@Title"/>
+					</td>
+					<td class="ms-vb">
+						<xsl:value-of select="@Page_x0020_address"/>
+					</td>
+					<td class="ms-vb">
+						<xsl:value-of select="format-number(@Order0, '#,##0.00;-#,##0.00')"/>
+					</td>
+					<td class="ms-vb">
+						<xsl:value-of select="@_Category" />
+					</td>
+				</tr>
+			</xsl:template>
+		</xsl:stylesheet>
+	</XSL>
+	<xsllink>http://warwickhistory.ca/menus.xsl</xsllink>
+	</WebPartPages:DataFormWebPart>
 </div></div>
 
-<div id="copyright"><div>
+<div id="copyright" style="height: 34px"><div>
 	<p class="left">Site By CCI Studios</p>
 	<p class="right">&copy; The Corporation of the County of Lambton 2010</p>
 </div></div>
 
 <div id="quicklaunch">
-	<Sharepoint:SPNavigationManager
-		id="QuickLaunchNavigationManager"
-		runat="server"
-		QuickLaunchControlId="QuickLaunchMenu"
-		ContainedControl="QuickLaunch"
-		EnableViewState="false">
-	<div>
-		<SharePoint:DelegateControl runat="server" ControlId="QuickLaunchDataSource">
-			<Template_Controls>
-				<asp:SiteMapDataSource
-					SiteMapProvider="SPNavigationProvider"
-					ShowStartingNode="False"
-					id="QuickLaunchSiteMap"
-					StartingNodeUrl="sid:1025"
-					runat="server"/>
-			</Template_Controls>
-		</SharePoint:DelegateControl>
-		<SharePoint:AspMenu
-			id="QuickLaunchMenu"
-			DataSourceId="QuickLaunchSiteMap"
-			runat="server"
-			Orientation="horizontal"
-			StaticDisplayLevels="2"
-			ItemWrap="true"
-			MaximumDynamicDisplayLevels="0"
-			StaticSubMenuIndent="0"
-			SkipLinkText="">
-		
-			<LevelMenuItemStyles>
-				<asp:MenuItemStyle CssClass="ms-navheader"/>
-				<asp:MenuItemStyle CssClass="ms-navitem"/>
-			</LevelMenuItemStyles>
-			<LevelSubMenuStyles>
-				<asp:SubMenuStyle CssClass="ms-navSubMenu1"/>
-				<asp:SubMenuStyle CssClass="ms-navSubMenu2"/>
-			</LevelSubMenuStyles>
-			<LevelSelectedStyles>
-				<asp:MenuItemStyle CssClass="ms-selectednavheader"/>
-				<asp:MenuItemStyle CssClass="ms-selectednav"/>
-			</LevelSelectedStyles>
-		</SharePoint:AspMenu>
-	</div>
-	</Sharepoint:SPNavigationManager>
+
 </div>
 
 
 <asp:Panel visible="false" runat="server">
-    <asp:ContentPlaceHolder id="PlaceHolderTitleBreadcrumb" runat="server"/>
-    <asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea"  runat="server"/>
-    <asp:ContentPlaceHolder id="PlaceHolderLeftNavBar" runat="server"/>
-    <asp:ContentPlaceHolder ID="PlaceHolderPageImage" runat="server"/>
-    <asp:ContentPlaceHolder ID="PlaceHolderBodyLeftBorder" runat="server"/>
-    <asp:ContentPlaceHolder ID="PlaceHolderTitleLeftBorder" runat="server"/>
-   	<asp:ContentPlaceHolder ID="PlaceHolderNavSpacer" runat="server"/>
-    <asp:ContentPlaceHolder ID="PlaceHolderTitleAreaSeparator" runat="server"/>
-    <asp:ContentPlaceHolder ID="PlaceHolderMiniConsole" runat="server"/>
-    <asp:ContentPlaceHolder id="PlaceHolderCalendarNavigator" runat ="server" />
-    <asp:ContentPlaceHolder id="PlaceHolderLeftActions" runat ="server"/>
-    <asp:ContentPlaceHolder id="PlaceHolderPageDescription" runat ="server"/>
-    <asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" runat ="server"/>
-    <asp:ContentPlaceHolder id="PlaceHolderTitleAreaClass" runat ="server"/>
+		<asp:ContentPlaceHolder id="PlaceHolderTitleBreadcrumb" runat="server"/>
+		<asp:ContentPlaceHolder id="PlaceHolderPageTitleInTitleArea"	runat="server"/>
+		<asp:ContentPlaceHolder id="PlaceHolderLeftNavBar" runat="server"/>
+		<asp:ContentPlaceHolder id="PlaceHolderLeftNavBarDataSource" runat="server"/>
+		<asp:ContentPlaceHolder ID="PlaceHolderPageImage" runat="server"/>
+		<asp:ContentPlaceHolder ID="PlaceHolderBodyLeftBorder" runat="server"/>
+		<asp:ContentPlaceHolder ID="PlaceHolderTitleLeftBorder" runat="server"/>
+		<asp:ContentPlaceHolder ID="PlaceHolderNavSpacer" runat="server"/>
+		<asp:ContentPlaceHolder ID="PlaceHolderTitleAreaSeparator" runat="server"/>
+		<asp:ContentPlaceHolder ID="PlaceHolderMiniConsole" runat="server"/>
+		<asp:ContentPlaceHolder id="PlaceHolderCalendarNavigator" runat ="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderLeftActions" runat ="server"/>
+		<asp:ContentPlaceHolder id="PlaceHolderPageDescription" runat ="server"/>
+		<asp:ContentPlaceHolder id="PlaceHolderBodyAreaClass" runat ="server"/>
+		<asp:ContentPlaceHolder id="PlaceHolderTitleAreaClass" runat ="server"/>
+
+		<asp:ContentPlaceHolder id="PlaceHolderBodyRightMargin" runat="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderFormDigest" runat="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderGlobalNavigation" runat="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderHorizontalNav" runat="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderLeftNavBarBorder" runat="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderLeftNavBarTop" runat="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderSiteName" runat="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderTitleRightMargin" runat="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderTopNavBar" runat="server" />
+		<asp:ContentPlaceHolder id="PlaceHolderUtilityContent" runat="server" />
+		<asp:ContentPlaceHolder id="SPNavigation" runat="server" />
+		<asp:ContentPlaceHolder id="WSSDesignConsole" runat="server" />
 </asp:Panel>
+
 </form>
 </body>
 </html>

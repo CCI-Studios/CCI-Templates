@@ -40,7 +40,6 @@ select.ms-searchbox { display: none; }
 
 /* @group Breadcrumbs */
 .ms-pagebreadcrumb { display: none; }
-
 /* @end */
 
 
@@ -85,3 +84,10 @@ select.ms-searchbox { display: none; }
 	background: url(../images/logos.png) no-repeat;
 }
 /* @end */
+
+/* @group SharePoint */
+.ms-MenuUIPopupBody {
+	z-index: 99;
+}
+
+/* @end group */
