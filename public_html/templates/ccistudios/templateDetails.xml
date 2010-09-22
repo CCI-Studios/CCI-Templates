@@ -27,8 +27,12 @@
     </files>
 
     <positions>
+    	<position>days</position>
     	<position>header</position>
     	<position>menu</position>
+    	<position>months</position>
+    	<position>social</position>
+    	<position>title</position>
     </positions>
 
     <params>

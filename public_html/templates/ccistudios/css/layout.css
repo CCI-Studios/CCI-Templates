@@ -1,0 +1,74 @@
+body {
+	background: url(../images/body_bg.jpg) repeat-x;
+	font-family: calibri;
+}
+
+#wrapper {
+	width: 1105px;
+	margin: 0 auto;
+}
+
+#wrapper2 {
+	background: url(../images/wrapper_bg.png);
+	padding: 17px 101px 23px 94px;
+	
+	position: relative;
+}
+#wrapper3 {
+	margin: 0 36px;
+	background: white url(../images/content_bg.jpg) bottom repeat-x;
+	padding: 1px 0;
+}
+#header {
+	padding: 12px 10px 10px 12px;
+}
+#content {
+	background: url(../images/content_bg.png) bottom no-repeat;
+
+	width: 813px;
+	margin: 0 auto;
+	padding:  0 4px 7px 6px;
+}
+#content .article {
+	padding: 0 10px 10px;
+}
+
+#leftstrip {}
+#rightstrip {}
+
+#footer {
+	color: white;
+	height: 169px;
+	background: url(../images/curve.png) no-repeat;
+	
+	padding: 1px 30px;
+	position: relative;
+}
+#footer a { color: white; }
+
+#title {
+	margin-top: 30px;
+
+	text-align: center;
+	line-height: 1.4em;
+	
+	text-shadow: -1px -1px 0px black;
+}
+
+#menu {
+	margin-top:  30px;
+	font-size: 12px;
+	text-align: center;
+}
+
+#social {
+	position: absolute;
+	bottom: 1em;
+	left: 2em;
+}
+
+#copyright {
+	position: absolute;
+	bottom: 1em;
+	right:  2em;
+}

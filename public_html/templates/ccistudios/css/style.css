@@ -1,3 +1,8 @@
+/* @group misc */
+a {	text-decoration: none; }
+a:hover { text-decoration: underline; }
+/* @end */
+
 /* @group ie6 redirect */
 .ie6warn {
 	background-color: #edee98;
@@ -34,3 +39,5 @@ html[xmlns] .clearfix { display: block; }
 .left { float: left; }
 .right { float: right; }
 .clear, .clr { clear: both; }
+.hidden { display: none; }
+/* @end */

@@ -23,8 +23,8 @@
 }
 
 .moduletable.menu li {
-	float: left;
-	padding: 0 10px;
+	display: inline;
+	padding: 0 3px;
 	margin: 0;
 }
 /* @group drop menu */
@@ -45,6 +45,16 @@
 .moduletable.dropmenu li li {
 	float: none;
 }
-
 /* @end */
+/* @end */
+
+/* @group */
+#header .moduletable { margin: 0 0 0 7px;}
+#header .moduletable.right { margin-left: 30px; }
+
+#social .moduletable {
+	float: left;
+	margin: 0 10px 0 0;
+}
+
 /* @end */
