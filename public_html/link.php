@@ -54,14 +54,24 @@ shell_exec("ln -s ".
 echo "<p>Nooku Installed</p>";
 
 /* install calendar */
-shell_exec("rm ".$site."administrator/com_calendar");
+shell_exec("rm ".$site."administrator/components/com_calendar");
 shell_exec("ln -s ".
 	$calendar	."administrator/components/com_calendar ".
 	$site		."administrator/components/com_calendar");
+shell_exec("rm ".$site."components/com_calendar");
+shell_exec("ln -s ".
+	$calendar	."components/com_calendar ".
+	$site		."components/com_calendar");
+	
 shell_exec("rm ".$site."modules/mod_calendar");
 shell_exec("ln -s ".
 	$calendar	."modules/mod_calendar ".
 	$site		."modules/mod_calendar");
+	
+shell_exec("rm ".$site."media/com_calendar");
+shell_exec("ln -s ".
+	$calendar	."media/com_calendar ".
+	$site		."media/com_calendar");
 
 
 echo "<p>Calendar installed</p>";
