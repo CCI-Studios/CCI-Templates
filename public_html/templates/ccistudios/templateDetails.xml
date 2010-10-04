@@ -2,7 +2,7 @@
 <install version="1.5" type="template">
     <name>ccistudios</name>
     <version>1.0</version>
-    <creationDate>July 27, 2010</creationDate>
+    <creationDate>Oct 4, 2010</creationDate>
     <author>Jonathan Bennett</author>
     <authorEmail>jbennett@ccistudios.com</authorEmail>
     <authorUrl>http://www.ccistudios.com</authorUrl>
@@ -18,8 +18,7 @@
     	<folder>images</folder>
 	    <folder>scripts</folder>
     
-        <filename>component.php</filename> 
-        <filename>ie6.php</filename>   
+        <filename>component.php</filename>  
         <filename>index.html</filename>
         <filename>index.php</filename>
         <filename>offline.php</filename>
@@ -27,8 +26,6 @@
     </files>
 
     <positions>
-    	<position>header</position>
-    	<position>menu</position>
     </positions>
 
     <params>

@@ -1,1 +1,1 @@
-componentf6
+component
