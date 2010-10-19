@@ -8,15 +8,15 @@
 		width: 800px;
 		margin: 30px auto 0;
 		text-align: center;
-	}
-	.inner {
-		width: 600px;
-		margin: 50px auto;
-		
+
 		font-size: 15px;
 		line-height: 1.4em;
 		font-family: "Century Gothic";
 		color:  red;
+	}
+	.inner {
+		width: 600px;
+		margin: 50px auto;
 	}
 	.image {
 		float: left;
