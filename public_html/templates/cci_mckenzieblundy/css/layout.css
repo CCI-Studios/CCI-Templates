@@ -1,0 +1,40 @@
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	
+	background: url(../images/bg_blundy.gif);
+	color: #666;
+}
+
+#wrapper {
+	width: 766px;
+	margin: 0 auto;
+}
+
+	#header {
+		background: url(../images/bg_top.png) no-repeat;
+		padding: 66px 0 0;
+	}
+	#header > div {
+		background: url(../images/bg_main.gif);
+		padding: 0 18px;
+	}
+	#menu {
+		background: url(../images/bg_main.gif);
+		padding: 0 18px;
+	}
+	#body {
+		background: url(../images/bg_main.gif);
+		padding: 5px 18px 18px;
+	}
+	#body > div {
+		border: 1px solid #eee;
+		padding: 10px;
+	}
+	
+		#content {}
+		#sidebar {}
+	#footer {
+		background: url(../images/bg_shadow_bottom.gif) no-repeat;
+		
+	}

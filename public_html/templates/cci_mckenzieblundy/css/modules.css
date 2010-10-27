@@ -1,0 +1,89 @@
+.moduletable {
+	margin: 1em 0;
+}
+
+#header .moduletable,
+#menu .moduletable { margin: 0; }
+
+
+/* @group menu */
+.moduletable.menu {
+	margin: 0;
+	padding: 0;
+	
+	position: relative;
+}
+
+
+.moduletable.menu ul {
+	margin: 0;
+	padding: 0;
+	
+	list-style: none;
+}
+
+.moduletable.menu li {
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+/* @group main menu */
+.moduletable.menu.main {
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 42px;
+	font-size: 15px;
+}
+
+.moduletable.menu.main li {
+	background: url(../images/menu_bg.gif) repeat-x;
+}
+
+.moduletable.menu.main li > span,
+.moduletable.menu.main li > a {
+	color: #333;
+	display: block;
+	padding: 0 12px;
+	
+	background: url(../images/menu_cap.gif) left no-repeat;
+}
+/* @end */
+/* @group subnav */
+.moduletable.menu.sub {
+	background: #FFF1B7;
+	border: 1px solid #FAE691;
+	border-top: none;
+	padding: 5px;
+}
+
+.moduletable.menu.sub ul li {
+	color: #060;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 14px;
+	padding: 0 13px 0 3px;
+	
+	background: none;
+}
+/* @end */
+/* @group drop menu */
+.moduletable.dropmenu li {
+	position: relative;
+}
+.moduletable.dropmenu ul ul {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	
+	display: none;
+}
+.moduletable.dropmenu ul li:hover ul {
+	display: block;
+}
+.moduletable.dropmenu li li {
+	float: none;
+}
+
+/* @end */
+/* @end */

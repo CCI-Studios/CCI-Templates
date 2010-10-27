@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<install version="1.5" type="template">
+    <name>cci_mckenzieblundy</name>
+    <version>1.0</version>
+    <creationDate>Oct 27, 2010</creationDate>
+    <author>Jonathan Bennett</author>
+    <authorEmail>jbennett@ccistudios.com</authorEmail>
+    <authorUrl>http://www.ccistudios.com</authorUrl>
+    <copyright>Copyright 2010 - ccistudios.com</copyright>
+    <license>Proprietary</license>
+    <description>
+        <![CDATA[
+        ]]>
+    </description>
+    <files>
+	    <folder>css</folder>    
+    	<folder>html</folder>
+    	<folder>images</folder>
+	    <folder>scripts</folder>
+    
+        <filename>component.php</filename> 
+        <filename>ie6.php</filename>   
+        <filename>index.html</filename>
+        <filename>index.php</filename>
+        <filename>offline.php</filename>
+        <filename>params.ini</filename>
+    </files>
+
+    <positions>
+    	<position>header</position>
+    	<position>menu</position>
+			<position>left</position>
+			<position>post-content</position>
+			<position>footer</position>
+    </positions>
+
+    <params>
+    </params>
+</install>
