@@ -29,7 +29,7 @@
     <positions>
     	<position>header</position>
     	<position>menu</position>
-			<position>left</position>
+			<position>sidebar</position>
 			<position>post-content</position>
 			<position>footer</position>
     </positions>

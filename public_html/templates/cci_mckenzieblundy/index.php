@@ -21,6 +21,7 @@ $testing = "true";
 <?php if ($testing): ?>
 	<link rel="stylesheet" type="text/css" href="/templates/<?php echo $this->template ?>/css/template.css" />
 	<script type="text/javascript" src="/templates/<?php echo $this->template ?>/scripts/dropmenu.js"></script>
+	<script type="text/javascript" src="/templates/<?php echo $this->template ?>/scripts/accordian.js"></script>
 <?php else: ?>
 	<link rel="stylesheet" type="text/css" href="/templates/<?php echo $this->template ?>/css/template.css" />
 <?php endif; ?>
@@ -30,7 +31,7 @@ $testing = "true";
 <?php if (!$testing): ?>
 <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+  _gaq.push(['_setAccount', 'UA-19372383-1']);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -42,11 +43,11 @@ $testing = "true";
 <?php endif; ?>
 
 	<div id="wrapper">
-		<div id="header">
+		<div id="header"><div>
 			<jdoc:include type="modules" name="header" style="xhtml" />
 			
 			<div class="clr"></div>
-		</div>
+		</div></div>
 	
 		<div id="menu">
 			<jdoc:include type="modules" name="menu" style="xhtml" />
@@ -55,7 +56,7 @@ $testing = "true";
 		</div>
 	
 		<div id="body"><div>
-			<div id="content">
+			<div id="content" <?php echo (!$this->countModules('sidebar'))? 'class="wide"': ''; ?>>
 				<jdoc:include type="component" />
 				<jdoc:include type="modules" name="post-content" style="xhtml" />
 				
@@ -64,7 +65,7 @@ $testing = "true";
 		
 			<?php if ($this->countModules('sidebar')): ?>
 			<div id="sidebar">
-				<jdoc:include type="modules" name="left" style="xhtml" />
+				<jdoc:include type="modules" name="sidebar" style="xhtml" />
 
 				<div class="clr"></div>
 			</div>
@@ -78,7 +79,7 @@ $testing = "true";
 				Site Developed by <a href="http://www.ccistudios.com" target="_blank">CCI Studios</a>
 			</p>
 			<p class="left">
-				&copy;Copyright <?php echo date('Y'); ?> McKenzie & Blundie
+				&copy; Copyright <?php echo date('Y'); ?> McKenzie & Blundie
 			</p>
 			<jdoc:include type="modules" name="footer" style="xhtml" />
 			

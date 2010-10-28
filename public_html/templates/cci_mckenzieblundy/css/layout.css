@@ -17,12 +17,13 @@ body {
 	}
 	#header > div {
 		background: url(../images/bg_main.gif);
-		padding: 0 18px;
+		padding: 0 18px 10px;
 	}
 	#menu {
 		background: url(../images/bg_main.gif);
 		padding: 0 18px;
 	}
+	#menu .menu.sub { width: 718px; }
 	#body {
 		background: url(../images/bg_main.gif);
 		padding: 5px 18px 18px;
@@ -32,8 +33,23 @@ body {
 		padding: 10px;
 	}
 	
-		#content {}
-		#sidebar {}
+		#content {
+			float: left;
+			width: 445px;
+			margin-right: 11px;
+		}
+		#content.wide {
+			margin-right: 0;
+			width: 100%;
+		}
+		#sidebar {
+			float: left;
+			width: 230px;
+			
+			border: 1px solid #E9E9E9;
+			padding: 10px;
+			
+		}
 	#footer {
 		background: url(../images/bg_shadow_bottom.gif) no-repeat;
 		

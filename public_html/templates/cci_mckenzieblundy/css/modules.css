@@ -1,5 +1,5 @@
 .moduletable {
-	margin: 1em 0;
+	margin: 0 0 1em;
 }
 
 #header .moduletable,
@@ -43,10 +43,48 @@
 .moduletable.menu.main li > a {
 	color: #333;
 	display: block;
-	padding: 0 12px;
+	padding: 0 19px;
 	
 	background: url(../images/menu_cap.gif) left no-repeat;
 }
+
+.moduletable.menu.main li.active,
+.moduletable.menu.main li:hover {
+	background-image: url(../images/menu_bg-over.gif);
+}
+
+.moduletable.menu.main li.active > span,
+.moduletable.menu.main li.active > a,
+.moduletable.menu.main li:hover > span,
+.moduletable.menu.main li:hover > a {
+	text-decoration: none;
+	background-image: url(../images/menu_cap-over.gif);
+}
+
+.moduletable.menu.main li.first > span,
+.moduletable.menu.main li.first > a {
+	background-image: url(../images/menu_cap_first.gif);
+}
+.moduletable.menu.main li.first.active > span,
+.moduletable.menu.main li.first.active > a,
+.moduletable.menu.main li:hover.first > span,
+.moduletable.menu.main li:hover.first > a {
+	background-image: url(../images/menu_cap_first-over.gif);
+}
+
+.moduletable.menu.main li.last > span,
+.moduletable.menu.main li.last > a {
+	background-image: url(../images/menu_cap_last.gif);
+	background-position: right;
+}
+.moduletable.menu.main li.last.active > span,
+.moduletable.menu.main li.last.active > a,
+.moduletable.menu.main li:hover.last > span,
+.moduletable.menu.main li:hover.last > a {
+	background-image: url(../images/menu_cap_last-over.gif);
+	background-position: right;
+}
+
 /* @end */
 /* @group subnav */
 .moduletable.menu.sub {
@@ -60,10 +98,15 @@
 	color: #060;
 	font-size: 14px;
 	font-weight: bold;
-	line-height: 14px;
-	padding: 0 13px 0 3px;
+	line-height: 20px;
+	padding: 0 3px 0 3px;
+	margin: 0 10px 0 0;
 	
 	background: none;
+}
+
+.moduletable.menu.sub li.active {
+	background-color: white;
 }
 /* @end */
 /* @group drop menu */

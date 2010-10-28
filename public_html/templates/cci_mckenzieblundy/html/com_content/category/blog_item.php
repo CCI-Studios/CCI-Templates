@@ -21,13 +21,13 @@ $canEdit	= ($this->user->authorize('com_content', 'edit', 'content', 'all') || $
 		<div class="headline">
 		
 			<?php if ($this->item->params->get('show_title')) : ?>
-			<h1 class="title">
+			<h2 class="title">
 				<?php if ($this->item->params->get('link_titles') && $this->item->readmore_link != '') : ?>
 					<a href="<?php echo $this->item->readmore_link; ?>"><?php echo $this->escape($this->item->title); ?></a>
 				<?php else : ?>
 					<?php echo $this->escape($this->item->title); ?>
 				<?php endif; ?>
-			</h1>
+			</h2>
 			<?php endif; ?>
 	
 			<?php if ($canEdit) : ?>

@@ -4,3 +4,24 @@
 	text-align: center;
 	margin: 15px 0;
 }
+
+.readmore {
+	font-weight: bold;
+	color: #060;
+}
+
+.pdf {
+	padding-left: 20px;
+	background: url(../images/icon_pdf.gif) no-repeat;
+}
+
+ul.accordion { list-style: none; }
+ul.accordion h2 { border-bottom: none; cursor: pointer; }
+ul.accordion ul { margin-bottom: 0; }
+ul.accordion li.last { border-bottom: 1px solid #ccc; }
+
+.scroller {
+	
+}
+
+.clr, .clear { clear: both; }

@@ -1,0 +1,24 @@
+.form_element {
+	margin: 0 0 10px;
+}
+
+input[type=text],
+input[type=password],
+textarea {
+	width: 198px;
+	font-size: 14px;
+	font-family: Arial, Helvetica, sans-serif;
+	
+	padding: 3px;
+	
+	border: 1px solid #DDD;
+	color: #9C9C9C;
+	display: block;
+}
+
+
+.cfclear {
+	clear: both;
+	height: 1px;
+}
+.chronoform { display: none; }
