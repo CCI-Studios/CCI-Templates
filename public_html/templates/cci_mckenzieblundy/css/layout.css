@@ -32,6 +32,10 @@ body {
 		border: 1px solid #eee;
 		padding: 10px;
 	}
+	body.home #body > div {
+		border: none;
+		padding: 0;
+	}
 	
 		#content {
 			float: left;
@@ -52,5 +56,16 @@ body {
 		}
 	#footer {
 		background: url(../images/bg_shadow_bottom.gif) no-repeat;
-		
+		padding: 10px 5px;
+		font-size: 10px;
+	}
+	#footer .left {
+		color: #fff;
+		background-color: #030;
+		padding: 2px;
+	}
+	#footer .right a {
+		color: #fff;
+		background-color: #c90;
+		padding: 2px;
 	}

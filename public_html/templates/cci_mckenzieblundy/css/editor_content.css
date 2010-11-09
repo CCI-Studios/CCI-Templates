@@ -14,14 +14,51 @@
 	padding-left: 20px;
 	background: url(../images/icon_pdf.gif) no-repeat;
 }
+.phone {
+	padding-left: 20px;
+	background: url(../images/icon_phone.gif) no-repeat;
+}
+.fax {
+	padding-left: 20px;
+	background: url(../images/icon_fax.gif) no-repeat;
+}
+.email {
+	padding-left: 20px;
+	background: url(../images/icon_email.gif) no-repeat;
+}
 
 ul.accordion { list-style: none; }
 ul.accordion h2 { border-bottom: none; cursor: pointer; }
 ul.accordion ul { margin-bottom: 0; }
 ul.accordion li.last { border-bottom: 1px solid #ccc; }
 
+ul.dashed {
+	list-style: none;
+	margin-bottom: 0.5em;
+}
+ul.dashed li {
+	color: #666;
+	margin: 0;
+	padding-left: 20px;
+	margin: 4px;
+	border-bottom: 1px dotted #ccc;
+	background: url(../images/bullet.gif) no-repeat left;
+	font-size: 13px;
+	line-height: 22px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+ul.dashed li:hover { 
+	color: #060;
+	background-image: url(../images/bullet-over.gif);
+}
+
 .scroller {
-	
+}
+
+.msg {
+	border: 3px solid #eee;
+	margin-bottom: 15px;
+	padding: 10px;
 }
 
 .clr, .clear { clear: both; }

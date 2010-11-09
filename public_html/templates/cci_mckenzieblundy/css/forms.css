@@ -15,7 +15,18 @@ textarea {
 	color: #9C9C9C;
 	display: block;
 }
+select {
+	border: 1px solid #ccc;
+}
 
+label {
+	float: left;
+	color: #999;
+	font-size: 18px;
+	line-height: 18px;
+	font-family: Geogia, "Times New Roman", Times, serif;
+	margin: 0 5px 0 0;
+}
 
 .cfclear {
 	clear: both;

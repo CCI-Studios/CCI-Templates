@@ -24,9 +24,17 @@
 
 .moduletable.menu li {
 	float: left;
-	padding: 0;
+	padding: 0 5px;
 	margin: 0;
 }
+/* @group footer menu */
+#footer .moduletable.menu {
+	padding: 2px;
+}
+#footer .moduletable.menu li:first-child {
+	margin-left: 10px;
+}
+/* @end */
 /* @group main menu */
 .moduletable.menu.main {
 	text-align: center;
@@ -37,6 +45,7 @@
 
 .moduletable.menu.main li {
 	background: url(../images/menu_bg.gif) repeat-x;
+	padding: 0;
 }
 
 .moduletable.menu.main li > span,
