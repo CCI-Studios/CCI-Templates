@@ -6,19 +6,19 @@
 		<tr>
 			<th width="5">#</th>
 			<th width="20" align="center">&nbsp;</th>
-			<th width="20" align="center"><?=@helper('grid.sort', array('state'=>$state, 'column'=>'date'))?></th>
+			<th width="20" align="center"><?=@helper('grid.sort', array('column'=>'date'))?></th>
 			<th width="150" align="center"><?= @text('Preview')?></th>
-			<th><?=@helper('grid.sort', array('state'=>$state, 'column'=>'title'))?></th>
+			<th><?=@helper('grid.sort', array('column'=>'title'))?></th>
 			<th width="75"><?=@text('Invoice')?></th>
-			<th width="50" align="center"><?=@helper('grid.sort', array('state'=>$state, 'column'=>'enabled'))?></th>
-			<th width="20" align="center"><?=@helper('grid.sort', array('state'=>$state, 'column'=>'id'))?></th>
+			<th width="50" align="center"><?=@helper('grid.sort', array('column'=>'enabled'))?></th>
+			<th width="20" align="center"><?=@helper('grid.sort', array('column'=>'id'))?></th>
 		</tr>
 	</thead>
 	
 	<tfoot>
 		<tr>
 			<td colspan="20" align="center">
-				<?=@helper('admin::com.default.helper.paginator.pagination', array('state'=>$state, 'total'=>$total))?>
+				<?=@helper('paginator.pagination', array('total'=>$total))?>
 			</td>
 	</tfoot>
 	

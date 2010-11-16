@@ -1,3 +1,7 @@
+html, body {
+	height: 100%;
+}
+
 body {
 	background: url(../images/body_bg.jpg) repeat-x;
 	font-family: calibri;
@@ -6,6 +10,11 @@ body {
 #wrapper {
 	width: 1105px;
 	margin: 0 auto;
+	min-height: 100%;
+	background: url(../images/curve_bottom.png);
+}
+#wrapper > div {
+	background: white url(../images/body_bg.jpg) repeat-x;
 }
 
 #wrapper2 {
@@ -14,20 +23,24 @@ body {
 	
 	position: relative;
 }
-#wrapper3 {
+#wrapper2 > div {
 	margin: 0 36px;
 	background: white url(../images/content_bg.jpg) bottom repeat-x;
 	padding: 1px 0;
 }
+
 #header {
 	padding: 12px 10px 10px 12px;
 }
 #content {
-	background: url(../images/content_bg.png) bottom no-repeat;
+	background: url(../images/content_bg_bottom.png) bottom center no-repeat;
 
-	width: 813px;
 	margin: 0 auto;
-	padding:  0 4px 7px 6px;
+	padding:  0 0 9px;
+}
+#content > div {
+	background: url(../images/content_bg.png) top center repeat-y;
+	padding:  0 14px 1px;
 }
 #content .article {
 	padding: 0 10px 10px;

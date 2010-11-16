@@ -49,19 +49,17 @@ $testing = "true";
 </script>
 <?php endif; ?>
 
-	<div id="wrapper">
-		<div id="wrapper2">
-			<div id="wrapper3">
-				<div id="header">
-					<jdoc:include type="modules" name="header" style="xhtml" />
-					<div class="clr"></div>
-				</div>
-				
-				<div id="content"><div>
-					<jdoc:include type="component" />
-					<div class="clr"></div>
-				</div></div>
+	<div id="wrapper"><div>
+		<div id="wrapper2"><div>
+			<div id="header">
+				<jdoc:include type="modules" name="header" style="xhtml" />
+				<div class="clr"></div>
 			</div>
+				
+			<div id="content"><div>
+				<jdoc:include type="component" />
+				<div class="clr"></div>
+			</div></div>
 			
 			<div id="leftstrip">
 				<jdoc:include type="modules" name="days" style="xhtml" />
@@ -74,7 +72,7 @@ $testing = "true";
 			</div>
 			
 			<div class="clr"></div>
-		</div>
+		</div></div>
 		
 		<div id="footer">
 			<div id="title">
@@ -93,7 +91,7 @@ $testing = "true";
 			
 			<div class="clr"></div>
 		</div>
-	</div>
+	</div></div>
 	
 	<div class="hidden"><jdoc:include type="modules" name="hidden" style="raw" /></div>
 </body>
