@@ -1,7 +1,7 @@
 <?php
 defined('KOOWA') or die;
 
-class ComCalendarViewDayHtml extends ComDefaultViewHtml {
+class ComCalendarViewMonthHtml extends ComDefaultViewHtml {
 
 	public function display() {
 		$this->_auto_assign = false;
@@ -12,12 +12,11 @@ class ComCalendarViewDayHtml extends ComDefaultViewHtml {
 			$date = date('Y-m-d');
 		}
 		
-		$today = KFactory::get('site::com.calendar.model.days')
-					->set('date', $date)
-					->limit(1)
-					->getList()->current();
+		$days = KFactory::get('site::com.calendar.model.days')
+					->set('month', $date)
+					->getList();
 
-		$this->assign('today', $today);
+		$this->assign('days', $days);
 		return parent::display();
 	}
 }

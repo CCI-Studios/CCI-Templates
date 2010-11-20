@@ -5,9 +5,9 @@
 	<thead>
 		<tr>
 			<th width="5">#</th>
-			<th>Date</th>
-			<th>Owner</th>
+			<th><?= @helper('grid.sort', array('column'=>'date'))?></th>
 			<th>Preview</th>
+			<th>Owner</th>
 			<th>Locked Time</th>
 			<th>Purchase Time</th>
 			<th width="50" align="center"><?=@helper('grid.sort', array('column'=>'enabled'))?></th>
@@ -32,8 +32,12 @@
 					<?= $day->date ?>
 				</a>
 			</td>
+			<td align="center">
+				<a href="<?= @route('view=day&id='.$day->id)?>">
+					<img src="/media/com_calendar/uploads/month_<?=$day->filename?>" width="50" />
+				</a>
+			</td>
 			<td align="center"><?= $day->user_name ?></td>
-			<td><?= $day->filename ?></td>
 			<td><?= $day->locked_at ?></td>
 			<td><?= $day->purchased_at ?></td>
 			<td align="center"><?= @helper('grid.enable', array('row'=>$day)) ?></td>

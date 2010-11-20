@@ -1,18 +1,4 @@
-<? if ($today): ?>
-<div class="sponsorpic">
-	<div class="image">
-		<img src="<?=$today->filename?>" />
-	</div>
-	
-	<div class="description"><div>
-		<?=$today->title?><br/>
-		<?=$today->description?>
-	</div></div>
-</div>
-<? else: ?>
-	no image for today
-<? endif; ?>
-
+<? print_r(count($days));?>
 
 
 <style src="media://com_calendar/css/calendar.css" />

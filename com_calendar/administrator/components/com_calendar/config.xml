@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<params>
+		<param type="text" name="available_day_id" label="Available Day ID" description="Day to use when it is not yet purchased." default="0" />
+		<param type="text" name="pending_day_id" label="Pending Day ID" description="Day to use when it is pending." default="0" />
+		
+		<param type="text" name="day_width" label="Day Width" description="Width of current day image." default="810" />
+		<param type="text" name="day_height" label="Day Height" description="Height of current day image." default="579" />
+		
+		<param type="text" name="month_width" label="Month Width" description="Width of current month image." default="100" />
+		<param type="text" name="month_height" label="Month Height" description="Height of current month image." default="100" />
+	</params>
+</config>

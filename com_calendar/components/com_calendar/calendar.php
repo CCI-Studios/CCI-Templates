@@ -6,6 +6,8 @@ if (!defined('KOOWA')) {
 }
 
 KFactory::map('site::com.calendar.model.sponsors', 'admin::com.calendar.model.sponsors');
+KFactory::map('site::com.calendar.model.days', 'admin::com.calendar.model.days');
 
-KFactory::get('site::com.calendar.dispatcher')
+
+echo KFactory::get('site::com.calendar.dispatcher')
 	->dispatch(KRequest::get('get.view', 'cmd', 'sponsor'));

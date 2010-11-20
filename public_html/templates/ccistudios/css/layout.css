@@ -40,7 +40,7 @@ body {
 }
 #content > div {
 	background: url(../images/content_bg.png) top center repeat-y;
-	padding:  0 14px 1px;
+	padding:  0 14px 0;
 }
 #content .article {
 	padding: 0 10px 10px;

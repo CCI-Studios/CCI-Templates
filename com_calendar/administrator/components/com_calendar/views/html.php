@@ -25,7 +25,10 @@ class ComCalendarViewHtml extends ComDefaultViewHtml {
 				->setTitle('Calendar: <small>'.ucfirst($name).'</small>')
 				->append('divider')
 				->append('publish')
-				->append('unpublish');
+				->append('unpublish')
+				->append('divider')
+				->append('preferences')
+				->append('resize');
 		}	
 	
 		return parent::display();
