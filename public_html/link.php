@@ -46,10 +46,10 @@ shell_exec("ln -s ".
 	$nooku		."site/components/com_default ".
 	$site		."components/com_default");
 	
-shell_exec("rm ".$site."modules/com_default");
+shell_exec("rm ".$site."modules/mod_default");
 shell_exec("ln -s ".
-	$nooku		."site/modules/com_default ".
-	$site		."modules/com_default");
+	$nooku		."site/modules/mod_default ".
+	$site		."modules/mod_default");
 	
 echo "<p>Nooku Installed</p>";
 
@@ -67,6 +67,10 @@ shell_exec("rm ".$site."modules/mod_calendar");
 shell_exec("ln -s ".
 	$calendar	."modules/mod_calendar ".
 	$site		."modules/mod_calendar");
+shell_exec("rm ".$site."modules/mod_date");
+shell_exec("ln -s ".
+	$calendar	."modules/mod_date ".
+	$site		."modules/mod_date");
 	
 shell_exec("rm ".$site."media/com_calendar");
 shell_exec("ln -s ".
