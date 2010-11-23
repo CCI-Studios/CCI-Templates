@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install SYSTEM "http://www.joomla.org/xml/dtd/1.5/module-install.dtd">
+<install type="module" version="1.5.0" method="upgrade">
+	<name>Calendar Date Module</name>
+	<author>Nooku Project</author>
+	<creationDate>May 2010</creationDate>
+	<copyright>Copyright (C) 2010 Timble CVBA and Contributors. (http://www.timble.net)</copyright>
+	<license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>info@nooku.org</authorEmail>
+	<authorUrl>www.nooku.org</authorUrl>
+	<version>0.7.0</version>
+	<description>Example Nooku Framework Module</description>
+	<files>
+		<filename module="mod_date">mod_date.php</filename>
+	    <filename module="mod_date">html.php</filename>
+	    <filename module="mod_date">/tmpl/default.php</filename>
+	</files>
+</install>
