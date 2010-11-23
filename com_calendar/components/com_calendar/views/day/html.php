@@ -12,10 +12,22 @@ class ComCalendarViewDayHtml extends ComDefaultViewHtml {
 			$date = date('Y-m-d');
 		}
 		
-		$today = KFactory::get('site::com.calendar.model.days')
+		$today = KFactory::tmp('site::com.calendar.model.days')
 					->set('date', $date)
 					->limit(1)
 					->getList()->current();
+					
+					
+		
+		if (!$today) {		
+			$component = JComponentHelper::getComponent('com_calendar');
+			$params = new JParameter($component->params);
+			$blank	= $params->get('available_day_id');
+			
+			$today = KFactory::tmp('site::com.calendar.model.days')
+						->set('id', $blank)
+						->getList()->current();
+		}
 
 		$this->assign('today', $today);
 		return parent::display();

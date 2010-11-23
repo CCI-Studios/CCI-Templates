@@ -21,3 +21,38 @@
 .daily_image .description > div{
 	padding: 5px 10px;
 }
+
+.com_calendar .days {
+	list-style: none;
+	margin-left: 3px;
+}
+
+.com_calendar .days li {
+	float: left;
+	margin: 5px;
+	position: relative;
+}
+
+.com_calendar .days li .description {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background:  url(../images/description_bg.png);
+	color: white;
+}
+.com_calendar .days li .description > div { margin: 5px; }
+
+.com_calendar .days li .date {
+	position: absolute;
+	top: 0px;
+	left: 5px;
+	
+	color: white;
+	font-size: 2em;
+	font-weight: bold;
+}
+
+.com_calendar .days img {
+	display: block;
+}

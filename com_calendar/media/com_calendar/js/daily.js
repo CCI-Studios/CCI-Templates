@@ -8,24 +8,21 @@
 			var els = this.els = $$(selector);
 			
 			for (var i = els.length-1; i>= 0; i--) {
-				els[i].getElements('.image').each(function(image) {
-					var description = image.parentNode.getElement('.description');
-					description.setProperty('data-height', description.getSize().scrollSize.y);
-					var toggle = new Fx.Style(description, 'height');
-					toggle.set(0);
-					
-					image.addEvents({
-						mouseenter: function() {
-							toggle.stop();
-							toggle.start(description.getProperty('data-height'));
-						},
-						mouseleave: function() {
-							toggle.stop();
-							toggle.start(0);
-						}
-					})
-					
-				});
+				var description = els[i].getElement('.description');
+				description.setProperty('data-height', description.getSize().scrollSize.y);
+				var toggle = new Fx.Style(description, 'height');
+				toggle.set(0);
+				
+				els[i].addEvents({
+					mouseenter: function() {
+						toggle.stop();
+						toggle.start(description.getProperty('data-height'));
+					},
+					mouseleave: function() {
+						toggle.stop();
+						toggle.start(0);
+					}
+				})
 			}
 		},
 		show: function() {
