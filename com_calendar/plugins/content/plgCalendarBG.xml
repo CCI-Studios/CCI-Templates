@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install version="1.5" type="plugin" group="content">
+	<name>Content - Calendar Backgrounds</name>
+	<author>CCI Studios</author>
+	<creationDate>November 2010</creationDate>
+	<copyright></copyright>
+	<license></license>
+	<authorUrl>http://ccistudios.com</authorUrl>
+	<version>0.1</version>
+	<description></description>
+	<files>
+		<filename plugin="plgCalendarBG">plgCalendarBG.php</filename>
+	</files>
+	<params/>
+</install>
