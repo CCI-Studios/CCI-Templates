@@ -14,14 +14,23 @@
 			<input type="text" id="date_field" name="date" value="<?=$day->date?>" /><br>
 			
 			
-			<label class="mainlabel">Enabled:</label>
-			<?= @helper('admin::com.default.template.helper.listbox.published')?><br/>
+			<label for="locked_at_field" class="mainlabel">Locked at:</label>
+			<input type="text" id="locked_at_field" name="locked_at_date" value="<?=$day->locked_at?>" /><br/>
 			
-			<label class="mainlabel">Purchase Date:</label><br/>
+			<label for="status_field" class="mainlabel">Status Date:</label>
+			<input type="text" id="status_field" name="status" value="<?=$day->status?>" /><br/>
+			
 			<label class="mainlabel">Transaction ID:</label><br/>
 			
 			<label for="title_field" class="mainlabel">Title:</label>
 			<input type="text" name="title" id="title_field" value="<?=$day->title?>" /><br/>
+			
+			<label for="link_field" class="mainlabel">Link:</label>
+			<input type="text" name="link" id="link_field" value="<?=$day->link?>" /><br/>
+			
+			<label for="dedication_field" class="mainlabel">Dedicated To:</label>
+			<input type="text" name="dedication" id="dedication_field" value="<?=$day->dedication?>" /><br/>
+			
 			<?= @editor(array('editor'=>null, 'width'=>'100%', 'height'=>'300')); ?>
 		</fieldset>
 	</div>

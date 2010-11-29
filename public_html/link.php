@@ -1,81 +1,38 @@
 <?php
+
+function _symlink($source, $destination, $path, $prefix = '') {
+	if ($prefix) $prefix .= '/';
+	
+	shell_exec("rm ".$destination.$path);
+	shell_exec("ln -s ".$source.$prefix.$path.' '.$destination.$path);
+	echo $source.$prefix.$path.'<br/>'.$destination.$path.'<br/><br/>';
+}
 $root 		= "/home/staging/subdomains/calendar/";
 $site		= $root."public_html/";
 $nooku 		= $root."nooku/";
 $calendar	= $root."com_calendar/";
 
 /* install nooku */
-shell_exec("rm ".$site."administrator/components/com_default");
-shell_exec("ln -s ".
-	$nooku		."administrator/components/com_default ".
-	$site		."administrator/components/com_default");
-shell_exec("rm ".$site."administrator/modules/mod_default");
-shell_exec("ln -s ".
-	$nooku		."administrator/modules/mod_default ".
-	$site		."administrator/modules/mod_default");
-
-shell_exec("rm ".$site."libraries/koowa");
-shell_exec("ln -s ".
-	$nooku		."libraries/koowa ".
-	$site		."libraries/koowa");
-	
-shell_exec("rm ".$site."media/com_default");
-shell_exec("ln -s ".
-	$nooku		."media/com_default ".
-	$site		."media/com_default");
-shell_exec("rm ".$site."media/lib_koowa");
-shell_exec("ln -s ".
-	$nooku		."media/lib_koowa ".
-	$site		."media/lib_koowa");
-	
-shell_exec("rm ".$site."plugins/koowa/default.php");
-shell_exec("ln -s ".
-	$nooku		."plugins/koowa/default.php ".
-	$site		."plugins/koowa/default.php");
-shell_exec("rm ".$site."plugins/system/koowa.php");
-shell_exec("ln -s ".
-	$nooku		."plugins/system/koowa.php ".
-	$site		."plugins/system/koowa.php");
-shell_exec("rm ".$site."plugins/system/koowa.xml");
-shell_exec("ln -s ".
-	$nooku		."plugins/system/koowa.xml ".
-	$site		."plugins/system/koowa.xml");
-	
-shell_exec("rm ".$site."components/com_default");
-shell_exec("ln -s ".
-	$nooku		."site/components/com_default ".
-	$site		."components/com_default");
-	
-shell_exec("rm ".$site."modules/mod_default");
-shell_exec("ln -s ".
-	$nooku		."site/modules/mod_default ".
-	$site		."modules/mod_default");
+_symlink($nooku, $site, 'administrator/components/com_default');
+_symlink($nooku, $site, 'administrator/modules/com_default');
+_symlink($nooku, $site, 'libraries/koowa');
+_symlink($nooku, $site, 'media/com_default');
+_symlink($nooku, $site, 'media/lib_koowa');
+_symlink($nooku, $site, 'plugins/koowa/default.php');
+_symlink($nooku, $site, 'plugins/system/koowa.php');
+_symlink($nooku, $site, 'plugins/system/koowa.xml');
+_symlink($nooku, $site, 'components/com_default', 'site');
+_symlink($nooku, $site, 'modules/mod_default', 'site');
 	
 echo "<p>Nooku Installed</p>";
 
 /* install calendar */
-shell_exec("rm ".$site."administrator/components/com_calendar");
-shell_exec("ln -s ".
-	$calendar	."administrator/components/com_calendar ".
-	$site		."administrator/components/com_calendar");
-shell_exec("rm ".$site."components/com_calendar");
-shell_exec("ln -s ".
-	$calendar	."components/com_calendar ".
-	$site		."components/com_calendar");
-	
-shell_exec("rm ".$site."modules/mod_calendar");
-shell_exec("ln -s ".
-	$calendar	."modules/mod_calendar ".
-	$site		."modules/mod_calendar");
-shell_exec("rm ".$site."modules/mod_date");
-shell_exec("ln -s ".
-	$calendar	."modules/mod_date ".
-	$site		."modules/mod_date");
-	
-shell_exec("rm ".$site."media/com_calendar");
-shell_exec("ln -s ".
-	$calendar	."media/com_calendar ".
-	$site		."media/com_calendar");
-
+_symlink($calendar, $site, 'administrator/components/com_calendar');
+_symlink($calendar, $site, 'components/com_calendar');
+_symlink($calendar, $site, 'modules/mod_calendar');
+_symlink($calendar, $site, 'modules/mod_date');
+_symlink($calendar, $site, 'media/com_calendar');
+_symlink($calendar, $site, 'plugins/content/plgCalendarBG.php');
+_symlink($calendar, $site, 'plugins/content/plgCalendarBG.xml');
 
 echo "<p>Calendar installed</p>";

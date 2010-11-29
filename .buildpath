@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry external="true" kind="lib" path="/Users/jbennett/Projects/FrameWorks/Nooku-Framework/trunk/code"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+	<buildpathentry kind="src" path="com_calendar/plugins/content"/>
+	<buildpathentry kind="src" path="com_calendar/modules/mod_date"/>
+	<buildpathentry kind="src" path="com_calendar/components/com_calendar"/>
+	<buildpathentry kind="src" path="public_html"/>
+	<buildpathentry kind="src" path="com_calendar/administrator/components/com_calendar"/>
+</buildpath>

@@ -9,8 +9,7 @@
 			<th width="20" align="center"><?=@helper('grid.sort', array('column'=>'date'))?></th>
 			<th width="150" align="center"><?= @text('Preview')?></th>
 			<th><?=@helper('grid.sort', array('column'=>'title'))?></th>
-			<th width="75"><?=@text('Invoice')?></th>
-			<th width="50" align="center"><?=@helper('grid.sort', array('column'=>'enabled'))?></th>
+			<th><?=@helper('grid.sort', array('column'=>'link'))?></th>
 			<th width="20" align="center"><?=@helper('grid.sort', array('column'=>'id'))?></th>
 		</tr>
 	</thead>
@@ -27,24 +26,19 @@
 		foreach($sponsors as $sponsor): ?>
 		<tr>
 			<td align="center"><?=$i?></td>
-			<td align="center">&nbsp;</td>
+			<td align="center"><input type="checkbox" /></td>
 			<td align="center"><?=$sponsor->date?></td>
-			<td align="center">&nbsp;</td>
+			<td align="center">
+				<? if ($sponsor->filename): ?>
+				<img src="/media/com_calendar/uploads/sponsors/banner_<?=$sponsor->filename?>" width="100" />
+				<? endif; ?>
+			</td>
 			<td>
 				<a href="<?=@route('view=sponsor&id='.$sponsor->id)?>">
 					<?=$sponsor->title?>
 				</a>
 			</td>
-			<td align="center">
-				<? if ($sponsor->calendar_invoice_id): ?>
-				<a href="<?=@route('view=invoice&id='.$sponsor->calendar_invoice_id)?>">
-					<?=@text('Invoice')?>
-				</a>
-				<? else: ?>
-					<?=@text('No Invoice')?>
-				<? endif; ?>
-			</td>
-			<td align="center"><?=@helper('grid.enable', array('row'=>$sponsor))?></td>
+			<td><?=$sponsor->link?></td>
 			<td align="center"><?=$sponsor->id?></td>
 		</tr>
 		<? $i++;

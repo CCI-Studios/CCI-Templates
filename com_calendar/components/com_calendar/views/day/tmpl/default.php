@@ -1,14 +1,26 @@
-<div class="com_calendar"><div class="daily_image">
+<div class="com_calendar wide"><div class="daily_image">
 	<div class="image">
 		<img src="/media/com_calendar/uploads/day_<?=$today->filename?>" />
 	</div>
 	
 	<div class="description"><div>
-		<h2><?= $today->title ?></h2>
+		<? if ($today->title || $today->link): ?>
+		<h1>
+			<?= $today->title ?>
+			<? if($today->link): ?>
+				<span class="link">
+					- 
+					<a href="<?=$today->link?>" target="_blank">
+						view website
+					</a>
+				</span>
+			<? endif; ?>
+		</h1>
+		<? endif; ?>
 		<?= $today->description ?>
 	</div></div>
 </div></div>
 
 <style src="media://com_calendar/css/calendar.css" />
 <? JHTML::_('behavior.mootools'); ?>
-<script src="media://com_calendar/js/daily.js" />
+<script src="media://com_calendar/js/daily.js" /></script>

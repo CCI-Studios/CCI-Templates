@@ -10,5 +10,12 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access'); ?>
 
-<?php echo $this->loadTemplate($this->type); ?>
+
+<?php 
+	if ($this->type === 'login') {
+		echo $this->loadTemplate('both');
+	} else {
+		echo $this->loadTemplate($this->type);
+	}
+?>
 

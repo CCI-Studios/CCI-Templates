@@ -25,9 +25,7 @@ defined('_JEXEC') or die('Restricted access');
 endif; ?>
 
 <div class="joomla <?php echo $this->escape($this->params->get('pageclass_sfx')); ?>">
-	
 	<div class="user">
-	
 		<?php if ( $this->params->get( 'show_page_title' ) ) : ?>
 		<h1 class="pagetitle">
 			<?php echo $this->escape($this->params->get('page_title')); ?>
@@ -49,7 +47,7 @@ endif; ?>
 		</div>
 		<?php endif; ?>
 		
-		<form action="<?php echo JRoute::_( 'index.php', true, $this->params->get('usesecure')); ?>" method="post" name="com-login" id="com-form-login">
+		<form action="<?php echo JRoute::_('index.php',true,$this->params->get('usesecure')); ?>" method="post" name="com-login" id="com-form-login">
 		<fieldset>
 			<legend><?php echo JText::_('LOGIN') ?></legend>
 			
@@ -70,7 +68,6 @@ endif; ?>
 			<div>
 				<input type="submit" name="Submit" class="button" value="<?php echo JText::_('LOGIN') ?>" />
 			</div>
-			
 		</fieldset>
 	
 		<ul>

@@ -5,6 +5,7 @@
 	<thead>
 		<tr>
 			<th width="5">#</th>
+			<th align="center" width="5"><input type="checkbox" name="toggle" value="" onclick="checkAll(<?=count($days)?>);" /></th>
 			<th><?= @helper('grid.sort', array('column'=>'date'))?></th>
 			<th>Preview</th>
 			<th>Owner</th>
@@ -27,6 +28,9 @@
 		foreach($days as $day): ?>
 		<tr>
 			<td><?= $i ?></td>
+			<td align="center">
+				<?= @helper('grid.checkbox', array('row'=>$day))?>
+			</td>
 			<td>
 				<a href="<?= @route('view=day&id='.$day->id)?>">
 					<?= $day->date ?>

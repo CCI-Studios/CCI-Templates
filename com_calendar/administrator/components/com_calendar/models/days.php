@@ -10,7 +10,11 @@ class ComCalendarModelDays extends KModelTable {
 		$this->_state
 			->insert('date', 'date')
 			->insert('id', 'int')
-			->insert('month', 'date');
+			->insert('ids', 'raw')
+			->insert('month', 'date')
+			->insert('status', 'int')
+			->insert('user_id', 'int')
+			;
 	}
 	
 	protected function _buildQueryWhere(KDatabaseQuery $query) {
@@ -27,6 +31,19 @@ class ComCalendarModelDays extends KModelTable {
 		if ($this->_state->id) {
 			$query->where('calendar_day_id', '=', $this->_state->id);
 		}
+		
+		if ($this->_state->ids) {
+			$query->where('calendar_day_id', 'IN', $this->_state->ids);
+		}
+		
+		if ($this->_state->status) {
+			$query->where('status', '=', $this->_state->status);
+		}
+		
+		if ($this->_state->user_id) {
+			$query->where('user_id', '=', $this->_state->user_id);
+		}
+
 		parent::_buildQueryWhere($query);
 	}
 }

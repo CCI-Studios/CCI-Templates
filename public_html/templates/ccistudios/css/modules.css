@@ -58,3 +58,36 @@
 }
 
 /* @end */
+
+/* messages */
+#system-message { margin: 0; padding: 0 0 10px; }
+#system-message dt.message, #system-message dt.error,
+#system-message dt.notice { display: none; }
+#system-message dd { margin: 0; font-weight: bold; }
+#system-message dd ul, #system-message dd.message ul {
+	background: #C3D2E5;
+	border: 3px solid #84A7DB;
+	border-left: none; border-right: none;
+	color: #05B;
+	list-style: none;
+	padding: 10px;
+	margin: 0;
+}
+#system-message dd.error ul { background: #E6C0C0; border-color: #DE7A7B; color: #C00; }
+#system-message dd.notice ul { background: #EFE7B8; border-color: #F0DC7E; color: #C00; }
+#system-message dd li { margin: 0; }
+/* @end */
+
+/* user login */
+.joomla .user .user_signup {
+	margin: 10px 0;
+}
+.joomla .user .user_signin {
+	float: right;
+	width: 300px;
+	border: 1px solid black;
+	padding: 10px;
+	margin: 0 0 10px 20px;
+}
+.joomla .user .user_signin ul { margin-bottom: 0; }
+/* end */

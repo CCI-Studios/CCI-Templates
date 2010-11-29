@@ -10,7 +10,6 @@ class ComCalendarControllerDay extends ComDefaultControllerDefault {
 			$day->createThumbs();
 			
 		$this->_redirect = KRequest::get('session.com.dispatcher.referrer', 'url');
-		return $days;
 	}
 	
 }

@@ -1,7 +1,7 @@
 <?php
 defined('KOOWA') or die;
 
-class ComCalendarViewDayHtml extends ComDefaultViewHtml {
+class ComCalendarViewDayHtml extends ComCalendarViewHtml {
 
 	public function display() {
 		$this->_auto_assign = false;
@@ -16,9 +16,7 @@ class ComCalendarViewDayHtml extends ComDefaultViewHtml {
 					->set('date', $date)
 					->limit(1)
 					->getList()->current();
-					
-					
-		
+
 		if (!$today) {		
 			$component = JComponentHelper::getComponent('com_calendar');
 			$params = new JParameter($component->params);
@@ -28,7 +26,13 @@ class ComCalendarViewDayHtml extends ComDefaultViewHtml {
 						->set('id', $blank)
 						->getList()->current();
 		}
-
+		
+		if (strlen($today->link) > 0 && 
+			(substr($today->link, 0, 7) !== 'http://' || 
+			substr($today->link, 0, 8) !== 'https://')) {
+			$today->link = 'http://'.$today->link;
+		}
+		
 		$this->assign('today', $today);
 		return parent::display();
 	}

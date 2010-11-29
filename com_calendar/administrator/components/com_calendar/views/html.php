@@ -7,10 +7,11 @@ class ComCalendarViewHtml extends ComDefaultViewHtml {
 		parent::__construct($config);
 		
 		$this->views = array(
-			'dashboard'			=> JText::_('Dashboard'),
-			'sponsors'			=> JText::_('Sponsors'),
-			'days'					=> JText::_('Days'),
-			'transactions'	=> JText::_('Transactions')
+			'sponsors'		=> JText::_('Sponsors'),
+			'days'			=> JText::_('Days'),
+			'transactions'	=> JText::_('Transactions'),
+			'users'			=> JText::_('Users'),
+			'orders'		=> JText::_('Orders')
 		);
 	
 	}

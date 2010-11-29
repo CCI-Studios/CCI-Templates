@@ -4,6 +4,8 @@ CREATE TABLE IF NOT EXISTS `#__calendar_days` (
   `filename` varchar(150) NOT NULL,
 	`title`	varchar(150) NOT NULL,
   `description` text NOT NULL COMMENT '@Filter("html")',
+	`link` varchar(150),
+	`dedication` varchar(150),
   `enabled` tinyint(1) unsigned NOT NULL default '0',
   `locked_at` datetime NOT NULL,
   `purchased_at` datetime NOT NULL,

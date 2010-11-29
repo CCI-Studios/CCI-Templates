@@ -1,3 +1,9 @@
+.com_calendar .daily_image .link,
+.com_calendar .daily_image .link a {
+	color: white;
+	font-size: 15px;
+}
+
 .daily_image {
 	position: relative;
 	overflow: hidden;
@@ -29,9 +35,14 @@
 
 .com_calendar .days li {
 	float: left;
-	margin: 5px;
+	margin: 3px;
 	position: relative;
+	border: 2px solid transparent;
 }
+.com_calendar .days li.active { border-color: #FFF; }
+
+.com_calendar .days li a { color: white; }
+.com_calendar .days li a:hover { text-decoration: underline; }
 
 .com_calendar .days li .description {
 	position: absolute;
@@ -55,4 +66,12 @@
 
 .com_calendar .days img {
 	display: block;
+}
+
+.com_calendar .pick-your-day .days img {
+	border: 2px solid white;
+}
+
+.com_calendar .pick-your-day .days input[type="radio"]:checked + label img {
+	border-color: red;	
 }

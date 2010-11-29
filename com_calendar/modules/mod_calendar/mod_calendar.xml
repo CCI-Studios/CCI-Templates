@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<name>Calendar Sponsor Module</name>
+	<author></author>
+	<creationDate></creationDate>
+	<copyright></copyright>
+	<license></license>
+	<authorEmail></authorEmail>
+	<authorUrl></authorUrl>
+	<version></version>
+	<description>Calendar Sponsor Module</description>
+	<files>
+		<filename module="mod_calendar">mod_calendar.php</filename>
+	    <filename module="mod_calendar">html.php</filename>
+	    <filename module="mod_calendar">/tmpl/default.php</filename>
+	</files>
+	
+	<params>
+		<param name="moduleclass_sfx" type="text" default="" label="Module Class Suffix" description="PARAMMODULECLASSSUFFIX" />
+		<param name="is_year" label="Show year sponsor" type="list" default="0">
+			<option value="1">Yes</option>
+			<option value="0">No</option>
+		</param>
+	</params>
+</install>

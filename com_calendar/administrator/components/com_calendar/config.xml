@@ -3,11 +3,33 @@
 	<params>
 		<param type="text" name="available_day_id" label="Available Day ID" description="Day to use when it is not yet purchased." default="0" />
 		<param type="text" name="pending_day_id" label="Pending Day ID" description="Day to use when it is pending." default="0" />
-		
+		<param type="text" name="available_month_id" label="Available Month ID" description="Sponsor to use when a month is available." default="0" />
+		<param type="text" name="available_year_id" label="Available Year ID" description="Sponsor to use when a year is available." default="0" />
+	
 		<param type="text" name="day_width" label="Day Width" description="Width of current day image." default="810" />
 		<param type="text" name="day_height" label="Day Height" description="Height of current day image." default="579" />
-		
+	
 		<param type="text" name="month_width" label="Month Width" description="Width of current month image." default="100" />
 		<param type="text" name="month_height" label="Month Height" description="Height of current month image." default="100" />
+	
+		<param type="text" name="banner_width" label="Banner Width" description="Width of banner image." default="178" />
+		<param type="text" name="banner_height" label="Banner Height" description="Height of banner image." default="87" />
+
+		<param type="spacer" name="@spacer" />
+		<param type="text" name="flickr_key" label="Flickr App Key" description="" default="232996e20d48c20dc94a6e4766dcb279" />
+		<param type="text" name="flickr_secret" label="Flickr Secret" description="" default="b5d9128e58e447c0" />
+		
+		<param type="spacer" name="@spacer" />
+		<param type="text" name="facebook_key" label="Facebook App Key" description="" default="e71e29a3587455c6758e1b8266a09b02" />
+		<param type="text" name="facebook_secret" label="Facebook Secret" description="" default="8a20733a806299e173c9467a80bb8110" />
+		
+		<param type="spacer" name="@spacer" />
+		<param type="text" name="paypal_sig" label="Paypal Signature" description="" default="A5phAvfvwNwNb4o5D.wU-rB2Pj5uAh06Htmpsl8Mbqy-bJgxRPl3iXYS" />
+		<param type="text" name="paypal_user" label="Paypal User" description="" default="jbenne_1290938196_biz_api1.ccistudios.com" />
+		<param type="text" name="paypal_pass" label="Paypal Password" description="" default="1290938210" />
+		<param type="list" name="paypal_sandbox" label="Sandbox Mode" description="" default="1">
+			<option value="1">Sandbox</option>
+			<option value="0">Live</option>
+		</param>
 	</params>
 </config>

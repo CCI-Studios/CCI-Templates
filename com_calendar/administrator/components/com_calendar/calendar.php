@@ -6,4 +6,4 @@ if (!defined('KOOWA')) {
 }
 
 echo KFactory::get('admin::com.calendar.dispatcher')
-	->dispatch(KRequest::get('get.view', 'cmd', 'dashboard'));
+	->dispatch(KRequest::get('get.view', 'cmd', 'days'));

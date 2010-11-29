@@ -26,10 +26,11 @@ body {
 #wrapper2 > div {
 	margin: 0 36px;
 	background: white url(../images/content_bg.jpg) bottom repeat-x;
-	padding: 1px 0;
+	padding: 1px 0 4px;
 }
 
-#header {
+#header { width: 100%; }
+#header > div {
 	padding: 12px 10px 10px 12px;
 }
 #content {
@@ -42,9 +43,12 @@ body {
 	background: url(../images/content_bg.png) top center repeat-y;
 	padding:  0 14px 0;
 }
-#content .article {
-	padding: 0 10px 10px;
+#content > div > div > div {
+	min-height: 579px;
+	background: url(../images/trans-white.png);
 }
+#content > div > div > div > div { padding: 0 10px 10px; }
+#content .com_calendar.wide { padding: 0; }
 
 #leftstrip {}
 #rightstrip {}
@@ -60,16 +64,17 @@ body {
 #footer a { color: white; }
 
 #title {
-	margin-top: 30px;
+	margin-top: 10px;
 
 	text-align: center;
 	line-height: 1.4em;
 	
 	text-shadow: -1px -1px 0px black;
 }
+#title .moduletable { margin-top: 0; }
 
 #menu {
-	margin-top:  30px;
+	margin-top:  40px;
 	font-size: 12px;
 	text-align: center;
 }

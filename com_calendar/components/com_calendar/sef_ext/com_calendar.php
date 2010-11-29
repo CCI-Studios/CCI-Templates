@@ -25,11 +25,36 @@ if (isset($view)) {
 	$title[] = 'day';
 }
 
-if (isset($date)) {
-	$title[] = $date;
-	shRemoveFromGETVarsList('date');
-} else {
-	$title[] = date('Y-m-d');
+switch($view) {
+	case 'donate':
+		$layout = KRequest::get('get.layout', 'string', 'default');
+		shRemoveFromGETVarsList('layout');
+		switch($layout) {
+			case 'edit_date':
+				$title[] = 'edit-date';
+				break;
+			case 'checkout':
+				$title[] = 'checkout';
+				break;
+			case 'thanks':
+				$title[] = 'thanks';
+				break;
+			case 'default':
+			default:
+				$title[] = 'whats-your-day';
+				break;
+		}
+		break;
+	case 'day':
+	case 'month':
+	default:
+		if (isset($date)) {
+			$title[] = $date;
+			shRemoveFromGETVarsList('date');
+		} else {
+			$title[] = date('Y-m-d');
+		}
+		break;
 }
 
 // ------------------ standard plugin finalize function - don't change --------------------------- 

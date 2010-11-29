@@ -28,6 +28,7 @@ $testing = "true";
 	<link rel="stylesheet" type="text/css" href="/templates/<?php echo $this->template ?>/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="/templates/<?php echo $this->template ?>/css/editorStyles.css" />
 	
+	<?php JHtml::_('behavior.mootools')?>
 	<script type="text/javascript" src="/templates/<?php echo $this->template ?>/scripts/dropmenu.js"></script>
 <?php else: ?>
 	<link rel="stylesheet" type="text/css" href="/templates/<?php echo $this->template ?>/css/template.css" />
@@ -51,15 +52,17 @@ $testing = "true";
 
 	<div id="wrapper"><div>
 		<div id="wrapper2"><div>
-			<div id="header">
+			<div id="header"><div>
 				<jdoc:include type="modules" name="header" style="xhtml" />
 				<div class="clr"></div>
-			</div>
-				
-			<div id="content"><div>
-				<jdoc:include type="component" />
-				<div class="clr"></div>
 			</div></div>
+				
+			<div id="content"><div><div><div>
+				<jdoc:include type="message" />
+				
+				<jdoc:include type="component" />
+				<span class="clr" style="display:block"></>
+			</div></div></div></div>
 			
 			<div id="leftstrip">
 				<jdoc:include type="modules" name="days" style="xhtml" />
