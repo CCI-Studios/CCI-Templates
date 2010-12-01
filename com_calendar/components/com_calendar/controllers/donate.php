@@ -11,12 +11,13 @@ class ComCalendarControllerDonate extends ComDefaultControllerDefault
 		));
 		
 		if ($post->submit) {
-			$this->setRedirect('view=summary');
+			$this->setRedirect('index.php?option=com_calendar&view=summary');
 			return;
 		}
 		
 		if ($post->trash) {
 			$this->trash($post->trash);
+			$this->setRedirect('index.php?option=com_calendar&view=donate');
 			return;
 		}
 
@@ -27,7 +28,7 @@ class ComCalendarControllerDonate extends ComDefaultControllerDefault
 
 		// if user selects existing date
 		if (count($model->getlist()) > 0) {
-			$this->setRedirect('view=donate');
+			$this->setRedirect('index.php?option=com_calendar&view=donate');
 			return;
 		}
 		
@@ -40,7 +41,7 @@ class ComCalendarControllerDonate extends ComDefaultControllerDefault
 		$new_date->status		= 0; // locked
 		
 		if (!$new_date->save()) {
-			$this->setRedirect('view=donate');
+			$this->setRedirect('index.php?option=com_calendar&view=donate');
 		}
 		
 		// add to session
@@ -49,7 +50,7 @@ class ComCalendarControllerDonate extends ComDefaultControllerDefault
 		KRequest::set('session.com.calendar.days.selected', null);
 		KRequest::set('session.com.calendar.days.selected', $dates);
 		
-		$this->setRedirect('view=donate');
+		$this->setRedirect('index.php?option=com_calendar&view=donate');
 	}
 	
 	protected function trash($date) {
