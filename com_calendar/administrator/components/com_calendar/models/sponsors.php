@@ -6,10 +6,8 @@ class ComCalendarModelSponsors extends KModelTable {
 	public function __construct(KConfig $config) {
 		parent::__construct($config);
 		
-		
-		
-		$this->_state->insert('day', 'int', date('j'))
-			->insert('month', 'int', date('n'))
+		$this->_state->insert('day', 'int', date('d'))
+			->insert('month', 'int', date('m'))
 			->insert('year', 'int', date('Y'));		
 	}
 	
@@ -21,7 +19,7 @@ class ComCalendarModelSponsors extends KModelTable {
 		if ($app->getName() == 'site') {
 			$date = $this->_state->year.'-'.$this->_state->month.'-'.$this->_state->day;
 			$query->where('date', '=', $date);
-		}
+		}		
 	}
 
 }
