@@ -44,7 +44,7 @@ class ComCalendarDatabaseRowSponsor extends KDatabaseRowAbstract {
 	public function createThumbs() {
 		$params = &JComponentHelper::getParams( 'com_calendar' );
 		
-		$this->resizeImage($this->filename, $params->get('banner_width'), $params->get('banner_height'), 'banner_');
+		//$this->resizeImage($this->filename, $params->get('banner_width'), $params->get('banner_height'), 'banner_');
 	}
 	
 	public function deleteImages($original = true) {
@@ -79,7 +79,7 @@ class ComCalendarDatabaseRowSponsor extends KDatabaseRowAbstract {
 		$src_ratio 	= $src_width/$src_height;
 		$dest_ratio	= $_width/$_height;
 		
-		if ($src_ratio > $dest_ratio) {
+		if ($dest_ratio >= 1) {
 			$temp_height 	= $_height;
 			$temp_width		= (int)($_height*$src_ratio);
 		} else {

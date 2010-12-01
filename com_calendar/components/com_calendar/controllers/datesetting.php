@@ -13,9 +13,14 @@ class ComCalendarControllerDatesetting extends ComDefaultControllerDefault {
 			'date'	=> null
 		));
 
-		$day = KFactory::tmp('site::com.calendar.model.days')
-				->set('id', $pending_dates[0])
-				->getList()->current();
+		$pending = KRequest::get('session.com.calendar.days.selected', 'raw');
+
+		$days = KFactory::tmp('site::com.calendar.model.days')
+					->set('ids', $pending)
+					->set('status', 0)
+					->sort('date')
+					->getList();
+		$day = $days->current();
 		
 		$day->file_upload = $post->file_upload;
 		$day->title 		= $post->title;
@@ -24,18 +29,21 @@ class ComCalendarControllerDatesetting extends ComDefaultControllerDefault {
 		$day->link          = $post->link;
 		$day->status		= 1; // pending
 		$day->locked_at		= date('Y-m-d H:i:s');
-		
 		$day->save();
-
-		$pending_dates =  array_slice($pending_dates, 1);
-		KRequest::set('session.com.calendar.days.selected', null);
-		KRequest::set('session.com.calendar.days.selected', $pending_dates);
 		
-		if (count($pending_dates) > 0) {
+		
+		if (count($days) > 1) {
 			$this->setRedirect('view=datesetting');
 		} else {
-			$this->setRedirect('view=review');
+			if (KFactory::get('lib.koowa.user')->gid >= 19) {
+				$this->setRedirect('view=method');
+			} else {
+				$this->setRedirect('view=review');
+			}
+			
+			$day->user_id = $user_id;
 		}
+		
 		return $day;
 	}
 }

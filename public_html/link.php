@@ -31,6 +31,7 @@ _symlink($calendar, $site, 'administrator/components/com_calendar');
 _symlink($calendar, $site, 'components/com_calendar');
 _symlink($calendar, $site, 'modules/mod_calendar');
 _symlink($calendar, $site, 'modules/mod_date');
+_symlink($calendar, $site, 'modules/mod_datestrip');
 _symlink($calendar, $site, 'media/com_calendar');
 _symlink($calendar, $site, 'plugins/content/plgCalendarBG.php');
 _symlink($calendar, $site, 'plugins/content/plgCalendarBG.xml');

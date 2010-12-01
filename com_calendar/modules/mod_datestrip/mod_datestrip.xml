@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<install type="module" version="1.5.0" method="upgrade">
+	<name>Calendar Date strip Module</name>
+	<author>Nooku Project</author>
+	<creationDate>May 2010</creationDate>
+	<copyright>Copyright (C) 2010 Timble CVBA and Contributors. (http://www.timble.net)</copyright>
+	<license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>info@nooku.org</authorEmail>
+	<authorUrl>www.nooku.org</authorUrl>
+	<version>0.7.A0</version>
+	<description>Display a strip of dates.</description>
+	
+	<files>
+		<filename module="mod_datestrip">mod_datestrip.php</filename>
+	    <filename module="mod_datestrip">html.php</filename>
+	    <filename module="mod_datestrip">/tmpl/default.php</filename>
+	</files>
+	
+	<params>
+		<param type="list" label="Display Type" name="display_type" default="0">
+			<option value="1">Months</option>
+			<option value="0">Days</option>
+		</param>
+	</params>
+</install>

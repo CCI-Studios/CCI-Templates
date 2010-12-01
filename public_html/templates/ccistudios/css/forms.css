@@ -26,6 +26,10 @@ input[type=file] {
 	margin: 0 0 10px 0;
 }
 
+input[type=image] {
+	display: block;
+}
+
 input[type=submit], button {
 	margin-top: 1em;
 	padding: 3px 2em 5px;

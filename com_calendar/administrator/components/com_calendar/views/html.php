@@ -10,7 +10,7 @@ class ComCalendarViewHtml extends ComDefaultViewHtml {
 			'sponsors'		=> JText::_('Sponsors'),
 			'days'			=> JText::_('Days'),
 			'transactions'	=> JText::_('Transactions'),
-			'users'			=> JText::_('Users'),
+			'users'			=> JText::_('Create User'),
 			'orders'		=> JText::_('Orders')
 		);
 	

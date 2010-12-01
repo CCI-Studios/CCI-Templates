@@ -8,8 +8,8 @@ class ComCalendarDatabaseRowDay extends KDatabaseRowAbstract {
 	
 	public function save() {
 		$file = KRequest::get('FILES.file_upload', 'raw');
-		
-		if ($file['error'] !== 4) {
+
+		if ($file && $file['error'] !== 4) {	
 			if ($file['error'] === 0) {
 				$extension	= JFile::getExt($file['name']);
 				$src 		= $file['tmp_name'];
@@ -82,7 +82,7 @@ class ComCalendarDatabaseRowDay extends KDatabaseRowAbstract {
 		$src_ratio 	= $src_width/$src_height;
 		$dest_ratio	= $_width/$_height;
 		
-		if ($src_ratio > $dest_ratio) {
+		if ($dest_ratio >= 1) {
 			$temp_height 	= $_height;
 			$temp_width		= (int)($_height*$src_ratio);
 		} else {

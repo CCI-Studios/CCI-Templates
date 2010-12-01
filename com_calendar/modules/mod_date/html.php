@@ -1,41 +1,38 @@
 <?php
+defined('KOOWA') or die;
 
 class ModDateHtml extends ModDefaultHtml {
 	
 	public function display() {
-		$date = KRequest::get('get.date', 'date', date('Y-m-d'));
-		$view = KRequest::get('get.view', 'cmd', 'day');
-		
 		$component = JComponentHelper::getComponent('com_calendar');
 		$params = new JParameter($component->params);
-		$blank	= $params->get('available_day_id');
 
-		$day	= substr($date, 8, 2);
-		$month	= substr($date, 5, 2);
-		$year	= substr($date, 0, 4);
-		$month_name = date('F', mktime(0,0,0, $month, 1, $year));
-		
-		$table = KFactory::tmp('admin::com.calendar.database.table.days');
-		$query = $table->getDatabase()->getQuery()
-				->where('date', '=', $date)
-				->where('calendar_day_id', '=', $blank, 'or')
-				->order('calendar_day_id', 'desc')
-				->limit(2);
-		$result = $table->select($query);		
-				
-		if ((count($result) === 2 && $result->current()->id != $blank) || count($result) === 1) {
-			$today = $result->current();
+		if (KRequest::get('get.option', 'cmd') == 'com_calendar' &&
+			KRequest::get('get.view', 'cmd') == 'day') {
+			$date = KRequest::get('get.date', 'date', date('Y-m-d'));
 		} else {
-			$today = $result->next();
+			$date = date('Y-m-d');
 		}
-		
-		$title = $today->dedication;		
-		
-		$this->assign('month_name', $month_name);
-		$this->assign('month', $month);
+				
+		$today = KFactory::tmp('site::com.calendar.model.days')
+			->set('date', $date)
+			->limit(1)
+			->getList()->current();
+		$blank = KFactory::tmp('site::com.calendar.model.days')
+			->set('id', $params->get('available_day_id'))
+			->limit(1)
+			->getList()->current();
+				
+		if ($today) {
+			$day = $today;
+		} else {
+			$day = $blank;
+		}
+			
+		$this->assign('date', date('F d, Y'));
+		$this->assign('today', $today);
+		$this->assign('blank', $blank);
 		$this->assign('day', $day);
-		$this->assign('year', $year);
-		$this->assign('row', $today);
 		parent::display();
 	}
 }

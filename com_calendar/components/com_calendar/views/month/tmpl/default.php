@@ -1,17 +1,15 @@
 <div class="com_calendar wide">
-	<!--<h1>Calendar for <?= date('F', mktime(0,0,0, $month,1,1));?></h1>-->
-	
 	<div>
 		<p style="float: left; margin-left: 10px;">
 			<? if ($month > 1): ?>
-				<a href="<?=@route('view=month&date='.$year.'-'.($month-1).'-01')?>"><<</a>
+				<a href="<?=@route('view=month&date='.date('Y-m-d', mktime(0,0,0, $month-1,1,$year)))?>"><<</a>
 			<? else: ?>
 				<<
 			<? endif; ?>
 		</p>
 		<p style="float: right; margin-right: 10px;">
 			<? if ($month < 12): ?>
-				<a href="<?=@route('view=month&date='.$year.'-'.($month+1).'-01')?>">>></a>
+				<a href="<?=@route('view=month&date='.date('Y-m-d', mktime(0,0,0, $month+1,1,$year)))?>">>></a>
 			<? else: ?>
 				>>
 			<? endif; ?>
@@ -27,15 +25,19 @@
 			<?= (date('d') == $i)? 'class="active"':'';?> >
 			<div class="date"><?=$i?></div>
 			<? if ($days->current()->date === "$year-$month-".sprintf("%02d",$i)): ?>
-			<a href="<?= @route('view=day&date='.$days->current()->date) ?>">
-				<img src="/media/com_calendar/uploads/month_<?= $days->current()->filename ?>" />
-			</a>
+				<? if ($days->current()->filename): ?>
+					<a href="<?= @route('view=day&date='.$days->current()->date) ?>">
+						<img src="/media/com_calendar/uploads/month_<?= $days->current()->filename ?>" />
+					</a>
 			
-			<div class="description"><div>
-				<a href="<?= @route('view=day&date='.$days->current()->date) ?>">
-					<?=$days->current()->title?>
-				</a>
-			</div></div>
+					<div class="description"><div>
+						<a href="<?= @route('view=day&date='.$days->current()->date) ?>">
+							<?=$days->current()->title?>
+						</a>
+					</div></div>
+				<? else: ?>
+					<img src="/media/com_calendar/uploads/month_<?= $pending->filename?>" />
+				<? endif;?>
 			
 			<? $days->next(); ?>
 			<? else: ?>

@@ -27,6 +27,7 @@ body {
 	margin: 0 36px;
 	background: white url(../images/content_bg.jpg) bottom repeat-x;
 	padding: 1px 0 4px;
+	position: relative;
 }
 
 #header { width: 100%; }

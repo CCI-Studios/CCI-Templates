@@ -4,10 +4,13 @@ defined('KOOWA') or die;
 class ComCalendarViewReviewHtml extends ComCalendarViewHtml {
 
 	public function display() {
+		$pending = KRequest::get('session.com.calendar.days.selected', 'raw');
+		
 		$days = KFactory::tmp('site::com.calendar.model.days')
-					->set('user_id', KFactory::tmp('lib.koowa.user')->id)
-					->set('status', 1)
-					->getList();
+				->set('ids', $pending)
+				->set('status', 1)
+				->sort('date')
+				->getList();
 
 		$this->assign('days', $days);
 		return parent::display();

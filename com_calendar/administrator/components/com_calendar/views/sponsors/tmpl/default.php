@@ -30,7 +30,7 @@
 			<td align="center"><?=$sponsor->date?></td>
 			<td align="center">
 				<? if ($sponsor->filename): ?>
-				<img src="/media/com_calendar/uploads/sponsors/banner_<?=$sponsor->filename?>" width="100" />
+				<img src="/media/com_calendar/uploads/sponsors/<?=$sponsor->filename?>" width="100" />
 				<? endif; ?>
 			</td>
 			<td>

@@ -7,48 +7,38 @@
 		<p style="margin-left: 10px; margin-right: 10px;">Click on a day below to select it as your day.</p>
 		<p style="margin-left: 10px; margin-right: 10px;">Please note, selecting a day reserves it for only 30 minutes.</p>
 
+		<div>
+			<p style="float: left; margin-left: 10px;">
+				<? if ($month > 1): ?>
+					<a href="<?=@route('view=donate&date='.date('Y-m-d', mktime(0,0,0, $month-1,1,$year)))?>"><<</a>
+				<? else: ?>
+					<<
+				<? endif; ?>
+			</p>
+			<p style="float: right; margin-right: 10px;">
+				<? if ($month < 12): ?>
+					<a href="<?=@route('view=donate&date='.date('Y-m-d', mktime(0,0,0, $month+1,1,$year)))?>">>></a>
+				<? else: ?>
+					>>
+				<? endif; ?>
+			</p>
+			<h1 style="text-align: center; margin: 0 0 -4px; padding-top: 4px"><?= date('F Y', mktime(0,0,0, $month,1,$year));?></h1>
+		</div>
+
 		<form action="<?=@route('view=donate')?>" method="post">
 			<input type="hidden" name="action" value="pick_day" />
+			
+			<?= @template('_days')?>
 
-			<p style="margin-left: 10px; margin-right: 10px;" class="left"><<</p>
-			<p style="margin-left: 10px; margin-right: 10px;" class="right">>></p>
-			<p style="text-align: center;"><?= date('F', mktime(0,0,0, $month,1,$year))?></p>
-			<div class="clear"></div>
+			<? if (count($pending_dates)): ?>
+			<div style="padding: 0 10px 10px;">
+				<?= @template('_cart')?>
 
-			<ul class="days">
-				<? $index = 0;?>
-				<? for($i = 1; $i <= $days_in_month; $i++): ?>
-				<li <?= ($i==1)? 'style="margin-left: '.(115*(int)$day_offset+5).'px"':'';?>>
-					<div class="date"><?=$i?></div>
-					<? if ($days->current()->date === "$year-$month-".sprintf("%02d", $i)): ?>			
-						<img src="/media/com_calendar/uploads/month_<?= $days->current()->filename?>" />
-						<? $days->next();?>
-					<? else: ?>
-						<input type="radio" name="selected_date" 
-							id="date-<?= $year.'-'.$month.'-'.$i?>" 
-							value="<?= $year.'-'.$month.'-'.$i ?>" 
-							style="display: none;"/>
-
-						<label for="date-<?= $year.'-'.$month.'-'.$i?>">
-							<img src="/media/com_calendar/uploads/month_<?=$blank->filename?>" />
-						</label>
-					<? endif; ?>
-					<span >
-				</li>
-				<? endfor; ?>
-			</ul>
-			<div class="clear"></div>
-
-			<div style="float: left; width: 50%;"><div>
-				<? foreach($pending_dates as $day): ?>
-					<?= $day->date ?> (add delete)<br/>
-				<? endforeach ?>
-			</div></div>
-
-			<div style="float: left; width: 50%;"><div>
-				<input type="submit" name="submit" value="Continue" /><br/>
-				<input type="submit" name="submit" value="Pick an Additional Day" /><br/>
-			</div></div>
+				<div style="text-align: right;"><div>
+					<input type="submit" name="submit" value="Continue" /><br/>
+				</div></div>
+			</div>
+			<? endif; ?>
 
 			<div class="clear"></div>
 		</form>

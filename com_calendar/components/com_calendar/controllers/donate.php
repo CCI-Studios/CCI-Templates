@@ -9,43 +9,62 @@ class ComCalendarControllerDonate extends ComDefaultControllerDefault
 		$post->append(array(
 			'selected_date'	=> null
 		));
-		$date = $post->selected_date;
-
-		if ($date === null) {
-			$this->setRedirect('view=donate', 'Please select a day', 'error');
+		
+		if ($post->submit) {
+			$this->setRedirect('view=summary');
 			return;
 		}
+		
+		if ($post->trash) {
+			$this->trash($post->trash);
+			return;
+		}
+
+		$date = $post->selected_date;
 		
 		$model = KFactory::tmp('site::com.calendar.model.days')
 					->set('date', $date);
 
 		// if user selects existing date
 		if (count($model->getlist()) > 0) {
-			$this->setRedirect('view=donate', 'That date is already taken.', 'notice');
+			$this->setRedirect('view=donate');
 			return;
 		}
 		
 		
 		// create new row
 		$new_date = KFactory::tmp('site::com.calendar.database.row.day');
-		$new_date->user_id		= KFactory::get('lib.koowa.user')->id;
+		$new_date->user_id		= 0;
 		$new_date->locked_at	= date('Y-m-d H:i:s');
 		$new_date->date			= $date;
 		$new_date->status		= 0; // locked
 		
 		if (!$new_date->save()) {
-			$this->setRedirect('view=donate', JText::_('Failed to add date to your cart', 'error'));
+			$this->setRedirect('view=donate');
 		}
 		
 		// add to session
 		$dates = KRequest::get('session.com.calendar.days.selected', 'raw', array());
 		$dates[] = $new_date->id;
+		KRequest::set('session.com.calendar.days.selected', null);
 		KRequest::set('session.com.calendar.days.selected', $dates);
 		
-		if ($post->submit === 'Continue') {
-			$this->setRedirect('view=datesetting');
-		} else { // selects date and wants more
-			$this->setRedirect('view=donate', JText::_('Date added to your cart'));
+		$this->setRedirect('view=donate');
+	}
+	
+	protected function trash($date) {
+		$day = KFactory::tmp('site::com.calendar.model.days')
+				->set('date', $date)
+				->getList()->current();
+		
+		$id = $day->id;
+		
+		$ids = KRequest::get('session.com.calendar.days.selected', 'raw', array());
+		$index = array_search($id, $ids);
+		
+		if ($index) {
+			$day->delete();
 		}
+		unset($ids[$index]);
 	}
 }

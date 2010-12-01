@@ -3,6 +3,9 @@
 	color: white;
 	font-size: 15px;
 }
+.com_calendar .daily_image a {
+	color: white;
+}
 
 .daily_image {
 	position: relative;
@@ -35,11 +38,10 @@
 
 .com_calendar .days li {
 	float: left;
-	margin: 3px;
+	margin: 5px;
 	position: relative;
-	border: 2px solid transparent;
 }
-.com_calendar .days li.active { border-color: #FFF; }
+.com_calendar .days li.active { margin: 3px; border: 2px solid #FFF; }
 
 .com_calendar .days li a { color: white; }
 .com_calendar .days li a:hover { text-decoration: underline; }
@@ -52,24 +54,21 @@
 	background:  url(../images/description_bg.png);
 	color: white;
 }
-.com_calendar .days li .description > div { margin: 5px; }
+.com_calendar .days li .description > div { padding: 5px; }
+.com_calendar .days li a { display: block; }
 
 .com_calendar .days li .date {
 	position: absolute;
 	top: 0px;
 	left: 5px;
 	
-	color: white;
+	color: RED;
 	font-size: 2em;
 	font-weight: bold;
 }
 
 .com_calendar .days img {
 	display: block;
-}
-
-.com_calendar .pick-your-day .days img {
-	border: 2px solid white;
 }
 
 .com_calendar .pick-your-day .days input[type="radio"]:checked + label img {

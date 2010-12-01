@@ -19,5 +19,6 @@ CREATE TABLE IF NOT EXISTS `#__calendar_days` (
 
 CREATE OR REPLACE VIEW `#__calendar_view_days` AS
 SELECT `tbl`.*, `u`.`name` as `user_name`
-FROM `#__calendar_days` AS `tbl` JOIN `#__users` AS `u` 
-WHERE `tbl`.`user_id` = `u`.`id`;
+FROM `#__calendar_days` AS `tbl` 
+LEFT JOIN `#__users` AS `u` 
+ON `tbl`.`user_id` = `u`.`id`;

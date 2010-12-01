@@ -31,7 +31,7 @@
 			<input type="file" name="file_upload" /><br/>
 			
 			<? if ($sponsor->filename): ?>
-				<img src="/media/com_calendar/uploads/sponsors/banner_<?= $sponsor->filename ?>" title="" class="block" /><br/>
+				<img src="/media/com_calendar/uploads/sponsors/<?= $sponsor->filename ?>" title="" class="block" /><br/>
 			<? endif; ?>
 		</fieldset>
 	</div>
