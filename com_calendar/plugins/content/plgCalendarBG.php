@@ -7,12 +7,12 @@ $mainframe->registerEvent('onAfterDispatch', 'plgCalendarBG');
 function plgCalendarBG() {
 	// dont run on calendar pages
 	$option = KRequest::get('get.option', 'cmd');
-	$view	= KRequest::get('get.view', 'cmd');
-	if ($option === 'calendar') {
+	$view	= KRequest::get('get.view', 'cmd');	
+	
+	if ($option === 'com_calendar') {
 		if ($view === 'day' ||
 			$view === 'month' ||
-			$view === 'donate' ||
-			$view === 'review') {
+			$view === 'donate') {
 			return;
 		}
 	}

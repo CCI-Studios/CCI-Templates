@@ -38,10 +38,11 @@
 
 .com_calendar .days li {
 	float: left;
-	margin: 5px;
+	margin: 3px;
 	position: relative;
+	border: 2px solid red;
 }
-.com_calendar .days li.active { margin: 3px; border: 2px solid #FFF; }
+.com_calendar .days li.active { border: 2px solid green; }
 
 .com_calendar .days li a { color: white; }
 .com_calendar .days li a:hover { text-decoration: underline; }
