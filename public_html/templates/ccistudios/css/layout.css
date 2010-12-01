@@ -59,7 +59,7 @@ body {
 	height: 169px;
 	background: url(../images/curve.png) no-repeat;
 	
-	padding: 1px 30px;
+	padding: 17px 30px 1px;
 	position: relative;
 }
 #footer a { color: white; }
