@@ -7,32 +7,8 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 	public function _actionCheckoutcash(KCommandContext $context) {
 		$post = $context->data;
 		
-		$user = KFactory::get('lib.koowa.user');
-		$new_user = false;
+		list($user, $new_user, $password) = $this->getUser($post->email, $post->firstname, $post->lastname, false);	
 
-		if ($user->guest == 1) {
-			$db =& JFactory::getDBO();
-			$query = 'select id from #__users where email=\''.$post->email.'\' limit 1;';
-			$db->setQuery($query);
-			$result = $db->loadResult();
-
-			if ($result) {
-				$user = new Juser();
-				$user->load($result);
-			
-			} else {
-				$password = JUserHelper::genRandomPassword(8);
-				$new_user = true;
-			
-				$user = $this->RegisterNewUser($post->email, 
-									$password, 
-									$post->firstname.' '.$post->lastname,
-									$post->email);
-			}
-		}	
-		
-		$component = JComponentHelper::getComponent('com_calendar');
-		$params = new JParameter($component->params);
 		
 		$pending = KRequest::get('session.com.calendar.days.selected', 'raw');
 		$days = KFactory::tmp('site::com.calendar.model.days')
@@ -46,10 +22,7 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 		foreach($days as $day) {
 			$day->user_id = $user->id;
 			$day->status = 2;
-			if (!$day->save()) {
-				print_r($day);
-				die;
-			}
+			$day->save();
 		}
 
 		KRequest::set('session.com.calendar.days.selected', null);
@@ -64,32 +37,7 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 	public function _actionCheckout(KCommandContext $context) {
 		$post = $context->data;
 		
-		$user = KFactory::get('lib.koowa.user');
-		$new_user = false;
-
-		if ($user->guest == 1) {
-			$db =& JFactory::getDBO();
-			$query = 'select id from #__users where email=\''.$post->email.'\' limit 1;';
-			$db->setQuery($query);
-			$result = $db->loadResult();
-
-			if ($result) {
-				$user = new Juser();
-				$user->load($result);
-			
-			} else {
-				$password = JUserHelper::genRandomPassword(8);
-				$new_user = true;
-			
-				$user = $this->RegisterNewUser($post->email, 
-									$password, 
-									$post->firstname.' '.$post->lastname,
-									$post->email);
-			}
-		}	
-		
-		$component = JComponentHelper::getComponent('com_calendar');
-		$params = new JParameter($component->params);
+		list($user, $new_user, $password) = $this->getUser($post->email, $post->firstname, $post->lastname);	
 		
 		$pending = KRequest::get('session.com.calendar.days.selected', 'raw');
 		$days = KFactory::tmp('site::com.calendar.model.days')
@@ -97,6 +45,36 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 					->set('status', 1)
 					->sort('date')
 					->getList();				
+		
+		$transaction = $this->doCreditTransaction($post, $days, $user->id);
+		
+		if ($transaction->ack === 'Success') {
+			$this->setRedirect('view=thankyou');
+			$transaction->status = 1;
+			
+			foreach($days as $day) {
+				$day->user_id = $user->id;
+				$day->status = 2;
+				$day->save();
+			}
+			
+			KRequest::set('session.com.calendar.days.selected', null);
+			
+			if ($new_user) {
+				$this->newUserEmail($user->email, $password, $days);
+			} else {
+				$this->oldUserEmail($user->email, $days);
+			}
+		} else {
+			$this->setRedirect('view=error&message='.$r['L_LONGMESSAGE0']);
+			$transaction->status = 2;
+		}
+		$transaction->save();
+	}
+	
+	function doCreditTransaction($post, $days, $user_id) {
+		$component = JComponentHelper::getComponent('com_calendar');
+		$params = new JParameter($component->params);
 		
 		$ids = array();
 		foreach($days as $day) $ids[] = $day->id;
@@ -177,31 +155,35 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 		$transaction->cvv2 = $r['CVV2MATCH'];
 		$transaction->transactionid = $r['TRANSACTIONID'];
 		
-		if ($transaction->ack === 'Success') {
-			$this->setRedirect('view=thankyou');
-			$transaction->status = 1;
+		return $transaction;
+	}
+	
+	function getUser($email, $firstname, $lastname, $checkLoggedIn = true) {
+		$user = KFactory::get('lib.koowa.user');
+		$new_user = false;
+
+		if ($user->guest == 1 || !$checkLoggedIn) {
+			$db =& JFactory::getDBO();
+			$query = 'select id from #__users where email=\''.$email.'\' limit 1;';
+			$db->setQuery($query);
+			$result = $db->loadResult();
+
+			if ($result) {
+				$user = new Juser();
+				$user->load($result);
 			
-			foreach($days as $day) {
-				$day->user_id = $user->id;
-				$day->status = 2;
-				if (!$day->save()) {
-					print_r($day);
-					die;
-				}
-			}
-			
-			KRequest::set('session.com.calendar.days.selected', null);
-			
-			if ($new_user) {
-				$this->newUserEmail($user->email, $password, $days);
 			} else {
-				$this->oldUserEmail($user->email, $days);
+				$password = JUserHelper::genRandomPassword(8);
+				$new_user = true;
+			
+				$user = $this->RegisterNewUser($email, 
+									$password, 
+									$firstname.' '.$lastname,
+									$email);
 			}
-		} else {
-			$this->setRedirect('view=error&message='.$r['L_LONGMESSAGE0']);
-			$transaction->status = 2;
 		}
-		$transaction->save();
+		
+		return array($user, $new_user, $password);
 	}
 	
 	//------------------------------------------------------------------------------
