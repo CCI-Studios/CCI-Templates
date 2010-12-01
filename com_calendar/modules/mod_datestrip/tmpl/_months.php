@@ -24,10 +24,12 @@
 .mod_datestrip li.active a,
 .mod_datestrip li.hover a { color: #c2398e; }
 
-.mod_datestrip li div {
+.mod_datestrip li > div {
 	position: absolute;
 	top: 0;
 	left: 100%;
+	background: url(/media/com_calendar/images/bg.png) no-repeat;
+	padding: 6px;
 	
 	display: none;
 }
@@ -36,7 +38,7 @@
 </style>
 
 <div class="mod_datestrip">
-	<ul class="months">
+	<ul class="months" id="mod_daystrip_months">
 		<? for ($i = 1; $i <= 12; $i++): ?>
 		<li <?= ($i == $month)? 'class="active"': '' ?>>
 		 	<a href="<?=@route('option=com_calendar&view=month&date='.sprintf('%d-%02d-%02d', $year, $i, 1))?>">
@@ -44,7 +46,9 @@
 			</a>
 			<div><div>
 				<? if ($days->current()->date == sprintf('%d-%02d-%02d', $year, $i, 1)): ?>
-					<img src="/media/com_calendar/uploads/month_<?=$days->current()->filename?>" />
+					<a href="<?=@route('option=com_calendar&view=month&date='.sprintf('%d-%02d-%02d', $year, $i, 1))?>">
+						<img src="/media/com_calendar/uploads/month_<?=$days->current()->filename?>" />
+					</a>
 					<? $days->next(); ?>
 				<? else: ?>
 					<img src="/media/com_calendar/uploads/month_<?=$blank->filename?>" />
@@ -56,3 +60,6 @@
 	</ul>
 </div>
 	
+<script>
+new DS('mod_daystrip_months', 'left');
+</script>

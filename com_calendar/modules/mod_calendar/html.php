@@ -28,10 +28,10 @@ class ModCalendarHtml extends ModDefaultHtml {
 				->where('YEAR(date)', '=', $year)
 				->where('calendar_sponsor_id', '=', $default, 'or')
 				->order('calendar_sponsor_id', 'desc')
-				->limit(2);
+				->limit(2);				
 		$result = $table->select($query);
 
-		if ((count($result) === 2 && $result->current()->id != $default) || count($result) === 1) {
+		if ((count($result) === 2 && $result->current()->id != $default) || count($result) === 1) {			
 			return $result->current();
 		} else {
 			$result->next();
@@ -42,8 +42,7 @@ class ModCalendarHtml extends ModDefaultHtml {
 	protected function _getYear($month, $year, $default) {
 		$table = KFactory::tmp('admin::com.calendar.database.table.sponsors');
 		$query = $table->getDatabase()->getQuery()
-				->where("((YEAR(date) = '".$year."' AND MONTH(date) = '12') OR ".
-					"(YEAR(date) = '".($year+1)."' AND MONTH(date) <> '12'))")
+				->where("YEAR(date)", "=", $year)
 				->where('calendar_sponsor_id', '=', $default, 'or')
 				->order('calendar_sponsor_id', 'desc')
 				->limit(2);	
