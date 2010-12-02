@@ -54,7 +54,7 @@ class ComCalendarViewDonateHtml extends ComCalendarViewHtml {
 		$this->assign('year', $year);
 		
 		$this->assign('days_in_month', cal_days_in_month(CAL_GREGORIAN, $month, $year));
-		$this->assign('day_offset', date('N', mktime(0,0,0, $month, 01, $year)));
+		$this->assign('day_offset', date('N', mktime(0,0,0, $month, 01, $year))%7);
 		$this->assign('pending_dates', $pending_dates);
 	}
 }
