@@ -37,7 +37,10 @@ class ComCalendarViewMonthHtml extends ComCalendarViewHtml {
 					->set('id', $params->get('pending_day_id'))
 					->getItem();
 					
-		$offset = date('N', mktime(0,0,0, $month, 01, $year))%7;
+		JFactory::getDocument()->setTitle(date('F Y', mktime(0,0,0, $month,1,$year)));
+					
+		$offset = date('N', mktime(0,0,0, $month, 01, $year)) % 7;
+		
 		$this->assign('days', $days);
 		$this->assign('blank', $blank);
 		$this->assign('pending', $pending);

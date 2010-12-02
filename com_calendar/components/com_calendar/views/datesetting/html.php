@@ -14,6 +14,8 @@ class ComCalendarViewDateSettingHtml extends ComCalendarViewHtml {
 					->limit(1)
 					->getList();
 		$day = $days->current();
+		
+		JFactory::getDocument()->setTitle('Details for '.date('F d, Y', strtotime($day->date)));
 
 		if (count($days) == 0) {
 			KFactory::get('lib.joomla.application')->redirect('/index.php?option=com_calendar&view=review');

@@ -12,6 +12,9 @@ class ComCalendarViewDayHtml extends ComCalendarViewHtml {
 			$date = date('Y-m-d');
 		}
 		
+		$component = JComponentHelper::getComponent('com_calendar');
+		$params = new JParameter($component->params);
+		
 		$today = KFactory::tmp('site::com.calendar.model.days')
 					->set('date', $date)
 					->limit(1)
@@ -20,12 +23,17 @@ class ComCalendarViewDayHtml extends ComCalendarViewHtml {
 		if (!$today) {		
 			$component = JComponentHelper::getComponent('com_calendar');
 			$params = new JParameter($component->params);
-			$blank	= $params->get('available_day_id');
 			
 			$today = KFactory::tmp('site::com.calendar.model.days')
-						->set('id', $blank)
+						->set('id', $params->get('available_day_id'))
 						->getList()->current();
 		}
+		
+		JFactory::getDocument()->setTitle($today->title);
+		
+		$pending = KFactory::tmp('site::com.calendar.model.days')
+					->set('id', $params->get('pending_day_id'))
+					->getList()->current();
 		
 		if (strlen($today->link) > 0 && 
 			(substr($today->link, 0, 7) !== 'http://' || 
@@ -34,6 +42,7 @@ class ComCalendarViewDayHtml extends ComCalendarViewHtml {
 		}
 		
 		$this->assign('today', $today);
+		$this->assign('pending', $pending);
 		return parent::display();
 	}
 }

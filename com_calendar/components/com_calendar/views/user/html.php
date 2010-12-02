@@ -9,6 +9,7 @@ class ComCalendarViewUserHtml extends ComCalendarViewHtml {
 					->sort('date')
 					->getList();
 				
+		JFactory::getDocument()->setTitle('User Details');		
 		$this->assign('days', $days);
 		return parent::display();
 	}
