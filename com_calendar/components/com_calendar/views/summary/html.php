@@ -7,10 +7,14 @@ class ComCalendarViewSummaryHtml extends ComCalendarViewHtml {
 		JFactory::getDocument()->setTitle('Summary');
 		
 		$pending = KRequest::get('session.com.calendar.days.selected', 'raw');
-		$pending_dates = KFactory::tmp('site::com.calendar.model.days')
-					->set('ids', $pending)
-					->sort('date')
-					->getList();
+		if (count($pending)) {
+			$pending_dates = KFactory::tmp('site::com.calendar.model.days')
+						->set('ids', $pending)
+						->sort('date')
+						->getList();
+		} else {
+			$pending_dates = array();
+		}
 				
 		$this->assign('pending', $pending_dates);
 		return parent::display();
