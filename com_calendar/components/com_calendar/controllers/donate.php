@@ -57,15 +57,16 @@ class ComCalendarControllerDonate extends ComDefaultControllerDefault
 		$day = KFactory::tmp('site::com.calendar.model.days')
 				->set('date', $date)
 				->getList()->current();
-		
 		$id = $day->id;
 		
 		$ids = KRequest::get('session.com.calendar.days.selected', 'raw', array());
 		$index = array_search($id, $ids);
-		
-		if ($index) {
+
+		if ($index !== false) {
 			$day->delete();
 		}
 		unset($ids[$index]);
+		KRequest::set('session.com.calendar.days.selected', null);
+		KRequest::set('session.com.calendar.days.selected', $ids);
 	}
 }
