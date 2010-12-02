@@ -19,7 +19,6 @@ if (isset($limitstart))                   // use isset to test $limitstart, as i
 	shRemoveFromGETVarsList('limitstart');
 
 if (isset($view)) {
-	$title[] = $view;
 	shRemoveFromGETVarsList('view');
 } else {
 	$title[] = 'day';
@@ -27,33 +26,53 @@ if (isset($view)) {
 
 switch($view) {
 	case 'donate':
-		$layout = KRequest::get('get.layout', 'string', 'default');
-		shRemoveFromGETVarsList('layout');
-		switch($layout) {
-			case 'edit_date':
-				$title[] = 'edit-date';
-				break;
-			case 'checkout':
-				$title[] = 'checkout';
-				break;
-			case 'thanks':
-				$title[] = 'thanks';
-				break;
-			case 'default':
-			default:
-				$title[] = 'whats-your-day';
-				break;
-		}
+		$title[] = 'donate';
+		$title[] = 'pick-your-day';		
 		break;
+	case 'summary':
+		$title[] = 'donate';
+		$title[] = 'summary';
+		break;
+	case 'datesetting':
+		$title[] = 'donate';
+		$title[] = 'details';
+		break;
+	case 'method':
+		$title[] = 'donate';
+		$title[] = 'checkout-method';
+		break;
+	case 'review':
+		$title[] = 'donate';
+		$title[] = 'checkout';
+
+		if (!$layout || $layout === 'default' || $layout === '') {
+			$title[] = 'credit-card';
+		} else {
+			$title[] = $layout;
+		}
+		shRemoveFromGETVarsList('layout');
+
+		break;	
+	case 'thankyou':
+		$title[] = 'donate';
+		$title[] = 'thank-you';
+		break;
+	case 'error':
+		$title[] = 'donate';
+		$title[] = 'error';
+		break;
+
+	case 'user':
+		$title[] = 'user';
+		break;
+	case 'edit':
+		$title[] = 'edit-day';
+		break;				
+			
 	case 'day':
 	case 'month':
 	default:
-		if (isset($date)) {
-			$title[] = $date;
-			shRemoveFromGETVarsList('date');
-		} else {
-			$title[] = date('Y-m-d');
-		}
+		$title[] = $view;
 		break;
 }
 
