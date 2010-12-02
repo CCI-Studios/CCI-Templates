@@ -22,7 +22,7 @@
 		<? $index = 0;?>
 		<? for($i = 1; $i <= $days_in_month; $i++): ?>
 		<li style="<?= ($i==1)? 'margin-left: '.(114*(int)$day_offset+3).'px':'';?>"
-			<?= (date('d') == $i)? 'class="active"':'';?> >
+			<?= (date('d') == $i && date('m') == $month)? 'class="active"':'';?> >
 			<div class="date"><?=$i?></div>
 			<? if ($days->current()->date === "$year-$month-".sprintf("%02d",$i)): ?>
 				<? if ($days->current()->filename): ?>
