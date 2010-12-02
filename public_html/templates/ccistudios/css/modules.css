@@ -91,3 +91,6 @@
 }
 .joomla .user .user_signin ul { margin-bottom: 0; }
 /* end */
+
+#leftstrip .moduletable,
+#rightstrip .moduletable { margin: 0; }
