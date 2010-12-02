@@ -1,6 +1,10 @@
 <div class="com_calendar wide"><div class="daily_image">
 	<div class="image">
-		<img src="/media/com_calendar/uploads/day_<?=$today->filename?>" />
+		<? if ($today->filename): ?>
+			<img src="/media/com_calendar/uploads/day_<?=$today->filename?>" />
+		<? else: ?>
+			<img src="/media/com_calendar/uploads/day_<?=$pending->filename?>" />
+		<? endif; ?>
 	</div>
 	
 	<div class="description"><div>
