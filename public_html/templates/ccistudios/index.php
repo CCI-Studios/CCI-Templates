@@ -57,12 +57,12 @@ $testing = "true";
 				<div class="clr"></div>
 			</div></div>
 				
-			<div id="content"><div><div><div>
+			<div id="content"><div><div><div><div>
 				<jdoc:include type="message" />
 				
 				<jdoc:include type="component" />
 				<span class="clr" style="display:block"></>
-			</div></div></div></div>
+			</div></div></div></div></div>
 			
 			<div id="leftstrip">
 				<jdoc:include type="modules" name="days" style="xhtml" />

@@ -38,17 +38,21 @@ body {
 	background: url(../images/content_bg_bottom.png) bottom center no-repeat;
 
 	margin: 0 auto;
-	padding:  0 0 9px;
+	padding:  0 0 4px;
 }
 #content > div {
-	background: url(../images/content_bg.png) top center repeat-y;
-	padding:  0 14px 0;
+	background: url(../images/content_bg_top.png) top center no-repeat;
+	padding:  4px 0 0;
 }
-#content > div > div > div {
+#content > div  > div {
+	background: url(../images/content_bg.png) top center repeat-y;
+	padding:  0 11px 0 12px;
+}
+#content > div > div > div > div {
 	min-height: 579px;
 	background: url(../images/trans-white.png);
 }
-#content > div > div > div > div { padding: 0 10px 10px; }
+#content > div > div > div > div > div { padding: 0 10px 10px; }
 #content .com_calendar.wide { padding: 0; }
 
 #leftstrip {}
