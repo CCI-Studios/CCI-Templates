@@ -46,9 +46,13 @@
 			</a>
 			<div><div>
 				<? if ($days->current()->date == sprintf('%d-%02d-%02d', $year, $month, $i)): ?>
-					<a href="<?=@route('option=com_calendar&view=day&date='.sprintf('%d-%02d-%02d', $year, $month, $i))?>">
-						<img src="/media/com_calendar/uploads/month_<?=$days->current()->filename?>" />
-					</a>
+					<? if ($days->current()->filename): ?>
+						<a href="<?=@route('option=com_calendar&view=day&date='.sprintf('%d-%02d-%02d', $year, $month, $i))?>">
+							<img src="/media/com_calendar/uploads/month_<?=$days->current()->filename?>" />
+						</a>
+					<? else: ?>
+						<img src="/media/com_calendar/uploads/month_<?=$pending->filename?>" />
+					<? endif; ?>
 					<? $days->next(); ?>
 				<? else: ?>
 					<img src="/media/com_calendar/uploads/month_<?=$blank->filename?>" />
