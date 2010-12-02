@@ -16,6 +16,7 @@ class ComCalendarModelDays extends KModelTable {
 			->insert('year', 	'int')
 			->insert('status', 	'int')
 			->insert('user_id', 'int')
+			->insert('old', 	'boolean')
 			;
 	}
 	
@@ -52,6 +53,11 @@ class ComCalendarModelDays extends KModelTable {
 		
 		if (is_numeric($this->_state->user_id)) {
 			$query->where('user_id', '=', $this->_state->user_id);
+		}
+
+		if ($this->_state->old) {
+			$query->where('TIMEDIFF(NOW(), locked_at) > TIME(\'00:30:00\')');
+			$query->where('status', '<>', 2);
 		}
 		
 		parent::_buildQueryWhere($query);
