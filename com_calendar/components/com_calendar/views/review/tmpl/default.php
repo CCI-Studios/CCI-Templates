@@ -5,8 +5,7 @@ function myValidate(f) {
       return true; 
    }
    else {
-      var msg = 'All Fields are required.';
-      //if($('email').hasClass('invalid')){msg += '\n\n\t* Invalid E-Mail Address';}
+      var msg = 'Please complete all required fields.';
       alert(msg);
    }
    return false;
