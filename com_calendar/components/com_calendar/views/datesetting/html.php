@@ -18,7 +18,11 @@ class ComCalendarViewDateSettingHtml extends ComCalendarViewHtml {
 		JFactory::getDocument()->setTitle('Details for '.date('F d, Y', strtotime($day->date)));
 
 		if (count($days) == 0) {
-			KFactory::get('lib.joomla.application')->redirect('/index.php?option=com_calendar&view=review');
+			if (KFactory::get('lib.koowa.user')->gid >= 19) {
+				KFactory::get('lib.joomla.application')->redirect('/index.php?option=com_calendar&view=method');
+			} else {
+				KFactory::get('lib.joomla.application')->redirect('/index.php?option=com_calendar&view=review');
+			}
 		}
 			
 		$this->assign('day', $day);
