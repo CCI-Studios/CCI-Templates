@@ -83,11 +83,7 @@
 	margin: 10px 0;
 }
 .joomla .user .user_signin {
-	float: right;
 	width: 300px;
-	border: 1px solid black;
-	padding: 10px;
-	margin: 0 0 10px 20px;
 }
 .joomla .user .user_signin ul { margin-bottom: 0; }
 /* end */
