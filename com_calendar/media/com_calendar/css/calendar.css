@@ -49,7 +49,7 @@
 .com_calendar .days li.active { border: 2px solid green; }
 
 .com_calendar .days li a { color: white; }
-.com_calendar .days li a:hover { text-decoration: underline; }
+.com_calendar .days li a:hover { text-decoration: underline; text-decoration: none; }
 
 .com_calendar .days li .description {
 	position: absolute;
