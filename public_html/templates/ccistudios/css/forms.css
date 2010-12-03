@@ -12,6 +12,10 @@ textarea {
 	width: 200px;
 	font-size: 14px;
 }
+input[type=text].invalid, input[type=password].invalid,
+textarea.invalid {
+	border: 1px solid red;
+}
 
 input[type=text]:focus, input[type=password]:focus,
 textarea:focus { }
@@ -34,3 +38,4 @@ input[type=submit], button {
 	margin-top: 1em;
 	padding: 3px 2em 5px;
 }
+

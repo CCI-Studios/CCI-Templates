@@ -1,7 +1,7 @@
 <?php JHTML::_('behavior.modal'); ?>
 
 <label for="acct_field"><?=@text('Card Number')?>:</label>
-<input type="text" name="acct" id="acct_field" />
+<input type="text" name="acct" id="acct_field" class="required"/>
 
 <div class="clear"></div>
 <input type="radio" name="cardtype" id="visa_field" value="Visa" />
@@ -12,7 +12,7 @@
 
 
 <label for="_field"><?=@text('Expiry Date')?>:</label>
-<input type="text" name="exp1" id="_field" value="<?=date('m')?>" style="width: 50px; "/> <input type="text" name="exp2" id="_field" value="<?=date('Y')?>" style="width: 50px; "/>
+<input type="text" name="exp1" id="_field" value="<?=date('m')?>" style="width: 50px; " class="required" /> <input type="text" name="exp2" id="_field" value="<?=date('Y')?>" style="width: 50px; "  class="required" />
 
 <label for="csc_field"><?=@text('CSC')?>: <a href="<?=JRoute::_('/index.php?option=com_content&view=article&id=8&tmpl=component')?>" class="modal">What is this?</a></label>
-<input type="text" name="csc" id="csc_field" />
+<input type="text" name="csc" id="csc_field" class="required" />
