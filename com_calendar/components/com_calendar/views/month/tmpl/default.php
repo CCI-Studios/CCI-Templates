@@ -20,9 +20,12 @@
 	<div style="padding: 0 6px 6px;">
 	<ul class="days" style="margin: 4px 0 0;">
 		<? $index = 0;?>
+		<li style="width: <?=(114*($day_offset))?>px; border: none; margin: 0;">
+			&nbsp;
+		</li>
+		
 		<? for($i = 1; $i <= $days_in_month; $i++): ?>
-		<li style="<?= ($i==1)? 'margin-left: '.(114*(int)$day_offset+3).'px':'';?>"
-			<?= (date('d') == $i && date('m') == $month)? 'class="active"':'';?> >
+		<li <?= (date('d') == $i && date('m') == $month)? 'class="active"':'';?> >
 			<div class="date"><?=$i?></div>
 			<? if ($days->current()->date === "$year-$month-".sprintf("%02d",$i)): ?>
 				<? if ($days->current()->filename): ?>
