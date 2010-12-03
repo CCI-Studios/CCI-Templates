@@ -44,7 +44,7 @@
 	float: left;
 	margin: 3px;
 	position: relative;
-	border: 2px solid red;
+	border: 2px solid #C2398E;
 }
 .com_calendar .days li.active { border: 2px solid green; }
 
@@ -67,7 +67,7 @@
 	top: 0px;
 	left: 5px;
 	
-	color: RED;
+	color: #478840;
 	font-size: 2em;
 	font-weight: bold;
 }
