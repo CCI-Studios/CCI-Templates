@@ -28,8 +28,7 @@
 	position: absolute;
 	top: 0;
 	left: 100%;
-	background: url(/media/com_calendar/images/bg.png) no-repeat;
-	padding: 6px;
+	border: 2px solid #C2398E;
 	
 	display: none;
 }

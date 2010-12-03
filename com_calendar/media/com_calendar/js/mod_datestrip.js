@@ -27,7 +27,7 @@ var DS = new Class({
 		toggle.set({
 			width: 0,
 			height: 0,
-			padding: 0
+			'border-width': 0
 		})
 		
 		el.addEvents({
@@ -36,7 +36,7 @@ var DS = new Class({
 				toggle.start({
 					width: 104,
 					height: 98,
-					padding: 6
+					'border-width': 2
 				});
 			},
 			mouseleave: function() {
@@ -44,7 +44,7 @@ var DS = new Class({
 				toggle.start({
 					width: 0,
 					height: 0,
-					padding: 0
+					'border-width': 0
 				});
 			}
 		})
