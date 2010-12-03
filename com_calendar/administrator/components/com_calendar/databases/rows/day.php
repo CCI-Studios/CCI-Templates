@@ -43,7 +43,8 @@ class ComCalendarDatabaseRowDay extends KDatabaseRowAbstract {
 	}
 	
 	public function createThumbs() {
-		$params = &JComponentHelper::getParams( 'com_calendar' );
+		$component = JComponentHelper::getComponent('com_calendar');
+		$params = new JParameter($component->params);
 		
 		$this->resizeImage($this->filename, $params->get('day_width'), $params->get('day_height'), 'day_');
 		$this->resizeImage($this->filename, $params->get('month_width'), $params->get('month_height'), 'month_');
