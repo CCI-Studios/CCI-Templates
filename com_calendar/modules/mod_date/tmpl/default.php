@@ -8,13 +8,9 @@
 <![endif]-->
 <div class="mod-date">
 	<div style="font-size: 50px; line-height: 1em; height: 50px;" class="ieshadow">
-		<? if ($found): ?>
-			<?= date('F j, Y', strtotime($day->date)); ?>
-		<? else: ?>
-			<?= date('F j, Y') ?>
-		<? endif; ?>
+		<?= $date ?>
 	</div>
  	<div style="font-size: 35px; line-height: 1em; height: 35px;" class="ieshadow">
-		<?= $day->dedication ?>
+		<?= $title ?>
 	</div>
 </div>
