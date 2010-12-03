@@ -17,7 +17,7 @@
 		<h1 style="text-align: center; margin: 0 0 -4px; padding-top: 4px; color: #004B9D;"><?= date('F Y', mktime(0,0,0, $month,1,$year));?></h1>
 	</div>
 	
-	<div style="margin: 0 6px;">
+	<div style="padding: 0 6px 6px;">
 	<ul class="days" style="margin: 4px 0 0;">
 		<? $index = 0;?>
 		<? for($i = 1; $i <= $days_in_month; $i++): ?>
@@ -46,6 +46,7 @@
 		</li>
 		<? endfor; ?>
 	</ul>
+	<div class="clear"></div>
 	</div>
 	
 	<div class="clear"></div>

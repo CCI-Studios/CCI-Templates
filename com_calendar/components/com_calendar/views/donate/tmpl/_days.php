@@ -1,4 +1,4 @@
-<div style="margin: 0 6px;">
+<div style="padding: 0 6px 6px;">
 <ul class="days" style="margin: 4px 0 0;">
 	<? $index = 0;?>
 	<? for($i = 1; $i <= $days_in_month; $i++): ?>
@@ -27,5 +27,5 @@
 	</li>
 	<? endfor; ?>
 </ul>
-</div>
 <div class="clear"></div>
+</div>
