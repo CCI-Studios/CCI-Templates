@@ -19,13 +19,12 @@ function plgCalendarBG() {
 
 	$component 	= JComponentHelper::getComponent('com_calendar');
 	$params 	= new JParameter($component->params);
-	$blank		= $params->get('available_day_id');		
 	$today 		= KFactory::tmp('site::com.calendar.model.days')
-					->set('id', $blank)
+					->set('id', $params->get('available_day_id'))
 					->getList()->current();
-	
+
 	$document = &JFactory::getDocument();
-	$css = 	"#content > div > div {".
+	$css = 	"#content > div > div > div {".
 			"	background: url(/media/com_calendar/uploads/day_{$today->filename}) top left no-repeat; }";
 	$document->addStyleDeclaration($css);
 }
