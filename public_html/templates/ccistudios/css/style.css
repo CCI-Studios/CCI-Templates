@@ -5,7 +5,10 @@ a:hover { text-decoration: underline; }
 h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 0.5em;
 }
-h1, .componentheading { font-size: 18px; }
+h1, .componentheading { 
+	font-size: 18px;
+	color: #004B9D;
+}
 h2 { font-size: 17px; }
 h3 { font-size: 16px; }
 h4 { font-size: 15px; }
