@@ -28,8 +28,8 @@ defined('_JEXEC') or die('Restricted access');
 			<legend><?php echo JText::_( 'REMIND_USERNAME_EMAIL_TIP_TITLE' ) ?></legend>
 
 			<div>
-				<label for="email" class="hasTip" title="<?php echo JText::_('REMIND_USERNAME_EMAIL_TIP_TITLE'); ?>::<?php echo JText::_('REMIND_USERNAME_EMAIL_TIP_TEXT'); ?>"><?php echo JText::_('Email Address'); ?>:</label>
-			<input id="email" name="email" type="text" class="required validate-email" />
+				<label for="email" ><?php echo JText::_('Email Address'); ?>:</label>
+				<input id="email" name="email" type="text" class="required validate-email" />
 			</div>
 			<div>
 				<button type="submit"><?php echo JText::_('Submit'); ?></button>

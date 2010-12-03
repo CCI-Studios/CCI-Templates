@@ -15,28 +15,28 @@ defined('_JEXEC') or die('Restricted access');
 	
 	<div class="user">
 
-		<h1 class="pagetitle">
-			<?php echo JText::_('Confirm your Account'); ?>
-		</h1>
+		<h1 class="pagetitle"><?php echo JText::_('Confirm your Account'); ?></h1>
 
-		<p>
-			<?php echo JText::_('RESET_PASSWORD_CONFIRM_DESCRIPTION'); ?>
-		</p>
-
-		<form action="<?php echo JRoute::_( 'index.php?option=com_user&task=confirmreset' ); ?>" method="post" class="josForm form-validate">
-		<fieldset>
-			<legend><?php echo JText::_('Confirm your Account'); ?></legend>
+		<p><?php echo JText::_('RESET_PASSWORD_CONFIRM_DESCRIPTION'); ?></p>
+		
+		<br/>
+		<form action="<?php echo JRoute::_( 'index.php' ); ?>" method="post" class="josForm form-validate">
+			<input type="hidden" name="option" value="com_user" />
+			<input type="hidden" name="task" value="confirmreset" />
 			
 			<div>
-				<label for="token" class="hasTip" title="<?php echo JText::_('RESET_PASSWORD_TOKEN_TIP_TITLE'); ?>::<?php echo JText::_('RESET_PASSWORD_TOKEN_TIP_TEXT'); ?>"><?php echo JText::_('Token'); ?>:</label>
+				<label for="username"><?php echo JText::_('Email'); ?></label>
+				<input id="username" name="username" type="text" />
+			</div>
+			
+			<div>
+				<label for="token"><?php echo JText::_('Token'); ?>:</label>
 				<input id="token" name="token" type="text" class="required" size="36" />
 			</div>
 			<div>
 				<button type="submit"><?php echo JText::_('Submit'); ?></button>
 			</div>
-			
-		</fieldset>
-		<?php echo JHTML::_( 'form.token' ); ?>
+			<?php echo JHTML::_( 'form.token' ); ?>
 		</form>
 	
 	</div>
