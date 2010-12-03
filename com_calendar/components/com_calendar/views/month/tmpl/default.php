@@ -1,20 +1,20 @@
 <div class="com_calendar wide">
 	<div>
-		<p style="float: left; margin-left: 10px;">
+		<p style="float: left; margin-left: 10px; color: color: #004B9D;">
 			<? if ($month > 1): ?>
-				<a href="<?=@route('view=month&date='.date('Y-m-d', mktime(0,0,0, $month-1,1,$year)))?>"><<</a>
+				<a href="<?=@route('view=month&date='.date('Y-m-d', mktime(0,0,0, $month-1,1,$year)))?>" style="color: #004B9D;"><<</a>
 			<? else: ?>
 				<<
 			<? endif; ?>
 		</p>
-		<p style="float: right; margin-right: 10px;">
+		<p style="float: right; margin-right: 10px; color: color: #004B9D;">
 			<? if ($month < 12): ?>
-				<a href="<?=@route('view=month&date='.date('Y-m-d', mktime(0,0,0, $month+1,1,$year)))?>">>></a>
+				<a href="<?=@route('view=month&date='.date('Y-m-d', mktime(0,0,0, $month+1,1,$year)))?>" style="color: #004B9D;">>></a>
 			<? else: ?>
 				>>
 			<? endif; ?>
 		</p>
-		<h1 style="text-align: center; margin: 0 0 -4px; padding-top: 4px"><?= date('F Y', mktime(0,0,0, $month,1,$year));?></h1>
+		<h1 style="text-align: center; margin: 0 0 -4px; padding-top: 4px; color: #004B9D;"><?= date('F Y', mktime(0,0,0, $month,1,$year));?></h1>
 	</div>
 	
 	<div style="margin: 0 6px;">
