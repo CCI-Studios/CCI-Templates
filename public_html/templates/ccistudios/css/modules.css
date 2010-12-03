@@ -50,7 +50,7 @@
 
 /* @group */
 #header .moduletable { margin: 0 0 0 7px;}
-#header .moduletable.right { margin-left: 30px; }
+#header .moduletable.right { margin: 10px 0 0 10px; }
 
 #social .moduletable {
 	float: left;
