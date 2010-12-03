@@ -1,8 +1,20 @@
+<!--[IF IE]>
+<style>
+	.ieshadow {
+		/*filter: glow(color=#000000,strength=3);*/
+		filter: dropshadow(color=#000000,offX=-1,offY=-1);
+	}
+</style>
+<![endif]-->
 <div class="mod-date">
-	<span style="font-size: 50px; line-height: 1em;">
-		<?= $date ?>
-	</span><br />
-	<span style="font-size: 35px; line-height: 1em;">
+	<div style="font-size: 50px; line-height: 1em; height: 50px;" class="ieshadow">
+		<? if ($found): ?>
+			<?= date('F j, Y', strtotime($day->date)); ?>
+		<? else: ?>
+			<?= date('F j, Y') ?>
+		<? endif; ?>
+	</div>
+ 	<div style="font-size: 35px; line-height: 1em; height: 35px;" class="ieshadow">
 		<?= $day->dedication ?>
-	</span>
+	</div>
 </div>

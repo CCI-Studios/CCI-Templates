@@ -9,30 +9,23 @@ class ModDateHtml extends ModDefaultHtml {
 
 		if (KRequest::get('get.option', 'cmd') == 'com_calendar' &&
 			KRequest::get('get.view', 'cmd') == 'day') {
-			$date = KRequest::get('get.date', 'date', date('Y-m-d'));
-		} else {
-			$date = date('Y-m-d');
+			$day = KFactory::tmp('site::com.calendar.model.days')
+				->set('date', KRequest::get('get.date', 'date', date('Y-m-d')))
+				->limit(1)
+				->getList()->current();
+			$found = true;
 		}
-				
-		$today = KFactory::tmp('site::com.calendar.model.days')
-			->set('date', $date)
-			->limit(1)
-			->getList()->current();
-		$blank = KFactory::tmp('site::com.calendar.model.days')
-			->set('id', $params->get('available_day_id'))
-			->limit(1)
-			->getList()->current();
-				
-		if ($today) {
-			$day = $today;
-		} else {
-			$day = $blank;
+		
+		if (!$day) {
+			$day = KFactory::tmp('site::com.calendar.model.days')
+				->set('id', $params->get('available_day_id'))
+				->limit(1)
+				->getList()->current();
+			$found = false;
 		}
-			
-		$this->assign('date', date('F d, Y'));
-		$this->assign('today', $today);
-		$this->assign('blank', $blank);
+
 		$this->assign('day', $day);
+		$this->assign('found', $found);
 		parent::display();
 	}
 }
