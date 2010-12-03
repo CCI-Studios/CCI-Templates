@@ -1,11 +1,13 @@
 <form enctype="multipart/form-data" action="<?= @route('view=datesetting')?>" method="post" id="mainform" name="mainForm">
 	<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 	
-	<label for="title_field"><?=@text('Title 1')?>:</label>
+	<label for="title_field"><?=@text('Title')?>:</label>
 	<input type="text" name="title" id="title_field" />
 	
+	<!--
 	<label for="dedication_field"><?=@text('Title 2')?>:</label>
 	<input type="text" name="dedication" id="dedication_field" />
+	-->
 	
 	<label for="link_field"><?=@text('Link')?>:</label>
 	<input type="text" name="link" id="link_field" />

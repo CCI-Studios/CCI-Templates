@@ -18,7 +18,7 @@ class ModDateHtml extends ModDefaultHtml {
 			
 			if ($day) {
 				$date	= date('F j, Y', strtotime($day->date));
-				$title	= $day->dedication;
+				$title	= $day->title;
 			} else {
 				$date	= date('F j, Y');
 				$title	= "What's Your Day?";
