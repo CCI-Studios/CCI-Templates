@@ -22,7 +22,7 @@ var DS = new Class({
 			overflow: 'hidden'
 		});
 		var toggle = new Fx.Styles(image, {
-			duration: 500
+			duration: 200
 		});
 		toggle.set({
 			width: 0,
