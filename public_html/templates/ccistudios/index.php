@@ -61,7 +61,7 @@ $testing = "true";
 				<jdoc:include type="message" />
 				
 				<jdoc:include type="component" />
-				<span class="clr" style="display:block"></>
+				<div class="clr" style="padding: 0;"></div>
 			</div></div></div></div></div>
 			
 			<div id="leftstrip">
