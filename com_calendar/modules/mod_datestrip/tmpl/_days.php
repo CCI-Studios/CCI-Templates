@@ -40,9 +40,8 @@
 		$c = (int)date('t', strtotime($date));
 		for ($i = 1; $i <= $c; $i++): ?>
 		<li <?= ($i == $day && KRequest::get('get.view', 'cmd') !== 'month')? 'class="active"': '' ?>>
-		 	<a href="<?=@route('option=com_calendar&view=day&date='.sprintf('%d-%02d-%02d', $year, $month, $i))?>">
-				<?=$i?>
-			</a>
+			<?=$i?>
+			
 			<div><div>
 				<? if ($days->current()->date == sprintf('%d-%02d-%02d', $year, $month, $i)): ?>
 					<? if ($days->current()->filename): ?>

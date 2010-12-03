@@ -40,14 +40,17 @@
 	<ul class="months" id="mod_daystrip_months">
 		<? for ($i = 1; $i <= 12; $i++): ?>
 		<li <?= ($i == $month)? 'class="active"': '' ?>>
-		 	<a href="<?=@route('option=com_calendar&view=month&date='.sprintf('%d-%02d-%02d', $year, $i, 1))?>">
 				<?=substr(date('F', strtotime(sprintf('%d-%02d-%02d', $year, $i, 1))), 0, 1)?>
-			</a>
+
 			<div><div>
 				<? if ($days->current()->date == sprintf('%d-%02d-%02d', $year, $i, 1)): ?>
-					<a href="<?=@route('option=com_calendar&view=month&date='.sprintf('%d-%02d-%02d', $year, $i, 1))?>">
-						<img src="/media/com_calendar/uploads/month_<?=$days->current()->filename?>" />
-					</a>
+					<? if ($days->current()->filename): ?>
+						<a href="<?=@route('option=com_calendar&view=month&date='.sprintf('%d-%02d-%02d', $year, $i, 1))?>">
+							<img src="/media/com_calendar/uploads/month_<?=$days->current()->filename?>" />
+						</a>
+					<? else: ?>
+						<img src="/media/com_calendar/uploads/month_<?=$pending->filename?>" />
+					<? endif; ?>
 					<? $days->next(); ?>
 				<? else: ?>
 					<img src="/media/com_calendar/uploads/month_<?=$blank->filename?>" />
