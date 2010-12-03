@@ -9,8 +9,8 @@
 		<?= @template('_form')?>
 		</div>
 		
-		<div class="left" style="">
-			<img src="http://dummyimage.com/550x400/000/f00" />
+		<div class="left" style="margin-top: 20px;">
+			<img src="/media/com_calendar/images/legend.png" />
 		</div>
 	</div>
 </div>
