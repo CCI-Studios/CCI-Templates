@@ -52,7 +52,7 @@ body {
 	min-height: 579px;
 	background: url(../images/trans-white.png);
 }
-#content > div > div > div > div > div { padding: 0 10px 10px; }
+#content > div > div > div > div > div { padding: 4px 10px 10px; }
 #content .com_calendar.wide { padding: 0; }
 
 #leftstrip {}
