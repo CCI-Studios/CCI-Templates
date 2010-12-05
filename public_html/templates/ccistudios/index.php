@@ -33,6 +33,7 @@ $testing = "true";
 <?php else: ?>
 	<link rel="stylesheet" type="text/css" href="/templates/<?php echo $this->template ?>/css/template.css" />
 <?php endif; ?>
+	   <link rel="icon" type="image/gif" href="/templates/<?php echo $this->template?>/images/favicon.ico" />
 </head>
 
 <body class="<?php echo $menu; ?>">
