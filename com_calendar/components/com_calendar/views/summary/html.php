@@ -4,7 +4,7 @@ defined('KOOWA') or die;
 class ComCalendarViewSummaryHtml extends ComCalendarViewHtml {
 	
 	public function display() {
-		JFactory::getDocument()->setTitle('Summary');
+		JFactory::getDocument()->setTitle('What\'s Your Day? Donation Summary');
 		
 		$pending = KRequest::get('session.com.calendar.days.selected', 'raw');
 		if (count($pending)) {

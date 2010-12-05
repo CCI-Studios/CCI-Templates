@@ -1,6 +1,8 @@
 <div class="com_calendar">
 	<div class="summary">
-		<h1>Donation Summary</h1>
+		<h1>What's Your Day? Donation Summary</h1>
+		
+		<p>Listed below are your currently selected day(s).  If these days are correct, simply click the 'Continue' button to proceed to the checkout.</p>
 		
 		<? foreach($pending as $day): ?>
 		<form action="<?=@route('view=summary')?>" method="post">
@@ -38,7 +40,7 @@
 			<form action="/index.php" method="get">
 				<input type="hidden" name="option" value="com_calendar" />
 				<input type="hidden" name="view" value="donate" />
-				<input type="submit" value="Select More" />
+				<input type="submit" value="Get More Days!" />
 			</form>
 		</div>
 	
