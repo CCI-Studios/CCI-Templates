@@ -2,8 +2,8 @@
 	<div class="pick-your-day" style="padding-top: 4px;">
 		<h1 style="margin-left: 10px; margin-right: 10px;"><?=$title?></h1>
 		
-		<p style="margin-left: 10px; margin-right: 10px;">Click on a day below to select it as your day.</p>
-		<p style="margin-left: 10px; margin-right: 10px;">Please note, selecting a day reserves it for only 30 minutes.</p>
+		<p style="margin-left: 10px; margin-right: 10px;">To select Your Day(s), simply click on any free day(s) (i.e. one(s) with the ‘What’s Your Day?’ logo) in the calendar below.  When you are ready to checkout, just click the ‘Continue’ button.</p>
+		<p style="margin-left: 10px; margin-right: 10px;">***Please note that after selecting your day(s), you will have 30 minutes to complete your transaction or else the day(s) will become available to the public again.</p>
 
 		<? if (count($pending_dates)): ?>
 		<div style="padding: 0 10px 10px;">
