@@ -5,7 +5,7 @@ class ComCalendarControllerSummary extends ComDefaultControllerDefault {
 	
 	public function _actionTrash(KCommandContext $context) {
 		$post = $context->data;
-		$date = $post->trash;
+		$date = $post->date;
 		
 		$day = KFactory::tmp('site::com.calendar.model.days')
 				->set('date', $date)

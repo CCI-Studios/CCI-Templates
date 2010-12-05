@@ -1,19 +1,19 @@
 <div style="padding: 0 6px 6px;">
 <ul class="days" style="margin: 4px 0 0;">
+	<li style="width: <?=(114*($day_offset))?>px; border: none; margin: 0;">
+		&nbsp;
+	</li>
+	
 	<? $index = 0;?>
 	<? for($i = 1; $i <= $days_in_month; $i++): ?>
-	<li style="<?= ($i==1)? 'margin-left: '.(114*(int)$day_offset+3).'px':'';?>" >
+	<li>
 		<div class="date"><?=$i?></div>
 		<? if ($days->current()->date === "$year-$month-".sprintf("%02d",$i)): ?>
 			<? if ($days->current()->filename): ?>
-				<a href="<?= @route('view=day&date='.$days->current()->date) ?>">
-					<img src="/media/com_calendar/uploads/month_<?= $days->current()->filename ?>" />
-				</a>
+				<img src="/media/com_calendar/uploads/month_<?= $days->current()->filename ?>" />
 
 				<div class="description"><div>
-					<a href="<?= @route('view=day&date='.$days->current()->date) ?>">
 						<?=$days->current()->title?>
-					</a>
 				</div></div>
 			<? else: ?>
 				<img src="/media/com_calendar/uploads/month_<?= $pending->filename?>" />
@@ -21,8 +21,12 @@
 
 		<? $days->next(); ?>
 		<? else: ?>
-			<input type="image" src="/media/com_calendar/uploads/month_<?= $blank->filename?>"
-				name="selected_date" value="<?= date('Y-m-d', mktime(0,0,0, $month,$i,$year))?>" style="display:block;"/>
+			<form action="<?=@route('view=donate')?>" method="post">
+				<input type="hidden" name="action" value="pick_day" />
+				<input type="hidden" name="date" value="<?= date('Y-m-d', mktime(0,0,0, $month,$i,$year))?>" />
+				<input type="image" src="/media/com_calendar/uploads/month_<?= $blank->filename?>"
+					name="selected_date" style="display:block;"/>
+			</form>
 		<?endif; ?>
 	</li>
 	<? endfor; ?>

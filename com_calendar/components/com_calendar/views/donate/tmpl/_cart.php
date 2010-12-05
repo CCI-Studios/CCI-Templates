@@ -6,13 +6,22 @@
 	<? endif; ?>
 	
 	<? foreach($pending_dates as $day): ?>
-		<?= date('F d, Y', strtotime($day->date)) ?>
-		<input 
-			type="image" 
-			src="/media/com_calendar/images/delete.png" 
-			name="trash" 
-			value="<?=$day->date?>"
-			style="display: inline" />
-		<br/>
+		
+		<form action="<?=@route('view=donate')?>" method="post">
+			<input type="hidden" name="action" value="trash" />
+			<input type="hidden" name="date" value="<?=$day->date?>">
+			<label style="font-weight: normal; float: left;"><?= date('F d, Y', strtotime($day->date)) ?></label>
+			<input type="submit" 
+				value="(Trash)" 
+				style="display: inline; 
+					float: left; 
+					line-height: 19px;
+					margin: 0 0 0 10px;
+					background: none; 
+					border: none; 
+					padding: 0;
+					cursor: pointer;" />
+		</form>
+		<div class="clear"></div>
 	<? endforeach ?>
 </div></div>

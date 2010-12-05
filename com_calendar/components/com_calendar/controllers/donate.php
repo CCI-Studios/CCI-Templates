@@ -7,22 +7,22 @@ class ComCalendarControllerDonate extends ComDefaultControllerDefault
 	{
 		$post = $context->data;
 		$post->append(array(
-			'selected_date'	=> null
+			'date'	=> null
 		));
-		
+
 		if ($post->submit) {
 			$this->setRedirect('index.php?option=com_calendar&view=summary');
 			return;
 		}
-		
+				
 		if ($post->trash) {
 			$this->trash($post->trash);
 			$this->setRedirect('index.php?option=com_calendar&view=donate');
 			return;
 		}
 
-		$date = $post->selected_date;
-		
+		$date = $post->date;
+		echo $date;
 		$model = KFactory::tmp('site::com.calendar.model.days')
 					->set('date', $date);
 
@@ -53,7 +53,10 @@ class ComCalendarControllerDonate extends ComDefaultControllerDefault
 		$this->setRedirect('index.php?option=com_calendar&view=donate');
 	}
 	
-	protected function trash($date) {
+	protected function _actionTrash(KCommandContext $context) {
+		$post = $context->data;
+		$date = $post->date;
+		
 		$day = KFactory::tmp('site::com.calendar.model.days')
 				->set('date', $date)
 				->getList()->current();

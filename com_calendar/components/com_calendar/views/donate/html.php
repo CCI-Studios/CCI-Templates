@@ -16,7 +16,7 @@ class ComCalendarViewDonateHtml extends ComCalendarViewHtml {
 		
 		$year 	= substr($date, 0, 4);
 		$month	= substr($date, 5,2);
-		$pending = KRequest::get('session.com.calendar.days.selected', 'raw');
+		$pending = KRequest::get('session.com.calendar.days.selected', 'raw');		
 
 		if (count($pending) > 0) {
 			$pending_dates = KFactory::tmp('site::com.calendar.model.days')
