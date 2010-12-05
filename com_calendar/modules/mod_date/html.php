@@ -11,8 +11,9 @@ class ModDateHtml extends ModDefaultHtml {
 		$view 	= KRequest::get('get.view', 'cmd');
 		
 		if ($option === 'com_calendar' && $view === 'day') {
+			$date = KRequest::get('get.date', 'date', date('Y-m-d'));
 			$day = KFactory::tmp('site::com.calendar.model.days')
-				->set('date', KRequest::get('get.date', 'date', date('Y-m-d')))
+				->set('date', $date)
 				->limit(1)
 				->getList()->current();
 			
@@ -20,7 +21,7 @@ class ModDateHtml extends ModDefaultHtml {
 				$date	= date('F j, Y', strtotime($day->date));
 				$title	= $day->title;
 			} else {
-				$date	= date('F j, Y');
+				$date	= date('F j, Y', strtotime($date));
 				$title	= "What's Your Day?";
 			}
 		} else if ($option == 'com_calendar' && $view === 'month') {

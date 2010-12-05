@@ -21,7 +21,7 @@
 	color: white;
 }
 
-.mod_datestrip li.active ,
+.mod_datestrip li.active,
 .mod_datestrip li:hover { color: #c2398e; }
 
 .mod_datestrip li > div {
