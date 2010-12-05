@@ -9,6 +9,7 @@ class ComCalendarViewDonateHtml extends ComCalendarViewHtml {
 	}
 	
 	protected function _default() {
+		JFactory::getDocument()->setTitle('What\'s Your Day?');
 		$date 	= KRequest::get('get.date', 'date', date('Y-m-01'));
 		if (strtotime($date) < strtotime(date('2011-01-01'))) {
 			$date = date('2011-01-01');
