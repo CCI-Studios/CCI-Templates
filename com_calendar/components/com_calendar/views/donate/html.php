@@ -46,7 +46,7 @@ class ComCalendarViewDonateHtml extends ComCalendarViewHtml {
 					->getItem();
 					
 	
-		$this->assign('title', JText::_('What\'s your day?'));
+		$this->assign('title', JText::_('What\'s Your Day?'));
 		$this->assign('days', $days);
 		$this->assign('blank', $blank);
 		$this->assign('pending', $pending);
