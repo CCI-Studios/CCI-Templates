@@ -15,7 +15,7 @@
 
 		<input type="submit" name="Submit" class="button" value="<?php echo JText::_('LOGIN') ?>" /><br/>
 		
-		
+		<br/>
 		<a href="<?= JRoute::_( 'index.php?option=com_user&view=reset' ); ?>">
 			<?= JText::_('FORGOT_YOUR_PASSWORD'); ?>
 		</a>

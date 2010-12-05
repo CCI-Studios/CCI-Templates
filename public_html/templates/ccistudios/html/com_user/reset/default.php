@@ -21,7 +21,8 @@ defined('_JEXEC') or die('Restricted access');
 		</h1>
 		<?php endif; ?>
 
-		<p><?php echo JText::_('RESET_PASSWORD_REQUEST_DESCRIPTION'); ?></p>
+		<p>To reset your password, please enter the email address you provided when you made your donation in the box below and click submit.
+			A verification email will be sent to you. Once you have received your verification email, simply follow the steps outlined in it to reset your password.</p>
 
 		<br/>
 		<form action="<?php echo JRoute::_( 'index.php?option=com_user&task=requestreset' ); ?>" method="post" class="josForm form-validate">
