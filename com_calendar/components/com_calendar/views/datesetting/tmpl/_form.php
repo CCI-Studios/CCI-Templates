@@ -1,8 +1,8 @@
-<form enctype="multipart/form-data" action="<?= @route('view=datesetting')?>" method="post" id="mainform" name="mainForm">
+<form enctype="multipart/form-data" action="<?= @route('view=datesetting')?>" method="post" class="form-validate" onSubmit="return myValidate(this);">
 	<input type="hidden" name="MAX_FILE_SIZE" value="10000000" />
 	
 	<label for="title_field"><?=@text('Title')?>:</label>
-	<input type="text" name="title" id="title_field" />
+	<input type="text" name="title" id="title_field" class="required" />
 	
 	<!--
 	<label for="dedication_field"><?=@text('Title 2')?>:</label>

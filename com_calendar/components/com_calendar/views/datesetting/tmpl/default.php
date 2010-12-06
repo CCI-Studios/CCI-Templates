@@ -1,3 +1,17 @@
+<?= JHTML::_('behavior.formvalidation'); ?>
+<script language="javascript">
+function myValidate(f) {
+   if (document.formvalidator.isValid(f)) {
+      return true; 
+   }
+   else {
+      var msg = 'Please enter a title.';
+      alert(msg);
+   }
+   return false;
+}
+</script>
+
 <div class="com_calendar">
 	<div class="date_settings">
 		<h1>Day Details For: <?= date('F d, Y', strtotime($day->date)) ?></h1>
