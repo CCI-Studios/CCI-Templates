@@ -8,17 +8,10 @@
 		<form action="<?=@route('view=summary')?>" method="post">
 			<input type="hidden" name="action" value="trash" />
 			<input type="hidden" name="date" value="<?=$day->date?>">
-			<label style="font-weight: normal; float: left;"><?= date('F d, Y', strtotime($day->date)) ?></label>
+			<label style="font-weight: normal; float: left; font-size: 13px;"><?= date('F d, Y', strtotime($day->date)) ?></label>
 			<input type="submit" 
-				value="(Trash)" 
-				style="display: inline; 
-					float: left; 
-					line-height: 19px;
-					margin: 0 0 0 10px;
-					background: none; 
-					border: none; 
-					padding: 0;
-					cursor: pointer;" />
+				value="(remove)" 
+				class="trash" />
 		</form>
 		<div class="clear"></div>
 		<? endforeach; ?>
@@ -46,3 +39,5 @@
 	
 	</div>
 </div>
+
+<style src="media://com_calendar/css/calendar.css" />

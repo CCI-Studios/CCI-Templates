@@ -81,3 +81,19 @@
 .com_calendar .pick-your-day .days input[type="radio"]:checked + label img {
 	border-color: red;	
 }
+
+
+input[type=submit].trash {
+	display: inline; 
+	float: left; 
+	line-height: 21px;
+	margin: 0 0 0 10px;
+	background: none; 
+	border: none; 
+	padding: 0;
+	cursor: pointer;
+	font-family: calibri;
+	font-size: 13px;
+	color: #C2398E;
+}
+input[type=submit].trash:hover { text-decoration: underline; }
