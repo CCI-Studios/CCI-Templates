@@ -4,6 +4,40 @@ jimport('joomla.user.helper');
 
 class ComCalendarControllerReview extends ComDefaultControllerDefault {
 	
+	public function _actionCheckoutpaypal(KCommandContext $context) {
+		$post = $context->data;
+		
+		list($user, $new_user, $password) = $this->getUser($post->email, $post->firstname, $post->lastname, false);	
+		
+		$pending = KRequest::get('session.com.calendar.days.selected', 'raw');
+		$days = KFactory::tmp('site::com.calendar.model.days')
+					->set('ids', $pending)
+					->set('status', 1)
+					->sort('date')
+					->getList();
+					
+		//https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5DZ24FP26B58J		
+		$this->setRedirect("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5DZ24FP26B58J".
+							"&amount=".(count($days)*100));
+							
+
+		foreach($days as $day) {
+			$day->user_id = $user->id;
+			$day->status = 2;
+			$day->save();
+		}
+
+		KRequest::set('session.com.calendar.days.selected', null);
+
+		if ($new_user) {
+			$this->newUserEmail($user->email, $password, $days);
+		} else {
+			$this->oldUserEmail($user->email, $days);
+		}
+		
+		$this->adminEmail($user->email, $days);
+	}
+	
 	public function _actionCheckoutcash(KCommandContext $context) {
 		$post = $context->data;
 		
@@ -272,5 +306,32 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 		$message .= "(519) 336-0940";
 
 		JUtility::sendMail( $adminEmail, $adminName, $email, $subject, $message );
+	}
+	
+	protected function adminEmail($email, $days) {
+		$adminEmail = "noreply@whatsyourday.com";
+		$adminName	= "What's Your Day";
+		
+		$subject = "PayPal Transaction Occured";
+		$message  = "Thank you for supporting Big Sisters of Sarnia-Lambton!\n\n";
+		$message .= "Your Day(s) is/are:\n\n";
+		
+		foreach($days as $day) {
+			$message .= date('F j, Y', strtotime($day->date))."\n";
+		}
+		$message .= "\n";
+		$message .= "Your Donation Total is:\n\n";
+		$message .= "$".(count($days)*100)."\n\n";
+		
+		$message .= "To update Your Day details (Title, Website Link, Image or Description), simply go to whatsyourday.com and click the 'Donors' menu item or click on the following link:\n\n";
+		$message .= "http://www.whatsyourday.com/log-in.html?email=$email\n\n";
+		
+		$message .= "Big Sisters of Sarnia-Lambton greatly appreciates your continued support – and thanks you for answering the question, \"What's Your Day?\"!\n\n";
+		$message .= "Best Regards,\n";
+		$message .= "Big Sisters of Sarnia-Lambton\n\n";
+		$message .= "www.whatsyourday.com\n";
+		$message .= "(519) 336-0940";
+
+		JUtility::sendMail( $adminEmail, $adminName, 'jbennett@ccistudios.com', $subject, $message );
 	}
 }
