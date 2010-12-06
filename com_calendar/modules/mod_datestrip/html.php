@@ -21,6 +21,11 @@ class ModDatestripHtml extends ModDefaultHtml {
 		$month 	= substr($date, 5, 2);
 		$day	= substr($date, 8, 2);
 		
+		$pendingm = KFactory::tmp('site::com.calendar.model.sponsors')
+					->set('id', $params->get('available_month_id'))
+					->getList()->current();
+					
+		
 		if ($year < 2011) {
 			$year = 2011;
 			$date = "$year-$month-$day";
@@ -35,9 +40,8 @@ class ModDatestripHtml extends ModDefaultHtml {
 					->getList();
 	
 		} else {
-			$days = KFactory::tmp('site::com.calendar.model.days')
-					->set('day', 01)
-					->set('status', 2)
+			$sponsors = KFactory::tmp('site::com.calendar.model.sponsors')
+					->set('year', $year)
 					->sort('date')
 					->getList();
 		}
@@ -50,7 +54,9 @@ class ModDatestripHtml extends ModDefaultHtml {
 		$this->assign('day', $day);
 		$this->assign('blank', $blank);
 		$this->assign('pending', $pending);
+		$this->assign('pendingm', $pendingm);
 		$this->assign('days', $days);
+		$this->assign('sponsors', $sponsors);
 	
 		parent::display();
 	}

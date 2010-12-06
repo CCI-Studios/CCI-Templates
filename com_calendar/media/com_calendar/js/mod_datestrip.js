@@ -16,26 +16,31 @@ var DS = new Class({
 	},
 	
 	_setupElement: function(el) {
-		var image = el.getElement('div');
+		var image, toggle, width, height;
+		
+ 		image = el.getElement('div');
+		image.getElement('img').setStyle('display', 'block');
 		image.setStyles({
 			display: 'block',
 			overflow: 'hidden'
 		});
-		var toggle = new Fx.Styles(image, {
+		width = image.getSize().size.x - 4;
+		height = image.getSize().size.y - 4;
+		toggle = new Fx.Styles(image, {
 			duration: 200
 		});
 		toggle.set({
 			width: 0,
 			height: 0,
 			'border-width': 0
-		})
+		});		
 		
 		el.addEvents({
 			mouseenter: function() {
 				toggle.stop();
 				toggle.start({
-					width: 104,
-					height: 98,
+					width: width,
+					height: height,
 					'border-width': 2
 				});
 			},

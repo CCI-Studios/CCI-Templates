@@ -5,18 +5,18 @@
 				<?=substr(date('F', strtotime(sprintf('%d-%02d-%02d', $year, $i, 1))), 0, 1)?>
 
 			<div><div>
-				<? if ($days->current()->date == sprintf('%d-%02d-%02d', $year, $i, 1)): ?>
+				<? if ($sponsors->current()->date == sprintf('%d-%02d-%02d', $year, $i, 1)): ?>
 					<a href="<?=@route('option=com_calendar&view=month&date='.sprintf('%d-%02d-%02d', $year, $i, 1))?>">
-						<? if ($days->current()->filename): ?>
-							<img src="/media/com_calendar/uploads/month_<?=$days->current()->filename?>" />
+						<? if ($sponsors->current()->filename): ?>
+							<img src="/media/com_calendar/uploads/sponsors/<?=$sponsors->current()->filename?>" width="120" />
 						<? else: ?>
-							<img src="/media/com_calendar/uploads/month_<?=$pending->filename?>" />
+							<img src="/media/com_calendar/uploads/sponsors/<?=$pendingm->filename?>" width="120" />
 						<? endif; ?>
 					</a>
-					<? $days->next(); ?>
+					<? $sponsors->next(); ?>
 				<? else: ?>
 					<a href="<?=@route('option=com_calendar&view=month&date='.sprintf('%d-%02d-%02d', $year, $i, 1))?>">
-						<img src="/media/com_calendar/uploads/month_<?=$blank->filename?>" />
+						<img src="/media/com_calendar/uploads/sponsors/<?=$pendingm->filename?>" width="120" />
 					</a>
 				<? endif; ?>
 			</div></div>	
