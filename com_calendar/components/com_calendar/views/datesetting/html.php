@@ -19,9 +19,11 @@ class ComCalendarViewDateSettingHtml extends ComCalendarViewHtml {
 
 		if (count($days) == 0) {
 			if (KFactory::get('lib.koowa.user')->gid >= 19) {
-				KFactory::get('lib.joomla.application')->redirect('/index.php?option=com_calendar&view=method');
+				KFactory::get('lib.joomla.application')
+				->redirect('/index.php?option=com_calendar&view=method');
 			} else {
-				KFactory::get('lib.joomla.application')->redirect('/index.php?option=com_calendar&view=review');
+				KFactory::get('lib.joomla.application')
+				->redirect('/index.php?option=com_calendar&view=review&layout=paypal');
 			}
 		}
 			
