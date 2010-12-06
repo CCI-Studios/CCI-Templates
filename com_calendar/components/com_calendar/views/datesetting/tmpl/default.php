@@ -1,8 +1,8 @@
 <div class="com_calendar">
 	<div class="date_settings">
-		<h1>Date Settings For:</h1>
+		<h1>Day Details For: <?= date('F d, Y', strtotime($day->date)) ?></h1>
 		
-		<p>Please enter the details for <?= date('F d, Y', strtotime($day->date)) ?> below<br/>
+		<p>Please enter the details for Your Day - <?= date('F d, Y', strtotime($day->date)) ?> - below.  You will be able to add/edit information after your transaction is completed.<br/>
 			Note: Images may take a few moments to upload.</p>
 		
 		<div class="left">

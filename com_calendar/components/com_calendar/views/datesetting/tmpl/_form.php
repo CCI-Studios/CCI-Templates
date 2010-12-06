@@ -19,7 +19,7 @@
 	<textarea id="description_field" name="description"></textarea>
 	
 	<br/>
-	<input type="submit" />
+	<input type="submit" value="Continue"/>
 	
 	<input type="hidden" name="action" value="savesettings" />
 </form>

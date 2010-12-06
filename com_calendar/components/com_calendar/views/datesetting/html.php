@@ -15,7 +15,7 @@ class ComCalendarViewDateSettingHtml extends ComCalendarViewHtml {
 					->getList();
 		$day = $days->current();
 		
-		JFactory::getDocument()->setTitle('Details for '.date('F d, Y', strtotime($day->date)));
+		JFactory::getDocument()->setTitle('Day Details For: '.date('F d, Y', strtotime($day->date)));
 
 		if (count($days) == 0) {
 			if (KFactory::get('lib.koowa.user')->gid >= 19) {
