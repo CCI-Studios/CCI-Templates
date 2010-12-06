@@ -4,7 +4,7 @@ defined('KOOWA') or die;
 class ComCalendarViewReviewHtml extends ComCalendarViewHtml {
 
 	public function display() {
-		JFactory::getDocument()->setTitle('Checkout');
+		JFactory::getDocument()->setTitle('Donation Details');
 		
 		$pending = KRequest::get('session.com.calendar.days.selected', 'raw');
 		

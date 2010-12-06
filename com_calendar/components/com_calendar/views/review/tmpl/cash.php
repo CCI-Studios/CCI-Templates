@@ -14,9 +14,10 @@ function myValidate(f) {
 
 <div class="com_calendar">
 	<div class="com_review">
-		<h1>Review your order</h1>
+		<h1>What's Your Day? Donation Details</h1>
 		
-		<p>Please look below to review your order,<br/> thanks</p>
+		<p>Please review your order and enter your payment information below. Once you have entered all necessary information, simply click the "Get My Day!"
+			button to finalize your donation.</p>
 		
 		<?=@template('_prices')?>
 		

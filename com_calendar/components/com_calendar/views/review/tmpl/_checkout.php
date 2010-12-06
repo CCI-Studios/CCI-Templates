@@ -30,7 +30,7 @@
 	<option value="PE">Prince Edward Island</option>
 	<option value="QC">Quebec</option>
 	<option value="SK">Saskatchewan</option>
-</select>
+</select><br/><br/>
 
 <label for="phone_field"><?=@text('Phone Number')?>:</label>
 <input type="text" name="phone" id="phone_field" class="required" />
@@ -39,4 +39,4 @@
 <input type="text" name="email" id="email_field" class="required" />
 
 <div class="clear"></div>
-<input type="submit" value="Checkout" />
+<input type="submit" value="Get My Day!" />
