@@ -220,25 +220,30 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 		$adminEmail = "noreply@whatsyourday.com";
 		$adminName	= "What's Your Day";
 		
-		$subject = "Thanks for donating!";
-		$message  = "Thank you for supporting Big Sisters.\n";
-		$message .= "You can update your settings at http://www.whatsyourday.com/log-in.html?email=$email ";
-		$message .= "using the password $password.\n";
-		$message .= "\n";
-		
-		if (count($days) > 1) {
-			$message .= "Your days are:\n";
-		} else {
-			$message .= "Your day is:\n";
-		}
+		$subject = "Thank you for supporting Big Sisters of Sarnia-Lambton!";
+		$message  = "Thank you for supporting Big Sisters of Sarnia-Lambton!\n\n";
+		$message .= "Your Day(s) is/are:\n\n";
 		
 		foreach($days as $day) {
-			$message .= date('F d, Y', strtotime($day->date))."\n";
+			$message .= date('F j, Y', strtotime($day->date))."\n";
 		}
 		$message .= "\n";
-		$message .= "Total: $".(count($days)*100);
+		$message .= "Your Donation Total is:\n\n";
+		$message .= "$".(count($days)*100)."\n\n";
 		
-
+		$message .= "To update Your Day details (Title, Website Link, Image or Description), simply go to whatsyourday.com and click the 'Donors' menu item or click on the following link:\n\n";
+		$message .= "http://www.whatsyourday.com/log-in.html?email=$email\n\n";
+		
+		$message .= "To login, simply use your account details:\n\n";
+		$message .= "Username:  $email\n";
+		$message .= "Password: $password\n\n";
+		
+		$message .= "Big Sisters of Sarnia-Lambton greatly appreciates your continued support – and thanks you for answering the question, \"What's Your Day?\"!\n\n";
+		$message .= "Best Regards,\n";
+		$message .= "Big Sisters of Sarnia-Lambton\n\n";
+		$message .= "www.whatsyourday.com\n";
+		$message .= "(519) 336-0940";
+		
 		JUtility::sendMail( $adminEmail, $adminName, $email, $subject, $message );
 	}
 	
@@ -246,22 +251,25 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 		$adminEmail = "noreply@whatsyourday.com";
 		$adminName	= "What's Your Day";
 		
-		$subject = "Thanks for donating!";
-		$message  = "Thank you for supporting Big Sisters.\n";
-		$message .= "You can update your settings at http://www.whatsyourday.com/log-in.html?email=$email.\n";
-		$message .= "\n";
-		
-		if (count($days) > 1) {
-			$message .= "Your days are:\n";
-		} else {
-			$message .= "Your day is:\n";
-		}
+		$subject = "Thank you for supporting Big Sisters of Sarnia-Lambton!";
+		$message  = "Thank you for supporting Big Sisters of Sarnia-Lambton!\n\n";
+		$message .= "Your Day(s) is/are:\n\n";
 		
 		foreach($days as $day) {
-			$message .= date('F d, Y', strtotime($day->date))."\n";
+			$message .= date('F j, Y', strtotime($day->date))."\n";
 		}
 		$message .= "\n";
-		$message .= "Total: $".(count($days)*100);
+		$message .= "Your Donation Total is:\n\n";
+		$message .= "$".(count($days)*100)."\n\n";
+		
+		$message .= "To update Your Day details (Title, Website Link, Image or Description), simply go to whatsyourday.com and click the 'Donors' menu item or click on the following link:\n\n";
+		$message .= "http://www.whatsyourday.com/log-in.html?email=$email\n\n";
+		
+		$message .= "Big Sisters of Sarnia-Lambton greatly appreciates your continued support – and thanks you for answering the question, \"What's Your Day?\"!\n\n";
+		$message .= "Best Regards,\n";
+		$message .= "Big Sisters of Sarnia-Lambton\n\n";
+		$message .= "www.whatsyourday.com\n";
+		$message .= "(519) 336-0940";
 
 		JUtility::sendMail( $adminEmail, $adminName, $email, $subject, $message );
 	}
