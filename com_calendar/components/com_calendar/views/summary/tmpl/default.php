@@ -3,7 +3,7 @@
 		<h1>What's Your Day? Donation Summary</h1>
 		
 		<p>Listed below are your currently selected day(s).  If these days are correct, simply click the 'Continue' button to proceed to the checkout.</p>
-		
+		<br/>
 		<? foreach($pending as $day): ?>
 		<form action="<?=@route('view=summary')?>" method="post">
 			<input type="hidden" name="action" value="trash" />
@@ -15,6 +15,7 @@
 		</form>
 		<div class="clear"></div>
 		<? endforeach; ?>
+		<br/>
 
 		
 		<? if(count($pending)): ?>		
