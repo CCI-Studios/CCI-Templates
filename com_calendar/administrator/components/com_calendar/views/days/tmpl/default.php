@@ -10,8 +10,6 @@
 			<th>Preview</th>
 			<th>Owner</th>
 			<th>Locked Time</th>
-			<th>Purchase Time</th>
-			<th width="50" align="center"><?=@helper('grid.sort', array('column'=>'enabled'))?></th>
 			<th width="20" align="center"><?=@helper('grid.sort', array('column'=>'id'))?></th>
 		</tr>
 	</thead>
@@ -43,8 +41,6 @@
 			</td>
 			<td align="center"><?= $day->user_name ?></td>
 			<td><?= $day->locked_at ?></td>
-			<td><?= $day->purchased_at ?></td>
-			<td align="center"><?= @helper('grid.enable', array('row'=>$day)) ?></td>
 			<td align="center"><?= $day->id ?></td>
 		</tr>
 		<? $i++;
