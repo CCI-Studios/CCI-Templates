@@ -29,6 +29,10 @@
     <positions>
     	<position>header</position>
     	<position>menu</position>
+		<position>sidebar</position>
+		<position>bottom</position>
+		<position>footer</position>
+		<position>hidden</position>
     </positions>
 
     <params>
