@@ -39,35 +39,22 @@ $testing = true;
 </script>
 <?php endif; ?>
 
-	<div class="container_16">
-			<div class="grid_16">
-				<jdoc:include type="modules" name="header" style="xhtml" />
+	<div class="wrapper">
+		<div class="header">lorem</div>
+		<div class="menu">menu</div>
+		<div class="body"><div><div><div>
+			<div class="component">
+				<jdoc:include type="component" />
 			</div>
 			
-			<div class="grid_16">
-				<jdoc:include type="modules" name="menu" style="xhtml" />
+			<div class="sidebar">
+				<jdoc:include type="module" name="sidebar" style="xhtml" />
 			</div>
-			
-			<div class="container_16">
-				<div class="grid_3 alpha">
-					sidebar
-				</div>
-				<div class="grid_10">
-					content
-				</div>
-				<div class="grid_3 omega">
-					sidebar
-				</div>
-			</div>
-			
-			<div class="container_16">
-				<div class="grid_8 alpha">
-					<p>Site by <a href="" target="">CCI Studios</a></p>
-				</div>
-				<div class="grid_8 omega">
-					<p>Copyright &copy; <?php echo date('Y'); ?> by COMPANY NAME</p>
-				</div>
-			</div>
+		</div></div></div></div>
+		<div class="bottom"></div>
+		
+		<div class="footer_spacer"></div>
+		<div class="footer">asdfasfda sdfa fd</div>
 	</div>
 	
 	<div class="hidden"><jdoc:include type="modules" name="hidden" style="raw" /></div>
