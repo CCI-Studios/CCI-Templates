@@ -1,3 +1,20 @@
+/* @group Misc */
+
+h1, h2, h3, h4, h5, h6 {
+	color: #e3242f;
+	font-weight: normal;
+	margin-bottom: 0.7em;
+}
+
+h1 { font-size: 18px; margin-bottom: 20px; }
+h2 { font-size: 16px; margin-bottom: 20px; }
+h3 { font-size: 14px; }
+h4 { font-size: 12px; }
+h5 { font-size: 12px; }
+h6 { font-size: 12px; }
+
+/* @end */
+
 /* @group ie6 redirect */
 .ie6warn {
 	background-color: #edee98;
@@ -6,6 +23,22 @@
  .ie6warn p {
 	line-height: 2em;
     margin: 0 1em;
+}
+/* @end */
+
+/* @group Fonts */
+@font-face {
+	font-family: AvantGarde;
+	src: url(../fonts/avant_garde.eot) /* EOT file for IE */
+}
+@font-face {
+	font-family: AvantGarde;
+	src: url(../fonts/avant_garde.TTF) /* TTF file for CSS3 browsers */
+}
+@font-face {
+	font-family: AvantGarde;
+	font-weight: bold;
+	src: url(../fonts/avant_garde.TTF) /* TTF file for CSS3 browsers */
 }
 /* @end */
 

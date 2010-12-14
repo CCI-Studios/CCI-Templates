@@ -1,0 +1,9 @@
+.redlist {
+	margin-left: 4em;
+	padding: 0;
+	list-style: square outside url(../images/bullet.png);
+}
+.redlist li {
+	padding-left: 1em;
+	margin-left: 0;
+}
