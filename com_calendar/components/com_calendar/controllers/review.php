@@ -80,7 +80,7 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 					->sort('date')
 					->getList();				
 		
-		$transaction = $this->doCreditTransaction($post, $days, $user->id);
+		list($transaction, $response) = $this->doCreditTransaction($post, $days, $user->id);
 		
 		if ($transaction->ack === 'Success') {
 			$this->setRedirect('view=thankyou');
@@ -99,8 +99,8 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 			} else {
 				$this->oldUserEmail($user->email, $days);
 			}
-		} else {
-			$this->setRedirect('view=error&message='.$r['L_LONGMESSAGE0']);
+		} else {	
+			$this->setRedirect('view=error&message='.$response['L_LONGMESSAGE0']);
 			$transaction->status = 2;
 		}
 		$transaction->save();
@@ -128,9 +128,9 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 		
 		$data = array(
 			'VERSION' 		=> '56.0',
-			'SIGNATURE'		=> $params->get('paypal_sig'),
-			'USER'			=> $params->get('paypal_user'),
-			'PWD'			=> $params->get('paypal_pass'),
+			'SIGNATURE'		=> trim($params->get('paypal_sig')),
+			'USER'			=> trim($params->get('paypal_user')),
+			'PWD'			=> trim($params->get('paypal_pass')),
 			
 			'METHOD'		=> 'DoDirectPayment',
 			'CURRENCYCODE'	=> 'CAD',
@@ -189,7 +189,7 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 		$transaction->cvv2 = $r['CVV2MATCH'];
 		$transaction->transactionid = $r['TRANSACTIONID'];
 		
-		return $transaction;
+		return array($transaction, $r);
 	}
 	
 	function getUser($email, $firstname, $lastname, $checkLoggedIn = true) {
