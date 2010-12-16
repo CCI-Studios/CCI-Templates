@@ -16,8 +16,8 @@ class ComCalendarControllerReview extends ComDefaultControllerDefault {
 					->sort('date')
 					->getList();
 					
-		//https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5DZ24FP26B58J		
-		$this->setRedirect("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5DZ24FP26B58J".
+		// https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HFYW8G8SUPNCQ
+		$this->setRedirect("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=HFYW8G8SUPNCQ".
 							"&amount=".(count($days)*100));
 							
 
