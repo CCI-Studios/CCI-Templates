@@ -5,7 +5,7 @@
 			<span class="right">
 				$100
 			</span>
-			<?= $day->date ?> - <?= $day->description ?>
+			<?= $day->date ?> - <?= $day->title ?>
 		</li>
 	<? endforeach; ?>
 	</ol>
