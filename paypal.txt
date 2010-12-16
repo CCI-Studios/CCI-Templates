@@ -1,0 +1,5 @@
+Credential		API Signature
+API Username	whatsyourday_api1.ccistudios.com
+API Password	8G6HRG6Z6U4BDDK6
+Signature		AFcWxV21C7fd0v3bYYYRCpSSRl31A04kMv2zyjG8clTGQr1CjA9Vm71G
+Request Date	Dec 16, 2010 12:04:34 GMT-05:00
