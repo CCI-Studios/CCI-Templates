@@ -38,7 +38,7 @@ class ComCalendarControllerDatesetting extends ComDefaultControllerDefault {
 			if (KFactory::get('lib.koowa.user')->gid >= 19) {
 				$this->setRedirect('view=method');
 			} else {
-				$this->setRedirect('view=review&layout=paypal');
+				$this->setRedirect('view=review');
 			}
 			
 			$day->user_id = $user_id;

@@ -23,7 +23,7 @@ class ComCalendarViewDateSettingHtml extends ComCalendarViewHtml {
 				->redirect('/index.php?option=com_calendar&view=method');
 			} else {
 				KFactory::get('lib.joomla.application')
-				->redirect('/index.php?option=com_calendar&view=review&layout=paypal');
+				->redirect('/index.php?option=com_calendar&view=review');
 			}
 		}
 			
