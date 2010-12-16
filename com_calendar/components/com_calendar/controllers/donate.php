@@ -42,15 +42,14 @@ class ComCalendarControllerDonate extends ComDefaultControllerDefault
 		
 		if (!$new_date->save()) {
 			$this->setRedirect('index.php?option=com_calendar&view=donate');
+		} else { // add to session
+			$dates = KRequest::get('session.com.calendar.days.selected', 'raw', array());
+			$dates[] = $new_date->id;
+			KRequest::set('session.com.calendar.days.selected', null);
+			KRequest::set('session.com.calendar.days.selected', $dates);
 		}
 		
-		// add to session
-		$dates = KRequest::get('session.com.calendar.days.selected', 'raw', array());
-		$dates[] = $new_date->id;
-		KRequest::set('session.com.calendar.days.selected', null);
-		KRequest::set('session.com.calendar.days.selected', $dates);
-		
-		$this->setRedirect('index.php?option=com_calendar&view=donate');
+		$this->setRedirect('index.php?option=com_calendar&view=donate&date='.$post->date);
 	}
 	
 	protected function _actionTrash(KCommandContext $context) {
