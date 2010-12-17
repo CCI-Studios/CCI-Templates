@@ -1,7 +1,6 @@
 <?php
 defined('KOOWA') or die;
 jimport('joomla.filesystem.file');
-ini_set('memory_limit', '64M');
 
 class ComCalendarDatabaseRowDay extends KDatabaseRowAbstract {
 	protected $storage = '/media/com_calendar/uploads/';
@@ -68,6 +67,7 @@ class ComCalendarDatabaseRowDay extends KDatabaseRowAbstract {
 
 		list($src_width, $src_height, $src_type) = getimagesize(JPATH_SITE.$this->storage.$filename);
 		
+		ini_set('memory_limit', '64M');
 		switch($src_type) {
 			case IMAGETYPE_GIF:
 				$src_img = imagecreatefromgif(JPATH_SITE.$this->storage.$filename);
