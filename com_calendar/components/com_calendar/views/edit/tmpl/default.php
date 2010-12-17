@@ -9,8 +9,8 @@
 		<?= @template('_form')?>
 		</div>
 		
-		<div class="left" style="">
-			<img src="/media/com_calendar/uploads/day_<?=$day->filename?>" width="550" />
+		<div class="left" style="margin-top: 20px;">
+			<img src="/media/com_calendar/images/legend.png" />
 		</div>
 	</div>
 </div>
