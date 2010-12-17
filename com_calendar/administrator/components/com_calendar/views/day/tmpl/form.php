@@ -7,7 +7,7 @@
 		<fieldset>
 			<legend>Date Details</legend>
 			
-			<label for="owner_field" class="mainlabel">Owner:</label>
+			<label for="owner_field" class="mainlabel">User Id:</label>
 			<input type="text" id="owner_field" name="user_id" value="<?=$day->user_id?>" /><br/>
 			
 			<label for="date_field" class="mainlabel">Date:</label>
@@ -17,19 +17,14 @@
 			<label for="locked_at_field" class="mainlabel">Locked at:</label>
 			<input type="text" id="locked_at_field" name="locked_at_date" value="<?=$day->locked_at?>" /><br/>
 			
-			<label for="status_field" class="mainlabel">Status Date:</label>
+			<label for="status_field" class="mainlabel">Status:</label>
 			<input type="text" id="status_field" name="status" value="<?=$day->status?>" /><br/>
-			
-			<label class="mainlabel">Transaction ID:</label><br/>
 			
 			<label for="title_field" class="mainlabel">Title:</label>
 			<input type="text" name="title" id="title_field" value="<?=$day->title?>" /><br/>
 			
 			<label for="link_field" class="mainlabel">Link:</label>
 			<input type="text" name="link" id="link_field" value="<?=$day->link?>" /><br/>
-			
-			<label for="dedication_field" class="mainlabel">Dedicated To:</label>
-			<input type="text" name="dedication" id="dedication_field" value="<?=$day->dedication?>" /><br/>
 			
 			<?= @editor(array('editor'=>null, 'width'=>'100%', 'height'=>'300')); ?>
 		</fieldset>
