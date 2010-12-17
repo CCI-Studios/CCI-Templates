@@ -28,20 +28,26 @@
 		<li <?= (date('d') == $i && date('m') == $month)? 'class="active"':'';?> >
 			<div class="date"><?=$i?></div>
 			<? if ($days->current()->date === "$year-$month-".sprintf("%02d",$i)): ?>
-				<? if ($days->current()->filename): ?>
 					<a href="<?= @route('view=day&date='.$days->current()->date) ?>">
-						<img src="/media/com_calendar/uploads/month_<?= $days->current()->filename ?>" />
+						<? if ($days->current()->filename): ?>
+							<img src="/media/com_calendar/uploads/month_<?= $days->current()->filename ?>" />
+						<? else: ?>
+							<img src="/media/com_calendar/uploads/month_<?= $pending->filename?>" />
+						<? endif;?>
 					</a>
 			
+					<? if ($days->current()->title): ?>
 					<div class="description"><div>
 						<a href="<?= @route('view=day&date='.$days->current()->date) ?>">
-							<?=$days->current()->title?>
+							<? if (strlen($days->current()->title) > 13) {
+								echo substr($days->current()->title, 0, 13).'...';
+							} else {
+								echo $days->current()->title;
+							}
+							?>
 						</a>
 					</div></div>
-				<? else: ?>
-					<img src="/media/com_calendar/uploads/month_<?= $pending->filename?>" />
-				<? endif;?>
-			
+					<? endif; ?>
 			<? $days->next(); ?>
 			<? else: ?>
 				<img src="/media/com_calendar/uploads/month_<?=$blank->filename?>" />
