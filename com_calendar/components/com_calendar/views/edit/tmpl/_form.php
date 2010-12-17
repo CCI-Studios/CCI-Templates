@@ -19,7 +19,7 @@
 	<textarea id="description_field" name="description"><?= $day->description ?></textarea>
 	
 	<br/>
-	<input type="submit" />
+	<input type="submit" value="Save"/>
 	
 	<input type="hidden" name="action" value="edit" />
 	<input type="hidden" name="id" value="<?=$day->id?>" />
