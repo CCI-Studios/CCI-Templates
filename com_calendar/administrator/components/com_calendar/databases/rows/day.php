@@ -83,11 +83,11 @@ class ComCalendarDatabaseRowDay extends KDatabaseRowAbstract {
 		$src_ratio 	= $src_width/$src_height;
 		$dest_ratio	= $_width/$_height;
 		
-		if ($dest_ratio >= 1) {
+		if ($src_ratio >= 1) {
 			$temp_height 	= $_height;
-			$temp_width		= (int)($_height*$src_ratio);
+			$temp_width		= (int)($_height*$dest_ratio);
 		} else {
-			$temp_height 	= (int)($_width*$src_ratio);
+			$temp_height 	= (int)($_width*$dest_ratio);
 			$temp_width		= $_width;
 		}
 		
