@@ -15,7 +15,7 @@
 	<label for="file_upload_field"><?=@text('Image')?>:</label>
 	<input type="file" id="field_upload_field" name="file_upload" />
 	
-	<label for="description_field"><?=@text('Description')?>:</label>
+	<label for="description_field"><?=@text('Comment/Story:')?>:</label>
 	<textarea id="description_field" name="description"></textarea>
 	
 	<br/>
