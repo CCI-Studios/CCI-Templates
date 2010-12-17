@@ -93,6 +93,7 @@ class ComCalendarDatabaseRowDay extends KDatabaseRowAbstract {
 		
 		$temp_img = imagecreatetruecolor($temp_width, $temp_height);
 		imagecopyresampled($temp_img, $src_img, 0,0,0,0, $temp_width, $temp_height, $src_width, $src_height);
+		imagedestroy($src_img);
 		
 		$final_img = imagecreatetruecolor($_width, $_height);
 		imagecopy($final_img, $temp_img, 
@@ -112,6 +113,9 @@ class ComCalendarDatabaseRowDay extends KDatabaseRowAbstract {
 				imageJpeg($final_img, JPATH_SITE.$this->storage.$_pre.$filename);
 				break;
 		}
+		
+		imagedestroy($temp_img);
+		imagedestroy($final_img);
 
 		return true;
 	}
