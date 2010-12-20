@@ -28,7 +28,7 @@ $testing = true;
 <?php if (!$testing): ?>
 <script type="text/javascript">
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+  _gaq.push(['_setAccount', 'UA-3335172-1']);
   _gaq.push(['_trackPageview']);
 
   (function() {
