@@ -20,9 +20,15 @@ body .wrapper {
 	margin: 0 auto;
 }
 
-.menu {
-	width: 970px;
+.mainmenu {
+	width: 948px;
 	margin: 0 auto;
+	
+	padding: 11px;
+	background: url(../images/body_bg.png) repeat-y;
+}
+.mainmenu > div {
+	background: #262626;
 }
 
 .body {
