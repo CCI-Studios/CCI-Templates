@@ -1,9 +1,13 @@
-.redlist {
+.colorList {
 	margin-left: 4em;
 	padding: 0;
-	list-style: square outside url(../images/bullet.png);
+	list-style: square outside;
 }
-.redlist li {
+.colorList li {
 	padding-left: 1em;
 	margin-left: 0;
 }
+.colorList.red { list-style-image: url(../images/red_bullet.png); }
+.colorList.green { list-style-image: url(../images/green_bullet.png); }
+.colorList.blue { list-style-image: url(../images/blue_bullet.png); }
+.colorList.yellow { list-style-image: url(../images/yellow_bullet.png); }

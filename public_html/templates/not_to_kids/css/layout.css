@@ -10,66 +10,72 @@ body {
 	font-size: 12px;
 }
 
-body .wrapper {
+#wrapper {
 	min-height: 100%;
 	position: relative;
 }
 
-.header {
+#body {
 	width: 970px;
 	margin: 0 auto;
-}
-
-.mainmenu {
-	width: 948px;
-	margin: 0 auto;
 	
-	padding: 11px;
-	background: url(../images/body_bg.png) repeat-y;
+	background: url(../images/body_bg_bottom.png) bottom no-repeat;
 }
-.mainmenu > div {
+
+#header {
+	position: relative;
+	background: url(../images/body_bg_top.png) bottom no-repeat;
+}
+
+#body > .inner { 
+	background: url(../images/body_bg.png) repeat-y;
+	padding: 0 11px 11px;
+	zoom: 1;
+}
+
+#menu {
 	background: #262626;
+	margin: 0 0 11px;
 }
 
-.body {
-	width: 948px;
-	margin: 0 auto;
-	padding: 11px;
-	background: url(../images/body_bg.png) repeat-y;
-}
-
-.body > div {
+#content {
 	background: url(../images/component_bg_top.png) no-repeat top;
 	padding: 33px 0 0;
 }
-.body > div > div {
+#content > div {
 	background: url(../images/component_bg_bottom.png) no-repeat bottom  ;
 	padding: 0 0 49px;
 }
-.body > div>div>div { 
+#content > div > div {
 	background: url(../images/component_bg.png);
-	padding: 10px;
+	padding: 1px 10px;
 }
 
-.bottom {
-	width: 970px;
-	margin: 0 auto;
+#component { float: left; }
+#sidebar { float: right; }
+
+#bottom {
+	margin: 22px 0 0;
+	background: #262626;
 }
 
-.footer_spacer { height: 140px; width: 100%; }
-.footer {
+#footer_spacer { height: 140px; width: 100%; }
+#footer {
 	background: url(../images/footer.png) repeat-x center top;
 	height: 140px;
 	width: 100%;
+	
 	
 	position: absolute;
 	bottom: 0;
 	left: 0;
 }
-
-
-
+#footer > .inner {
+	width: 970px;
+	margin: 0 auto;
+	padding: 55px 0 0;
+}
 
 
 /* temp */
-.body > div>div>div { min-height: 400px; }
+#header { height: 450px; }

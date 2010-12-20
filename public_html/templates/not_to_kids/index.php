@@ -39,35 +39,45 @@ $testing = true;
   })();
 </script>
 <?php endif; ?>
-
-	<div class="wrapper">
-		<div class="header">
-			<jdoc:include type="modules" name="header" style="xhtml" />
+	<div id="wrapper">
+		<div id="body">
+			<div id="header">
+				<jdoc:include type="modules" name="header" style="xhtml" />
+				<div class="clear"></div>
+			</div>
+			
+			<div class="inner">
+				<div id="menu">
+					<jdoc:include type="modules" name="menu" style="xhtml" />
+					<div class="clear"></div>
+				</div>
+				
+				<div id="content"><div><div>
+					<div id="component">
+						<jdoc:include type="component" />
+						<div class="clear"></div>
+					</div>
+					
+					<div id="sidebar">
+						<jdoc:include type="modules" name="sidebar" style="xhtml" />
+						<div class="clear"></div>
+					</div>
+					
+					<div class="clear"></div>
+				</div></div></div>
+				
+				<div id="bottom">
+					<jdoc:include type="modules" name="bottom" style="titleBlock" />
+					<div class="clear"></div>
+				</div>
+			</div>
 		</div>
 		
-		<div class="mainmenu"><div>
-			<jdoc:include type="modules" name="menu" style="xhtml" />
+		<div id="footer_spacer"></div>
+		<div id="footer"><div class="inner">
+			<jdoc:include type="modules" name="footer" style="xhtml" />
 			<div class="clear"></div>
 		</div></div>
-		
-		<div class="body"><div><div><div>
-			<div class="component">
-				<jdoc:include type="component" />
-			</div>
-			
-			<div class="sidebar">
-				<jdoc:include type="modules" name="sidebar" style="xhtml" />
-			</div>
-			
-			<div class="bottom">
-				<jdoc:include type="modules" name="bottom" style="xhtml" />
-			</div>
-		</div></div></div></div>
-		
-		<div class="footer_spacer"></div>
-		<div class="footer">
-			<jdoc:include type="modules" name="footer" style="xhtml" />
-		</div>
 	</div>
 	
 	<div class="hidden"><jdoc:include type="modules" name="hidden" style="raw" /></div>
