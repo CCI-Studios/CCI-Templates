@@ -1,5 +1,8 @@
 /* @group Misc */
 
+a { color: white; text-decoration: none; }
+a { text-decoration: underline; }
+
 h1, h2, h3, h4, h5, h6 {
 	color: #e3242f;
 	font-weight: normal;
@@ -67,3 +70,13 @@ html[xmlns] .clearfix { display: block; }
 .left { float: left; }
 .right { float: right; }
 .clear, .clr { clear: both; }
+.hidden { display: none; }
+.center { text-align: center; }
+/* @end */
+
+/* @group Joomla */
+.headline {
+	margin-top: -3em;
+}
+
+/* @end */
