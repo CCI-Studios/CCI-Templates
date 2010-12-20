@@ -41,7 +41,12 @@ $testing = true;
 
 	<div class="wrapper">
 		<div class="header">lorem</div>
-		<div class="menu">menu</div>
+		
+		<div class="mainmenu"><div>
+			<jdoc:include type="modules" name="menu" style="xhtml" />
+			<div class="clear"></div>
+		</div></div>
+		
 		<div class="body"><div><div><div>
 			<div class="component">
 				<jdoc:include type="component" />

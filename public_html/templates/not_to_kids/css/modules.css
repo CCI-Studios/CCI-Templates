@@ -45,6 +45,35 @@
 .moduletable.dropmenu li li {
 	float: none;
 }
+/* @end */
+/* @end */
 
-/* @end */
-/* @end */
+/* @group Top Menu */
+.mainmenu .moduletable.menu ul {}
+.mainmenu .moduletable.menu li {
+	padding: 0;
+}
+.mainmenu .moduletable.menu li > a,
+.mainmenu .moduletable.menu li > span {
+	display: block;
+	width: 316px;
+	height: 54px;
+	margin: 5px 0 0;
+	padding: 0;
+	
+	font-size: 20px;
+	text-align: center;
+	text-transform: uppercase;
+	
+	border-top: 5px solid white;
+}
+
+.mainmenu .moduletable.menu li > a > span,
+.mainmenu .moduletable.menu li > span > span { line-height: 54px; }
+
+.mainmenu .moduletable.menu li:first-child > a,
+.mainmenu .moduletable.menu li:first-child > span { border-top-color: #0030e9; }
+.mainmenu .moduletable.menu li:first-child + li > a,
+.mainmenu .moduletable.menu li:first-child + li > span { border-top-color: #00ac00; }
+.mainmenu .moduletable.menu li:first-child + li + li > a,
+.mainmenu .moduletable.menu li:first-child + li + li > span { border-top-color: #efe500; }
