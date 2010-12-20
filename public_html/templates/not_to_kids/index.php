@@ -21,6 +21,7 @@ $testing = true;
 <?php else: ?>
 	<link rel="stylesheet" type="text/css" href="/templates/<?php echo $this->template ?>/css/template.min.css" />
 <?php endif; ?>
+
 	<script type="text/javascript" src="/templates/<?php echo $this->template ?>/scripts/dropmenu.js"></script>
 </head>
 
@@ -40,7 +41,9 @@ $testing = true;
 <?php endif; ?>
 
 	<div class="wrapper">
-		<div class="header">lorem</div>
+		<div class="header">
+			<jdoc:include type="modules" name="header" style="xhtml" />
+		</div>
 		
 		<div class="mainmenu"><div>
 			<jdoc:include type="modules" name="menu" style="xhtml" />
@@ -53,13 +56,18 @@ $testing = true;
 			</div>
 			
 			<div class="sidebar">
-				<jdoc:include type="module" name="sidebar" style="xhtml" />
+				<jdoc:include type="modules" name="sidebar" style="xhtml" />
+			</div>
+			
+			<div class="bottom">
+				<jdoc:include type="modules" name="bottom" style="xhtml" />
 			</div>
 		</div></div></div></div>
-		<div class="bottom"></div>
 		
 		<div class="footer_spacer"></div>
-		<div class="footer">asdfasfda sdfa fd</div>
+		<div class="footer">
+			<jdoc:include type="modules" name="footer" style="xhtml" />
+		</div>
 	</div>
 	
 	<div class="hidden"><jdoc:include type="modules" name="hidden" style="raw" /></div>
