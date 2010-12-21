@@ -2,8 +2,6 @@
 	margin: 1em 0;
 }
 
-
-
 /* @group menu */
 .moduletable.menu {
 	margin: 0;
@@ -48,65 +46,136 @@
 /* @group Header Modules */
 #header .logo {
 	position: absolute;
-	bottom: 50px;
-	right: 50px;
+	bottom: 0px;
+	right: 10px;
 }
+body.home #header .logo { bottom: 35px; }
 
 #header .lang {
 	position: absolute;
 	top: 0;
 	right: 0;
+	margin: 0.5em 0;
 }
 #header .lang ul { list-style: none; }
-#header .lang li { display: inline; padding: 0 10px; margin: 0; }
-#header .lang li { display: inline; padding: 0 10px; margin: 0; }
+#header .lang li { display: inline; padding: 0 5px; margin: 0; font-size: 16px; }
+
+#header .header_image {
+	margin: 0;
+	position: relative;
+}
+#header .header_image img { display: block; }
+#header .header_image .description {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+#header .header_image .description > div {
+	margin: 0 11px;
+	padding: 0 17px;
+	background: red;
+	line-height: 38px;
+	font-size: 16px;
+	background: url(../images/description_bg.png) repeat-x;
+}
 
 /* @end */
 
 /* @group Top Menu */
-#menu .moduletable.menu ul {}
+#menu .moduletable.menu ul { position: relative; }
 #menu .moduletable.menu li {
+	background: #262626;
+	width: 316px;
 	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
 }
+#menu .moduletable.menu li {}
+#menu .moduletable.menu li + li { left: 316px; }
+#menu .moduletable.menu li + li + li { left: 632px; }
+
 #menu .moduletable.menu li > a,
 #menu .moduletable.menu li > span {
 	display: block;
-	width: 316px;
+	width: 100%;
 	height: 54px;
 	margin: 5px 0 0;
-	padding: 0;
+	padding: 5px 0 0;
 	
 	font-size: 20px;
 	text-align: center;
 	text-transform: uppercase;
 	
-	border-top: 5px solid white;
+	background: url(../images/menu_strip.png) 0 0 no-repeat;
 }
 
 #menu .moduletable.menu li > a > span,
 #menu .moduletable.menu li > span > span { line-height: 54px; }
 
 #menu .moduletable.menu li:first-child > a,
-#menu .moduletable.menu li:first-child > span { border-top-color: #0030e9; }
+#menu .moduletable.menu li:first-child > span {}
 #menu .moduletable.menu li:first-child + li > a,
-#menu .moduletable.menu li:first-child + li > span { border-top-color: #00ac00; }
+#menu .moduletable.menu li:first-child + li > span { background-position: -333px 0; }
 #menu .moduletable.menu li:first-child + li + li > a,
-#menu .moduletable.menu li:first-child + li + li > span { border-top-color: #efe500; }
+#menu .moduletable.menu li:first-child + li + li > span { background-position: -666px 0; }
+
+#menu .moduletable.menu li:hover {
+	background: url(../images/menu_bg.png);
+	z-index: 2;
+	
+	-moz-box-shadow: 0 0 17px #000;
+	-webkit-box-shadow: 0 0 17px #000;
+	box-shadow: 0 0 17px #000;
+	behavior: url(ie-css.htc);
+}
+
+#menu .moduletable.menu li:hover a, 
+#menu .moduletable.menu li:hover span {
+	text-decoration: none;
+} 
 /* @end */
 
 /* @group bottom modules */
 #bottom .moduleBlock {
+	background: #262626;
 	width: 316px;
+	height: 375px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	zoom: 1;
+
 	float: left;
 	margin: 0;
 }
+#bottom .moduleBlock + .moduleBlock { left: 316px; }
+#bottom .moduleBlock + .moduleBlock + .moduleBlock { left: 632px; }
+
+#bottom .moduleBlock.hover {
+	background: #262626 url(../images/bottom_bg.png) no-repeat;
+	z-index: 2;
+	
+	-moz-box-shadow: 0 0 50px #000;
+	-webkit-box-shadow: 0 0 50px #000;
+	box-shadow: 0 0 10px #000;
+	behavior: url(ie-css.htc);
+}
+#bottom .moduleBlock.hover h3 {
+	line-height: 44px;
+}
+
 #bottom .moduleBlock .inner {}
 #bottom .moduleBlock .title {
-	margin: 24px 0 0;
+	margin: 24px 0 11px;
+	background: url(../images/footer_hover_bg.png) 0 0 no-repeat;
+	zoom: 1;
 }
-#bottom .moduleBlock.blue .title { background-color: #0030e9; }
-#bottom .moduleBlock.green .title { background-color: #00ac00; }
-#bottom .moduleBlock.yellow .title { background-color: #efe500; }
+#bottom .moduleBlock.blue .title {}
+#bottom .moduleBlock.green .title { background-position: -333px 0; }
+#bottom .moduleBlock.yellow .title { background-position: -666px 0; }
 
 #bottom .moduleBlock h3 {
 	text-transform: uppercase;
@@ -114,10 +183,9 @@
 	line-height: 33px;
 	color: white;
 	text-align: center;
+	margin: 0;
 }
-#bottom .moduleBlock .body {
-	padding: 20px 24px;
-}
+#bottom .moduleBlock .body {	padding: 20px 24px; }
 #bottom .moduleBlock h1, #bottom .moduleBlock h2,
 #bottom .moduleBlock h3, #bottom .moduleBlock h4 { color: white; }
 /* @end */
@@ -125,7 +193,7 @@
 /* @group footer modules */
 #footer .moduletable { margin: 0; }
 
-#footer .menu {
+#footer .moduletable.menu {
 	text-align: center;
 	margin: 0 0 8px;
 	padding: 0 0 8px;

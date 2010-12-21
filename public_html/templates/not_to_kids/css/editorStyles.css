@@ -11,3 +11,7 @@
 .colorList.green { list-style-image: url(../images/green_bullet.png); }
 .colorList.blue { list-style-image: url(../images/blue_bullet.png); }
 .colorList.yellow { list-style-image: url(../images/yellow_bullet.png); }
+
+.grey {
+	color: #818181;
+}

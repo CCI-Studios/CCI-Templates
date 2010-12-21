@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <?php
 $menu = JSite::getMenu();
 if ($menu)
@@ -8,7 +10,7 @@ if ($menu)
 $testing = true;
 
 ?>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<jdoc:include type="head" />
 
@@ -22,7 +24,7 @@ $testing = true;
 	<link rel="stylesheet" type="text/css" href="/templates/<?php echo $this->template ?>/css/template.min.css" />
 <?php endif; ?>
 
-	<script type="text/javascript" src="/templates/<?php echo $this->template ?>/scripts/dropmenu.js"></script>
+	<script type="text/javascript" src="/templates/<?php echo $this->template ?>/scripts/hoverpop.js"></script>
 </head>
 
 <body class="<?php echo $menu; ?>">
@@ -43,33 +45,42 @@ $testing = true;
 		<div id="body">
 			<div id="header">
 				<jdoc:include type="modules" name="header" style="xhtml" />
-				<div class="clear"></div>
 			</div>
 			
 			<div class="inner">
-				<div id="menu">
+				<div id="menu"><div class="inner">
 					<jdoc:include type="modules" name="menu" style="xhtml" />
 					<div class="clear"></div>
-				</div>
+				</div></div>
 				
 				<div id="content"><div><div>
-					<div id="component">
+					<div id="component" <? echo !$this->countModules('sidebar')? 'class="wide"' : ''; ?>>
 						<jdoc:include type="component" />
 						<div class="clear"></div>
 					</div>
 					
-					<div id="sidebar">
+					<? if ($this->countModules('sidebar')): ?>
+					<div id="sidebar"><div>
 						<jdoc:include type="modules" name="sidebar" style="xhtml" />
 						<div class="clear"></div>
+						<div id="social_spacer"></div>
+					</div></div>
+					<? endif; ?>
+					
+					<div id="social">
+						<jdoc:include type="modules" name="social" style="xhtml" />
 					</div>
 					
 					<div class="clear"></div>
 				</div></div></div>
 				
-				<div id="bottom">
+				<?php if ($this->countModules('bottom')): ?>
+				<div style="clear: both; height:22px; width: 100%"></div>
+				<div id="bottom"><div class="inner">
 					<jdoc:include type="modules" name="bottom" style="titleBlock" />
 					<div class="clear"></div>
-				</div>
+				</div></div>
+				<?php endif; ?>
 			</div>
 		</div>
 		
@@ -80,6 +91,8 @@ $testing = true;
 		</div></div>
 	</div>
 	
-	<div class="hidden"><jdoc:include type="modules" name="hidden" style="raw" /></div>
+	<div class="hidden">
+		<jdoc:include type="modules" name="hidden" style="raw" />
+	</div>
 </body>
 </html>
