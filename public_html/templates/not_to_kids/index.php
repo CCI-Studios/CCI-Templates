@@ -8,13 +8,12 @@ if ($menu)
 if ($menu)
     $menu = $menu->alias;
 $testing = true;
-
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<jdoc:include type="head" />
 
-<?php if ($testing): ?>
+<?php if ($testing && false): ?>
 	<meta name="robots" content="nofollow, noindex" />
 <?php endif; ?>
 

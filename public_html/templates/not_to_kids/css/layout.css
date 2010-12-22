@@ -89,7 +89,7 @@ body.home #header { background-position: center bottom; }
 #bottom > .inner {
 	background: url(../images/bottom_shadow.png) bottom repeat-x;
 	padding: 0 0 13px;
-	height: 375px;
+	height: 345px;
 }
 
 #footer_spacer { height: 140px; width: 100%; }

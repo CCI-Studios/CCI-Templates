@@ -31,10 +31,11 @@
 			mouseenter: function() {
 				toggle.stop();
 				toggle.start({
-					top: -10,
-					left: left-5,
-					width: 326,
-					height: 395
+					top: -23,
+					left: left-20,
+					width: 329,
+					height: 357,
+					padding: "16px 14px 15px 15px"
 				})
 			},
 			mouseleave: function() {
@@ -43,7 +44,8 @@
 					top: 0,
 					left: left,
 					width: 316,
-					height: 375
+					height: 345,
+					padding: 0
 				});
 			}
 		})
@@ -67,10 +69,11 @@
 			mouseenter: function() {
 				toggle.stop();
 				toggle.start({
-					top: -3,
-					left: left-4,
-					width: 324,
-					height: 69
+					top: -20,
+					left: left-30,
+					width: 333,
+					height: 72,
+					padding: "15px 15px 14px"
 				})
 			},
 			mouseleave: function() {
@@ -79,7 +82,8 @@
 					top: 0,
 					left: left,
 					width: 316,
-					height: 64
+					height: 64,
+					padding: 0
 				});
 			}
 		})
