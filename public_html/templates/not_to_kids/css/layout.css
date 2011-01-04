@@ -4,7 +4,7 @@ html, body {
 
 
 body {
-	background: #010101 url(../images/splash.jpg) no-repeat -450px -200px;
+	background: #010101 url(../images/splash.jpg) no-repeat 0 0;
 	color: white;
 	font-family: AvantGarde, "sans-serif";
 	font-size: 12px;
@@ -32,7 +32,7 @@ body.home #header { background-position: center bottom; }
 
 #body > .inner { 
 	background: url(../images/body_bg.png) repeat-y;
-	padding: 0 11px 11px;
+	padding: 0 11px;
 	zoom: 1;
 }
 
@@ -40,8 +40,8 @@ body.home #header { background-position: center bottom; }
 	margin: 0 0 11px;
 }
 #menu > .inner {
-	background: #262626 url(../images/menu_shadow.png) bottom repeat-x;
-	padding: 0 0 14px;
+	background: url(../images/menu_shadow.png) bottom repeat-x;
+	padding: 0 0 8px;
 	height: 64px;
 	width: 100%;
 }
@@ -63,18 +63,19 @@ body.home #header { background-position: center bottom; }
 #component { 
 	float: left;
 	width: 685px;
+	margin-right: 30px;
 }
-#component.wide { width: 100%; }
+#component.wide { width: 100%; 	margin-right: 0;}
 #sidebar { 
 	float: left;
 	width: 210px;
 	background: url(../images/sidebar_bottom_bg.png) left bottom no-repeat;
-	padding: 0 0 300px;
-	margin-left: 30px;
+	padding: 0 0 337px;
 }
 #sidebar > div {
 	background: url(../images/sidebar_bg.png) 0 0 repeat-y;
 	padding: 0 0 0 35px;
+	zoom: 1;
 }
 
 #social {

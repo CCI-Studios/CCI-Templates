@@ -31,7 +31,7 @@
 			mouseenter: function() {
 				toggle.stop();
 				toggle.start({
-					top: -23,
+					top: -21,
 					left: left-20,
 					width: 329,
 					height: 357,
@@ -59,32 +59,76 @@
 (function (window, document, undefined) {
 	
 	var setupMove = function (element) {
-		var toggle, left;
-		toggle = new Fx.Styles(element, {
+		var toggleMenu, toggleTL, toggleBR, left, settings, topleft, bottomright;
+		
+		bottomright = new Element('div');
+		topleft = new Element('div');
+		
+		bottomright.adopt(element.getFirst());
+		bottomright.injectInside(topleft);
+		topleft.injectInside(element);
+		
+		toggleMenu = new Fx.Styles(element, {
 			duration: 200
 		});
+		toggleTL = new Fx.Styles(topleft, {
+			duration: 200
+		});
+		toggleBR = new Fx.Styles(bottomright, {
+			duration: 200
+		});
+		
+		
 		left = parseInt(element.getStyle('left'), 10);
+		
+		settings = {
+			menuUp: {
+				top: -20,
+				left: left-23,
+				width: 363,
+				height: 106
+			},
+			menuDown: {
+				top: 0,
+				left: left,
+				width: 316,
+				height: 64
+			},
+			tlUp: {
+				'padding-top': 18,
+				'padding-right': 0,
+				'padding-bottom': 0,
+				'padding-left': 15
+			},
+			tlDown: { padding: 0 },
+			brUp: {
+				'padding-top': 0,
+				'padding-right': 15,
+				'padding-bottom': 15,
+				'padding-left': 0
+			},
+			brDown: { padding: 0 }
+		}
 		
 		element.addEvents({
 			mouseenter: function() {
-				toggle.stop();
-				toggle.start({
-					top: -20,
-					left: left-30,
-					width: 333,
-					height: 72,
-					padding: "15px 15px 14px"
-				})
+				toggleMenu.stop();
+				toggleBR.stop();
+				toggleTL.stop();
+				
+				toggleMenu.start(settings.menuUp);
+				toggleBR.start(settings.brUp);
+				toggleTL.start(settings.tlUp);
 			},
 			mouseleave: function() {
-				toggle.stop();
-				toggle.start({
-					top: 0,
-					left: left,
-					width: 316,
-					height: 64,
-					padding: 0
-				});
+				return;
+				toggleMenu.stop();
+				toggleBR.stop();
+				toggleTL.stop();
+				
+				toggleMenu.start(settings.menuDown);
+				toggleBR.start(settings.brDown);
+				toggleTL.start(settings.tlDown);
 			}
 		})
 	}

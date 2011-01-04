@@ -98,7 +98,9 @@ body.home #header .logo { bottom: 35px; }
 #menu .moduletable.menu li + li + li { left: 632px; }
 
 #menu .moduletable.menu li > a,
-#menu .moduletable.menu li > span {
+#menu .moduletable.menu li > span,
+#menu .moduletable.menu li div > a,
+#menu .moduletable.menu li div > span {
 	background: #262626;
 	display: block;
 	width: 100%;
@@ -106,8 +108,8 @@ body.home #header .logo { bottom: 35px; }
 	cursor: pointer;
 }
 
-#menu .moduletable.menu li > a > span,
-#menu .moduletable.menu li > span > span {
+#menu .moduletable.menu li a > span,
+#menu .moduletable.menu li span > span {
 	display: block;
 	width: 100%;
 	height: 54px;
@@ -119,9 +121,13 @@ body.home #header .logo { bottom: 35px; }
 	
 	background: url(../images/menu_strip.png) 0 5px no-repeat;
 }
+#menu .moduletable.menu li > div { background: red url(../images/menu_shadow_bg.png) left top no-repeat; }
+#menu .moduletable.menu li > div div { background: red url(../images/menu_shadow_bg.png) bottom right no-repeat; }
 
-#menu .moduletable.menu li > a > span,
-#menu .moduletable.menu li > span > span { line-height: 54px; }
+#menu .moduletable.menu li a > span,
+#menu .moduletable.menu li span > span { line-height: 57px; }
+#menu .moduletable.menu li:hover a > span,
+#menu .moduletable.menu li:hover span > span { line-height: 62px; }
 
 #menu .moduletable.menu li:first-child span {}
 #menu .moduletable.menu li:first-child + li span { background-position: -333px 5px; }
@@ -132,10 +138,19 @@ body.home #header .logo { bottom: 35px; }
 }
 
 #menu .moduletable.menu li:hover > a, 
-#menu .moduletable.menu li:hover > span {
+#menu .moduletable.menu li:hover > span,
+#menu .moduletable.menu li:hover div > a, 
+#menu .moduletable.menu li:hover div > span {
 	background:	url(../images/menu_bg.png);
 	text-decoration: none;
 } 
+
+#menu .moduletable.menu li:hover > a span, 
+#menu .moduletable.menu li:hover > span span,
+#menu .moduletable.menu li:hover div > a span, 
+#menu .moduletable.menu li:hover div > span span {
+	padding-top: 14px;
+}
 /* @end */
 
 /* @group bottom modules */
@@ -161,7 +176,8 @@ body.home #header .logo { bottom: 35px; }
 	line-height: 44px;
 }
 
-#bottom .moduleBlock .inner {}
+#bottom .moduleBlock .inner { position: relative; }
+#bottom .moduleBlock .readmore { position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; }
 #bottom .moduleBlock .title {
 	margin: 20px 0 11px;
 	background: url(../images/footer_hover_bg.png) 0 0 no-repeat;
@@ -169,14 +185,26 @@ body.home #header .logo { bottom: 35px; }
 #bottom .moduleBlock.blue .title {}
 #bottom .moduleBlock.green .title { background-position: -333px 0; }
 #bottom .moduleBlock.yellow .title { background-position: -666px 0; }
+	
+#bottom .moduleBlock.blue:hover .readmore { color: #0030FD; }
+#bottom .moduleBlock.green:hover .readmore { color: #00AA00; }
+#bottom .moduleBlock.yellow:hover .readmore { color: #FDF400; }
 
 #bottom .moduleBlock h3 {
 	text-transform: uppercase;
 	font-size: 16px;
-	line-height: 33px;
+	line-height: 32px;
 	color: white;
 	text-align: center;
 	margin: 0;
+	zoom: 1;
+	
+	position: relative;
+}
+#bottom .moduleBlock h3 span { 
+	display: block; 
+	width: 100%; 
+	height: 100%; 
 	zoom: 1;
 }
 #bottom .moduleBlock .body {	padding: 5px 0; margin: 0 auto; width: 265px; }

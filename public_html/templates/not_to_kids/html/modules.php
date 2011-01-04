@@ -6,7 +6,7 @@ function modChrome_titleBlock($module, &$params, &$attribs)
 	echo '	<div class="inner">';
 	if ($module->showtitle) {
 		echo '		<div class="title">';
-		echo '			<h3>'.$module->title.'</h3>';
+		echo '			<h3><span>'.$module->title.'</span></h3>';
 		echo '		</div>';
 	}
 	echo '		<div class="body">';
