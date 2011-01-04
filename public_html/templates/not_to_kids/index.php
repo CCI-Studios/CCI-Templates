@@ -7,7 +7,10 @@ if ($menu)
     $menu = $menu->getActive();
 if ($menu)
     $menu = $menu->alias;
+
 $testing = true;
+
+JHTML::_('behavior.modal');
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
