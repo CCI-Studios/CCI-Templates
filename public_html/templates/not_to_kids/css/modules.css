@@ -90,7 +90,6 @@ body.home #header .logo { bottom: 35px; }
 	left: 0;
 	float: static;
 	width: 316px;
-	background: url(../images/menu_shadow_bg.png) center center no-repeat;
 	padding: 0;
 }
 #menu .moduletable.menu li {}
@@ -99,57 +98,60 @@ body.home #header .logo { bottom: 35px; }
 
 #menu .moduletable.menu li > a,
 #menu .moduletable.menu li > span,
-#menu .moduletable.menu li div > a,
-#menu .moduletable.menu li div > span {
-	background: #262626;
+#menu .moduletable.menu li > div div > a,
+#menu .moduletable.menu li > div div > span {
+	background-color: #262626;
 	display: block;
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
+	text-align: center;
+	font-size: 20px;
+	text-transform: uppercase;
 }
 
 #menu .moduletable.menu li a > span,
 #menu .moduletable.menu li span > span {
-	display: block;
-	width: 100%;
-	height: 54px;
-	padding-top: 10px;
-	
-	font-size: 20px;
-	text-align: center;
-	text-transform: uppercase;
-	
 	background: url(../images/menu_strip.png) 0 5px no-repeat;
+	padding-top: 10px;
+	display: block;
+	
+	line-height: 57px;
 }
-#menu .moduletable.menu li > div { background: red url(../images/menu_shadow_bg.png) left top no-repeat; }
-#menu .moduletable.menu li > div div { background: red url(../images/menu_shadow_bg.png) bottom right no-repeat; }
 
-#menu .moduletable.menu li a > span,
-#menu .moduletable.menu li span > span { line-height: 57px; }
-#menu .moduletable.menu li:hover a > span,
-#menu .moduletable.menu li:hover span > span { line-height: 62px; }
+#menu .moduletable.menu li:first-child a > span,
+#menu .moduletable.menu li:first-child span > span {}
+#menu .moduletable.menu li:first-child + li a > span,
+#menu .moduletable.menu li:first-child + li span > span { background-position: -333px 5px; }
+#menu .moduletable.menu li:first-child + li + li a > span,
+#menu .moduletable.menu li:first-child + li + li span > span { background-position: -666px 5px; }
 
-#menu .moduletable.menu li:first-child span {}
-#menu .moduletable.menu li:first-child + li span { background-position: -333px 5px; }
-#menu .moduletable.menu li:first-child + li + li span { background-position: -666px 5px; }
 
+/* animate */
 #menu .moduletable.menu li:hover {
+	width: 363px;
 	z-index: 2;
 }
 
-#menu .moduletable.menu li:hover > a, 
+#menu .moduletable.menu li:hover > a,
 #menu .moduletable.menu li:hover > span,
-#menu .moduletable.menu li:hover div > a, 
-#menu .moduletable.menu li:hover div > span {
-	background:	url(../images/menu_bg.png);
+#menu .moduletable.menu li:hover > div div > a,
+#menu .moduletable.menu li:hover > div div > span {
+	background: url(../images/menu_bg.png) repeat-x;
 	text-decoration: none;
-} 
+}
 
-#menu .moduletable.menu li:hover > a span, 
-#menu .moduletable.menu li:hover > span span,
-#menu .moduletable.menu li:hover div > a span, 
-#menu .moduletable.menu li:hover div > span span {
-	padding-top: 14px;
+#menu .moduletable.menu li:hover a > span,
+#menu .moduletable.menu li:hover span > span { 
+	padding: 14px 8px 5px 9px;
+	background-position: 0 9px;
+	line-height: 54px;
+}
+
+#menu .moduletable.menu li:hover > div {
+	padding: 18px 0 0 15px;
+	background: url(../images/menu_shadow_bg1.png) left top no-repeat;
+}
+#menu .moduletable.menu li:hover > div div { 
+	padding: 0 15px 15px 0;
+	background: url(../images/menu_shadow_bg2.png) bottom right no-repeat;
 }
 /* @end */
 
