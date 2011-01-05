@@ -12,7 +12,6 @@
 	}
 	
 	window.addEvent('load', function() {
-		setupPop($$('#menu .menu li'));
 		setupPop($$('#bottom .moduleBlock'));
 	});
 })(this, this.document);
@@ -59,78 +58,114 @@
 (function (window, document, undefined) {
 	
 	var setupMove = function (element) {
-		var toggleMenu, toggleTL, toggleBR, left, settings, topleft, bottomright;
+		var toggleLi, toggleDiv1, toggleDiv2, toggleSpan, left, span, div1, div2, settings;
 		
-		bottomright = new Element('div');
-		topleft = new Element('div');
+		span = element.getElement('* span');
+		div1 = new Element('div');
+		div2 = new Element('div');
 		
-		bottomright.adopt(element.getFirst());
-		bottomright.injectInside(topleft);
-		topleft.injectInside(element);
+		div1.injectInside(element)
+		div2.injectInside(div1);
+		div2.adopt(element.getFirst());
 		
-		toggleMenu = new Fx.Styles(element, {
-			duration: 200
+		toggleLi = new Fx.Styles(element, {
+			duration: 600
 		});
-		toggleTL = new Fx.Styles(topleft, {
-			duration: 200
+		toggleDiv1 = new Fx.Styles(div1, {
+			duration: 600
 		});
-		toggleBR = new Fx.Styles(bottomright, {
-			duration: 200
+		toggleDiv2 = new Fx.Styles(div2, {
+			duration: 600
+		});
+		toggleSpan = new Fx.Styles(span, {
+			duration: 600
 		});
 		
 		
 		left = parseInt(element.getStyle('left'), 10);
 		
 		settings = {
-			menuUp: {
-				top: -20,
-				left: left-23,
+			liUp: {
 				width: 363,
-				height: 106
+				left: left-23,
+				top: -22
 			},
-			menuDown: {
-				top: 0,
-				left: left,
+			liDown: {
 				width: 316,
-				height: 64
+				left: left,
+				top: 0
 			},
-			tlUp: {
+			div1Up: {
 				'padding-top': 18,
 				'padding-right': 0,
 				'padding-bottom': 0,
 				'padding-left': 15
 			},
-			tlDown: { padding: 0 },
-			brUp: {
+			div1Down: {
+				'padding-top': 0,
+				'padding-right': 0,
+				'padding-bottom': 0,
+				'padding-left': 0
+			},
+			div2Up: {
 				'padding-top': 0,
 				'padding-right': 15,
 				'padding-bottom': 15,
 				'padding-left': 0
 			},
-			brDown: { padding: 0 }
+			div2Down: {
+				'padding-top': 0,
+				'padding-right': 0,
+				'padding-bottom': 0,
+				'padding-left': 0
+			},
+			spanUp: {
+				'padding-top': 14,
+				'padding-right': 9,
+				'padding-bottom': 5,
+				'padding-left': 9,
+				'background-position-y': 9,
+				'line-height': 54
+			},
+			spanDown: {
+				'padding-top': 10,
+				'padding-right': 0,
+				'padding-bottom': 0,
+				'padding-left': 0,
+				'background-position-y': 5,
+				'line-height': 57
+			}
 		}
+		
+		toggleLi.set(settings.liDown);
+		toggleDiv1.set(settings.div1Down);
+		toggleDiv2.set(settings.div2Down);
+		toggleSpan.set(settings.spanDown);
 		
 		element.addEvents({
 			mouseenter: function() {
-				toggleMenu.stop();
-				toggleBR.stop();
-				toggleTL.stop();
+				toggleLi.stop();
+				toggleDiv1.stop();
+				toggleDiv2.stop();
+				toggleSpan.stop();
 				
-				toggleMenu.start(settings.menuUp);
-				toggleBR.start(settings.brUp);
-				toggleTL.start(settings.tlUp);
+				toggleLi.start(settings.liUp);
+				toggleDiv1.start(settings.div1Up);
+				toggleDiv2.start(settings.div2Up);
+				toggleSpan.start(settings.spanUp);
 			},
 			mouseleave: function() {
-				return;
-				toggleMenu.stop();
-				toggleBR.stop();
-				toggleTL.stop();
+				toggleLi.stop();
+				toggleDiv1.stop();
+				toggleDiv2.stop();
+				toggleSpan.stop();
 				
-				toggleMenu.start(settings.menuDown);
-				toggleBR.start(settings.brDown);
-				toggleTL.start(settings.tlDown);
+				toggleLi.start(settings.liDown);
+				toggleDiv1.start(settings.div1Down);
+				toggleDiv2.start(settings.div2Down);
+				toggleSpan.start(settings.spanDown);
 			}
-		})
+		});
 	}
 	
 	window.addEvent('load', function() {
