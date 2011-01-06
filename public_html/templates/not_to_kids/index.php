@@ -20,13 +20,19 @@ JHTML::_('behavior.modal');
 	<meta name="robots" content="nofollow, noindex" />
 <?php endif; ?>
 
+	<!-- styles -->
 <?php if ($testing): ?>
 	<link rel="stylesheet" type="text/css" href="/templates/<?php echo $this->template ?>/css/template.css" />
 <?php else: ?>
 	<link rel="stylesheet" type="text/css" href="/templates/<?php echo $this->template ?>/css/template.min.css" />
 <?php endif; ?>
 
+	<!-- scripts -->
 	<script type="text/javascript" src="/templates/<?php echo $this->template ?>/scripts/hoverpop.js"></script>
+	
+	<!-- fonts -->
+	<script type="text/javascript" src="http://use.typekit.com/rvz2pcr.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body class="<?php echo $menu; ?>">

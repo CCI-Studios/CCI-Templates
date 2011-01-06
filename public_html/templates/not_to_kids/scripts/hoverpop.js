@@ -22,7 +22,7 @@
 	var setupMove = function (element) {
 		var toggle, left;
 		toggle = new Fx.Styles(element, {
-			duration: 200
+			duration: 100
 		});
 		left = parseInt(element.getStyle('left'), 10);
 		
@@ -69,16 +69,16 @@
 		div2.adopt(element.getFirst());
 		
 		toggleLi = new Fx.Styles(element, {
-			duration: 600
+			duration: 100
 		});
 		toggleDiv1 = new Fx.Styles(div1, {
-			duration: 600
+			duration: 100
 		});
 		toggleDiv2 = new Fx.Styles(div2, {
-			duration: 600
+			duration: 100
 		});
 		toggleSpan = new Fx.Styles(span, {
-			duration: 600
+			duration: 100
 		});
 		
 		
@@ -88,7 +88,7 @@
 			liUp: {
 				width: 363,
 				left: left-23,
-				top: -22
+				top: -18
 			},
 			liDown: {
 				width: 316,
