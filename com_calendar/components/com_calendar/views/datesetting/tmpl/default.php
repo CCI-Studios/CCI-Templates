@@ -17,7 +17,7 @@ function myValidate(f) {
 		<h1>Day Details For: <?= date('F d, Y', strtotime($day->date)) ?></h1>
 		
 		<p>Please enter the details for Your Day - <?= date('F d, Y', strtotime($day->date)) ?> - below.  You will be able to add/edit information after your transaction is completed.<br/>
-			Note: Images may take a few moments to upload.</p>
+			Notes: Images may take a few moments to upload. Images will be resized to fit your WYD? space (810x579 pixels).</p>
 		
 		<div class="left">
 		<?= @template('_form')?>

@@ -3,7 +3,7 @@
 		<h1>Date Settings For:</h1>
 		
 		<p>Please enter the details for <?= date('F d, Y', strtotime($day->date)) ?> below<br/>
-			Note: Images may take a few moments to upload.</p>
+			Notes: Images may take a few moments to upload. Images will be resized to fit your WYD? space (810x579 pixels).</p>
 		
 		<div class="left">
 		<?= @template('_form')?>
