@@ -19,33 +19,66 @@
 
 (function (window, document, undefined) {
 	
-	var setupMove = function (element) {
-		var toggle, left;
+	var setupMove = function (element, index) {
+		var toggle, left, settings, contents, cToggle;
 		toggle = new Fx.Styles(element, {
 			duration: 100
 		});
-		left = parseInt(element.getStyle('left'), 10);
+		
+		contents = element.getElement('.body');
+		cToggle = new Fx.Styles(contents, {
+			duration: 100
+		});
+
+		element.setStyles({
+			position: 'absolute',
+			top: 0,
+			left: index*237
+		});
+		
+		settings = {
+			enter: {
+				top: -21,
+				left: index*237-8-15,
+				width: 253,
+				height: 357,
+				'padding-top': 16,
+				'padding-right': 14,
+				'padding-bottom': 15,
+				'padding-left': 15
+			},
+			leave: {
+				top: 0,
+				left: index*237,
+				width: 237,
+				height: 345,
+				'padding-top': 0,
+				'padding-right': 0,
+				'padding-bottom': 0,
+				'padding-left': 0
+			},
+			cOver: {
+				'padding-left': 22,
+				'padding-right': 22
+			},
+			cLeave: {
+				'padding-left': 14,
+				'padding-right': 14
+			}
+		}
 		
 		element.addEvents({
 			mouseenter: function() {
 				toggle.stop();
-				toggle.start({
-					top: -21,
-					left: left-20,
-					width: 329,
-					height: 357,
-					padding: "16px 14px 15px 15px"
-				})
+				cToggle.stop();
+				toggle.start(settings.enter);
+				cToggle.start(settings.cOver);
 			},
 			mouseleave: function() {
 				toggle.stop();
-				toggle.start({
-					top: 0,
-					left: left,
-					width: 316,
-					height: 345,
-					padding: 0
-				});
+				cToggle.stop();
+				toggle.start(settings.leave);
+				cToggle.start(settings.cLeave);
 			}
 		})
 	}
@@ -57,7 +90,7 @@
 
 (function (window, document, undefined) {
 	
-	var setupMove = function (element) {
+	var setupMove = function (element, index) {
 		var toggleLi, toggleDiv1, toggleDiv2, toggleSpan, left, span, div1, div2, settings;
 		
 		span = element.getElement('* span');
@@ -81,17 +114,21 @@
 			duration: 100
 		});
 		
-		
+		element.setStyles({
+			position: 'absolute',
+			top: 0,
+			left: 237*index
+		})
 		left = parseInt(element.getStyle('left'), 10);
 		
 		settings = {
 			liUp: {
-				width: 363,
+				width: 247+15+15,
 				left: left-23,
-				top: -18
+				top: -22
 			},
 			liDown: {
-				width: 316,
+				width: 237,
 				left: left,
 				top: 0
 			},

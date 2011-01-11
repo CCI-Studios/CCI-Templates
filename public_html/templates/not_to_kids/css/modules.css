@@ -85,16 +85,10 @@ body.home #header .logo { bottom: 35px; }
 /* @group Top Menu */
 #menu .moduletable.menu ul { position: relative; }
 #menu .moduletable.menu li {
-	position: absolute;
-	top: 0;
-	left: 0;
-	float: static;
-	width: 316px;
+	float: left;
+	width: 237px;
 	padding: 0;
 }
-#menu .moduletable.menu li {}
-#menu .moduletable.menu li + li { left: 316px; }
-#menu .moduletable.menu li + li + li { left: 632px; }
 
 #menu .moduletable.menu li > a,
 #menu .moduletable.menu li > span,
@@ -103,7 +97,7 @@ body.home #header .logo { bottom: 35px; }
 	background-color: #262626;
 	display: block;
 	text-align: center;
-	font-size: 20px;
+	font-size: 16px;
 	text-transform: uppercase;
 }
 
@@ -119,9 +113,11 @@ body.home #header .logo { bottom: 35px; }
 #menu .moduletable.menu li:first-child a > span,
 #menu .moduletable.menu li:first-child span > span {}
 #menu .moduletable.menu li:first-child + li a > span,
-#menu .moduletable.menu li:first-child + li span > span { background-position: -333px 5px; }
+#menu .moduletable.menu li:first-child + li span > span { background-position: -253px 5px; }
 #menu .moduletable.menu li:first-child + li + li a > span,
-#menu .moduletable.menu li:first-child + li + li span > span { background-position: -666px 5px; }
+#menu .moduletable.menu li:first-child + li + li span > span { background-position: -506px 5px; }
+#menu .moduletable.menu li:first-child + li + li + li a > span,
+#menu .moduletable.menu li:first-child + li + li + li span > span { background-position: -759px 5px; }
 
 
 /* animate */
@@ -158,18 +154,14 @@ body.home #header .logo { bottom: 35px; }
 /* @group bottom modules */
 #bottom .moduleBlock {
 	background: url(../images/block_shadow.png) center center no-repeat;
-	width: 316px;
+	width: 237px;
 	height: 343px;
 	margin: 0;
 	overflow: hidden;
-
-	position: absolute;
-	top: 0;
-	left: 0;
+	
+	float: left;
 }
 #bottom .moduleBlock .inner { background: #262626; height: 100%; padding: 1px 0;}
-#bottom .moduleBlock + .moduleBlock { left: 316px; }
-#bottom .moduleBlock + .moduleBlock + .moduleBlock { left: 632px; }
 
 #bottom .moduleBlock.hover { z-index: 2; }
 #bottom .moduleBlock.hover .inner {	background: #262626 url(../images/bottom_bg.png) no-repeat; }
@@ -182,15 +174,17 @@ body.home #header .logo { bottom: 35px; }
 #bottom .moduleBlock .readmore { position: absolute; bottom: 10px; left: 0; width: 100%; text-align: center; }
 #bottom .moduleBlock .title {
 	margin: 20px 0 11px;
-	background: url(../images/footer_hover_bg.png) 0 0 no-repeat;
+	background: url(../images/footer_bg.png) 0 0 no-repeat;
 }
 #bottom .moduleBlock.blue .title {}
-#bottom .moduleBlock.green .title { background-position: -333px 0; }
-#bottom .moduleBlock.yellow .title { background-position: -666px 0; }
+#bottom .moduleBlock.green .title { background-position: -253px 0; }
+#bottom .moduleBlock.yellow .title { background-position: -506px 0; }
+#bottom .moduleBlock.orange .title { background-position: -759px 0; }
 	
 #bottom .moduleBlock.blue:hover .readmore { color: #0030FD; }
 #bottom .moduleBlock.green:hover .readmore { color: #00AA00; }
 #bottom .moduleBlock.yellow:hover .readmore { color: #FDF400; }
+#bottom .moduleBlock.orange:hover .readmore { color: #EC8600; }
 
 #bottom .moduleBlock h3 {
 	text-transform: uppercase;
@@ -209,7 +203,7 @@ body.home #header .logo { bottom: 35px; }
 	height: 100%; 
 	zoom: 1;
 }
-#bottom .moduleBlock .body {	padding: 5px 0; margin: 0 auto; width: 265px; }
+#bottom .moduleBlock .body {	padding: 5px 14px; margin: 0 auto; }
 #bottom .moduleBlock h1, #bottom .moduleBlock h2,
 #bottom .moduleBlock h3, #bottom .moduleBlock h4 { color: white; }
 /* @end */
