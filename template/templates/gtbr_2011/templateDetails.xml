@@ -26,6 +26,11 @@
     </files>
 
     <positions>
+			<position>bottom1</position>
+			<position>bottom2</position>
+			<position>footer</position>
+			<position>header</position>
+			<position>hidden</position>
     </positions>
 
     <params>
