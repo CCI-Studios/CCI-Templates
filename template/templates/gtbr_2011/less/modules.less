@@ -1,0 +1,39 @@
+/* Modules */
+.moduletable.menu {
+	ul { list-style: none; }
+	
+	li {
+		background: red;
+		float: left;
+		padding: 0 0 0 30px;
+		
+		> span, > a {
+			background: green;
+			color: #231f20;
+			display: block;
+			padding: 0 30px 10px 0;
+			text-decoration: none;
+		}
+		
+		span span, a span {
+			display: block;
+			font-size: 17px;
+			line-height: 36px;
+		}
+		
+		&.active, &:hover { background: url(../images/menu-sprite.png) 0 0 no-repeat; }
+		&.active > span, &.active > a,
+		&:hover > span, &:hover > a { 
+			background: url(../images/menu-sprite.png) right -46px no-repeat;
+			color: white;
+		}
+	}
+}
+
+
+/* Bottom1 Modules */
+#bottom1 .moduletable {
+	float: left;
+	padding-left: 10px;
+}
+#bottom1 .moduletable:first-child { padding: 0; }

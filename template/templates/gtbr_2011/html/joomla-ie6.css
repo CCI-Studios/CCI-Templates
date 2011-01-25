@@ -1,0 +1,10 @@
+/* Copyright (C) 2007 - 2009 YOOtheme GmbH */
+
+div.joomla div.headline {
+	zoom: 1;
+}
+
+div.joomla div.item,
+div.joomla div.item-bg {
+	zoom: 1;
+}
