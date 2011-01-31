@@ -1,0 +1,20 @@
+body {}
+
+#wrapper {
+	margin: 0 auto;
+	width: 960px;
+}
+
+#header {}
+
+#body {}
+#component {}
+#sidebar {}
+
+#bottom {}
+
+#footer {}
+
+
+.left {}
+.right {}

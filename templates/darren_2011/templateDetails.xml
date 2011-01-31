@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<install version="1.5" type="template">
+    <name>darren_2011</name>
+    <version>1.0</version>
+    <creationDate>January 31, 2011</creationDate>
+    <author>Jonathan Bennett</author>
+    <authorEmail>jbennett@ccistudios.com</authorEmail>
+    <authorUrl>http://www.ccistudios.com</authorUrl>
+    <copyright>Copyright 2010 - ccistudios.com</copyright>
+    <license>Proprietary</license>
+    <description>
+        <![CDATA[
+        ]]>
+    </description>
+    <files>
+        <filename>component.php</filename>
+				<filename>index.php</filename>
+        <filename>offline.php</filename>
+				<folder>css</folder>
+        <folder>html</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+    </files>
+
+    <positions>
+			<position>header</position>
+			<position>sidebar</position>
+			<position>bottom</position>
+    </positions>
+
+    <params>
+    </params>
+</install>
