@@ -8,8 +8,14 @@ $domain = $_SERVER['HTTP_HOST'];
 $testing = (strpos($domain, '.local:8888') !== false || 
 			strpos($domain, '.ccistaging.com') !== false ||
 			strpos($domain, 'dev.') !== false);
-
-JHTML::_('behavior.mootools');
+			
+//remove mootools.js and caption.js
+$headerstuff=$this->getHeadData();
+reset($headerstuff['scripts']);
+foreach($headerstuff['scripts'] as $key=>$value){
+	unset($headerstuff['scripts'][$key]);
+}		
+$this->setHeadData($headerstuff);			
 ?>
 <html>
 <head>
@@ -22,14 +28,8 @@ JHTML::_('behavior.mootools');
 	
 	<!-- styles -->
 	<?php if ($testing): ?>
-		<link href="/templates/gtbr_2011/less/variables.less" rel="stylesheet/less" />
-		<link href="/templates/gtbr_2011/less/reset.less" rel="stylesheet/less" />
-		<link href="/templates/gtbr_2011/less/typography.less" rel="stylesheet/less" />
-		<link href="/templates/gtbr_2011/less/layout.less" rel="stylesheet/less" />
-		<link href="/templates/gtbr_2011/less/modules.less" rel="stylesheet/less" />
-		<link href="/templates/gtbr_2011/less/elements.less" rel="stylesheet/less" />
-		<link href="/templates/gtbr_2011/less/styles.less" rel="stylesheet/less" />
-		<link href="/templates/gtbr_2011/less/editorstyles.less" rel="stylesheet/less" />
+		<!--<link href="/templates/gtbr_2011/less/template.less" rel="stylesheet/less" /><!-- -->
+		<link href="/templates/gtbr_2011/css/template.css" rel="stylesheet" /><!-- -->
 		<script src="http://lesscss.googlecode.com/files/less-1.0.41.min.js"></script>
 		<script>
 			less.env = "development";
@@ -40,6 +40,15 @@ JHTML::_('behavior.mootools');
 	<?php endif; ?>
 	
 	<!-- scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/mootools/1.3.0/mootools.js" /></script>
+	<script src="/templates/gtbr_2011/js/mootools-more.js"></script>
+	<script src="https://github.com/matsko/Mootools-window.onhashchange/raw/master/onhashchange.js"></script>
+	<?php if ($testing): ?>
+		<script src="/templates/gtbr_2011/js/rollover.js"></script>
+		<script src="/templates/gtbr_2011/js/ajax.js"></script>
+	<?php else: ?>
+		<script src="/templates/gtbr_2011/js/scripts.min.js"></script>
+	<?php endif; ?>
 	
 	<!-- fonts -->
 	<script type="text/javascript" src="http://use.typekit.com/pei1aav.js"></script>
@@ -73,7 +82,7 @@ JHTML::_('behavior.mootools');
 		</div>
 		
 		<div id="body">
-			<jdoc:include type="component" />
+			<div id="component"><jdoc:include type="component" /></div>
 			<div class="clr"></div>
 		</div>
 		
@@ -87,8 +96,8 @@ JHTML::_('behavior.mootools');
 		</div>
 		
 		<div id="footer">
-			<div class="left">&copy; Get The Ball Rolling <?php echo date('Y'); ?></div>
-			<div class="right">Site By <a href="http://ccistudios.com" target="_blank">CCI Studios</a></div>
+			<div class="position-left">&copy; Get The Ball Rolling <?php echo date('Y'); ?></div>
+			<div class="position-right">Site By <a href="http://ccistudios.com" target="_blank">CCI Studios</a></div>
 			<jdoc:include type="modules" name="footer" style="xhtml" />
 			<div class="clr"></div>
 		</div>
