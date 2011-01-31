@@ -1,35 +1,61 @@
 /* Modules */
-.moduletable.menu {
-	ul { list-style: none; }
+.moduletable.menu {	
+	ul {
+		display: inline;
+		list-style: none;
+	}
 	
 	li {
-		background: red;
 		float: left;
-		padding: 0 0 0 30px;
+		padding: 0 0 0 10px;
+		
+		&:first-child { padding-left: 0; }
 		
 		> span, > a {
-			background: green;
-			color: #231f20;
 			display: block;
-			padding: 0 30px 10px 0;
-			text-decoration: none;
+			padding: 0;
+			text-decoration: none; 
+			zoom: 1;
 		}
+		&.active > span, &.active > a { color: #989898; }
+		&:hover > span, &:hover > a { color: #760000; }
 		
 		span span, a span {
 			display: block;
-			font-size: 17px;
-			line-height: 36px;
-		}
-		
-		&.active, &:hover { background: url(../images/menu-sprite.png) 0 0 no-repeat; }
-		&.active > span, &.active > a,
-		&:hover > span, &:hover > a { 
-			background: url(../images/menu-sprite.png) right -46px no-repeat;
-			color: white;
 		}
 	}
 }
 
+#menu .moduletable.menu {
+	ul {
+		background: url(../images/menu-bg.jpg) -39px -39px;
+		float: left;
+		margin-left: -12px;
+	}
+	
+	li {
+		background: url(../images/menuitem-bg.png) repeat-x;
+		padding: 0 0 0 30px;
+		
+		> span, > a {
+			color: #231f20;
+			padding: 7px 30px 10px 0;
+		}
+		
+		span span, a span {
+			font-size: 17px;
+			line-height: 29px;  
+		}
+		
+		&.active, &:hover { background: url(../images/menu-sprite.png) 0 0 no-repeat; }
+		&.active > span, &.active > a,
+		&:hover > span, &:hover > a {
+			background: url(../images/menu-sprite.png) right -46px no-repeat;
+			color: white;
+			text-decoration: none;
+		}
+	}
+}
 
 /* Bottom1 Modules */
 #bottom1 .moduletable {
@@ -37,3 +63,8 @@
 	padding-left: 10px;
 }
 #bottom1 .moduletable:first-child { padding: 0; }
+
+/* Footer Modules */
+#footer .moduletable.menu {
+	font-size: 11px;
+}

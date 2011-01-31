@@ -1,21 +1,23 @@
 body {
-	background: url(../images/body-bg.png) 0 249px repeat-x;
+	background: url(../images/body-bg.jpg) center 249px repeat-x;
 	font-family: "trajan-pro-1","trajan-pro-2";
+	min-width: 950px;
 }
 
 #wrapper {
-	background: url(../images/wrapper-bg.jpg) center 249px no-repeat;
 	font-size: 14px;
 }
 
 #wrapper > div {
 	margin: 0 auto;
-	width: 950px;
+	padding: 0 5px;
+	width: @width;
 }  
 
 
 #header {
-	height: 213px;
+	height: 208px;
+	padding-top: 5px; 
 }
 
 #menu { 
@@ -25,10 +27,18 @@ body {
 #body {
 	color: white;
 	min-height: 240px;
-	padding: 40px 0 50px;
+	padding: 40px 0 10px;
 	position: relative;
 }
+#component { opacity: 0; }
 
 #bottom1 {}
 #bottom2 { padding-bottom: 1em; }
-#footer { padding-bottom: 2em; }
+#footer {
+	color: #272727;
+	font-size: 10px;
+	line-height: 13px;
+	padding: 3em 0 2em;
+	position: relative;
+	text-align: center;
+}
