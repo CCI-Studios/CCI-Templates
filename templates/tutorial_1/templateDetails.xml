@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<install version="1.5" type="template">
+    <name>tutorial_1</name>
+    <version>1.0</version>
+    <creationDate>February 1, 2011</creationDate>
+    <author>Darren Murray</author>
+    <authorEmail>dmurray@ccistudios.com</authorEmail>
+    <authorUrl>http://www.ccistudios.com</authorUrl>
+    <copyright>Copyright 2010 - ccistudios.com</copyright>
+    <license>Proprietary</license>
+    <description>
+        <![CDATA[
+        ]]>
+    </description>
+    <files>
+        <filename>index.php</filename>
+        <folder>css</folder>
+        <folder>html</folder>
+        <folder>images</folder>
+        <folder>js</folder>
+    </files>
+
+    <positions>
+			<position>header</position>
+			<position>sidebar</position>
+			<position>bottom</position>
+    </positions>
+
+    <params>
+    </params>
+</install>
