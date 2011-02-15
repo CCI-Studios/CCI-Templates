@@ -42,7 +42,7 @@ body.home #header { background-position: center bottom; }
 #menu > .inner {
 	background: url(../images/menu_shadow.png) bottom repeat-x;
 	padding: 0 0 8px;
-	height: 64px;
+	height: 49px;
 	width: 100%;
 }
 
