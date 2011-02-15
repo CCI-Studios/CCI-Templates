@@ -123,7 +123,7 @@ var BottomItemPop = ItemPop.extend({
 		return [
 				[ {}, {} ],	// .moduleBlock
 				[ {'margin-top': 15 }, { 'margin-top': 20 } ],	// .title
-				[ { 'height': 343, 'left': 0, 'top': 0, 'width': 237 }, { 'height': 355, 'left': -5, 'top': -5, 'width': 247 } ],	// .inner
+				[ { 'height': 343, 'left': 0, 'top': 0, 'width': 236 }, { 'height': 355, 'left': -5, 'top': -5, 'width': 247 } ],	// .inner
 				[ { 'padding-right': 14, 'padding-left': 14 }, { 'padding-right': 16, 'padding-left': 16 } ],	// .body
 				[ { 'line-height': 32 }, { 'line-height': 41 } ],	// h3
 			   ];

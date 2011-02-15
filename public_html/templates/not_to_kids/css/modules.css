@@ -129,13 +129,14 @@ body.home #header .logo { bottom: 35px; }
 }
 #bottom .moduleBlock .inner {
 	background: #262626;
-	height: 100%;
+	height: 343px;
 	left: 0;
+	margin-left: 1px;
 	overflow: hidden;
 	padding: 1px 0;
 	position: absolute;
 	top: 0;
-	width: 100%;
+	width: 236px;
 	
 	/* apply dummy shadow for IE */
 	-moz-box-shadow: 0 0 0 red;
