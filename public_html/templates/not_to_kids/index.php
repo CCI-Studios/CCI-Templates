@@ -93,10 +93,10 @@ JHTML::_('behavior.modal');
 		</div>
 		
 		<div id="footer_spacer"></div>
-		<div id="footer"><div class="inner">
+		<div id="footer"><div class="inner"><div>
 			<jdoc:include type="modules" name="footer" style="xhtml" />
 			<div class="clear"></div>
-		</div></div>
+		</div></div></div>
 	</div>
 	
 	<div class="hidden">

@@ -95,17 +95,21 @@ body.home #header { background-position: center bottom; }
 
 #footer_spacer { height: 140px; width: 100%; }
 #footer {
-	background: url(../images/footer.png) repeat-x center top;
-	height: 140px;
+	background: #1f1f1f url(../images/footer-bg.jpg) repeat-x center top;
 	width: 100%;
-	
-	
+
 	position: absolute;
 	bottom: 0;
 	left: 0;
 }
 #footer > .inner {
-	width: 970px;
+	background: url(../images/footer.jpg) no-repeat center top;
+	height: 140px;
+	width: 100%;
+}
+
+#footer > .inner > div {
 	margin: 0 auto;
 	padding: 55px 0 0;
+	width: 970px;
 }
