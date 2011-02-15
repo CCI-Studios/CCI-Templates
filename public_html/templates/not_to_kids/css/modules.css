@@ -100,7 +100,6 @@ body.home #header .logo { bottom: 35px; }
 #menu .moduletable_menu li:hover > a,
 #menu .moduletable_menu li:hover > span {
 	background: #262626 url(../images/menu_bg.png) repeat-x;
-	line-height: 60px;
 	padding-top: 9px;
 	text-decoration: none;
 	top: -4px;
@@ -112,9 +111,7 @@ body.home #header .logo { bottom: 35px; }
 }
 
 #menu .moduletable_menu li:hover a > span, 
-#menu .moduletable_menu li:hover span > span {
-	display: block;
-	line-height: 44px;
+#menu .moduletable_menu li:hover span > span {`
 	padding-bottom: 4px;
 }
 
@@ -174,7 +171,7 @@ body.home #header .logo { bottom: 35px; }
 #bottom .moduleBlock:hover { z-index: 3; }
 #bottom .moduleBlock:hover .title { 
 	/*background-image: url(../images/footer_hover_bg.png);*/
-	margin: 20px 0 11px; 
+	margin-top: 20px; 
 }
 #bottom .moduleBlock:hover .inner {
 	background: #262626 url(../images/bottom_bg.png) no-repeat;
