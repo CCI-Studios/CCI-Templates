@@ -31,8 +31,6 @@ JHTML::_('behavior.modal');
 	<script type="text/javascript" src="/templates/<?php echo $this->template ?>/scripts/hoverpop.js"></script>
 	
 	<!-- fonts -->
-	<script type="text/javascript" src="http://use.typekit.com/rvz2pcr.js"></script>
-	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 
 <body class="<?php echo $menu; ?>">
