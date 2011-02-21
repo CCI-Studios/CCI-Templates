@@ -131,13 +131,20 @@ var BottomItemPop = ItemPop.extend({
 });
 
 window.addEvent('domready', function() {
-	$$('#menu .moduletable_menu')[0].getElements('li').each(function(li) {
-		new MenuItemPop(li);
-	});
+	var menu, bottom;
 	
-	$$('#bottom')[0].getElements('.moduleBlock').each(function(li) {
-		new BottomItemPop(li);
-	});
+	menu = $$('#menu .moduletable_menu');
+	if (menu.length) {
+		menu[0].getElements('li').each(function(li) {
+			new MenuItemPop(li);
+		});
+	}
 	
+	bottom = $$('#bottom');
+	if (bottom.length) {
+		bottom[0].getElements('.moduleBlock').each(function(li) {
+			new BottomItemPop(li);
+		});
+	}
 });
 

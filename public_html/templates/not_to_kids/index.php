@@ -1,17 +1,21 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
 <?php
-$menu = JSite::getMenu();
-if ($menu)
-    $menu = $menu->getActive();
-if ($menu)
-    $menu = $menu->alias;
+	$menu = JSite::getMenu();
+	if ($menu)
+	    $menu = $menu->getActive();
+	if ($menu)
+	    $menu = $menu->alias;
 
-$testing = true;
+	$testing = true;
 
-JHTML::_('behavior.modal');
-?>
+	JHTML::_('behavior.modal');
+	
+	$current_host = 'http://'.$_SERVER['HTTP_HOST'].'/';
+	if ((isset($_SERVER["HTTP_REFERER"]) && strpos($_SERVER["HTTP_REFERER"], $current_host) === 0) || ($menu !== 'home' && $menu !== 'maison')) {
+	} else {
+		header('Location:?tmpl=splash');
+	}
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<jdoc:include type="head" />

@@ -1,6 +1,7 @@
 /* @group Misc */
 
 a { color: white; text-decoration: none; }
+#component a { color: teal; }
 a:hover { text-decoration: underline; }
 
 #sidebar p { margin-bottom: 10px; }

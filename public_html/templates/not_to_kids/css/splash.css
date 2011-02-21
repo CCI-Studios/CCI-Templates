@@ -1,0 +1,23 @@
+body {
+	background: black url(../images/splash.jpg) no-repeat;
+	margin: 0;
+}
+
+#wrapper {
+	height: 650px;
+	margin: 0 auto;
+	position: relative;
+	width: 764px;
+}
+
+#welcome {
+	position: absolute;
+	top: 375px;
+	left: 50px;
+}
+
+#bienvenue {
+	position: absolute;
+	top: 375px;
+	left: 300px;
+}
