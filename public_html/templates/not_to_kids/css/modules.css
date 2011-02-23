@@ -114,6 +114,20 @@ body.home #header .logo { bottom: 35px; }
 #menu .moduletable_menu li:hover span > span {`
 	padding-bottom: 4px;
 }
+/* @end */
+
+/* @group sidebar */
+#sidebar h2 { margin: 0; }
+
+#sidebar .menu {
+	list-style: bullet;
+	margin: 0 0 0 1.5em;
+}
+#sidebar .menu li {
+	margin: 0;
+	padding: 3px 0;
+}
+
 
 /* @end */
 
@@ -163,7 +177,7 @@ body.home #header .logo { bottom: 35px; }
 	bottom: 10px;
 	left: 0;
 	text-align: center;
-	width: 237px;
+	width: 237px; /* todo: 100% */
 }
 #bottom .moduleBlock h1, #bottom .moduleBlock h2,
 #bottom .moduleBlock h3, #bottom .moduleBlock h4 { color: white; }
