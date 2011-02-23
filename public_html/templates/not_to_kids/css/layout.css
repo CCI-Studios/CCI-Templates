@@ -80,7 +80,7 @@ body.home #header { background-position: center bottom; }
 
 #social {
 	position: absolute;
-	bottom: -10px;
+	bottom: 13px;
 	right: 0;
 }
 #social_spacer { height: 171px; width: 100%; }
