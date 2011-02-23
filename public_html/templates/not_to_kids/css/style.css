@@ -1,7 +1,7 @@
 /* @group Misc */
 
 a { color: white; text-decoration: none; }
-#component a { color: teal; }
+#content a { font-weight: bold; }
 a:hover { text-decoration: underline; }
 
 #sidebar p { margin-bottom: 10px; }
@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 0.7em;
 }
 
-h1 { font-size: 18px; margin-bottom: 20px; }
+h1 { font-size: 18px; font-weight: bold; margin-bottom: 20px; }
 h2 { font-size: 16px; margin-bottom: 20px; }
 h3 { font-size: 14px; }
 h4 { font-size: 12px; }
@@ -21,6 +21,7 @@ h6 { font-size: 12px; }
 
 .hr { width: 75%; height: 2px; background: #c00; margin: 1em auto; }
 
+img.border { padding: 4px; border: 1px solid #E3242F; }
 /* @end */
 
 /* @group ie6 redirect */
