@@ -86,3 +86,10 @@ html[xmlns] .clearfix { display: block; }
 }
 
 /* @end */
+
+/* @group Q and A */
+.QandA {}
+.QandA .question { }
+.QandA .answer { margin-bottom: 1em; }
+
+/* @end */
