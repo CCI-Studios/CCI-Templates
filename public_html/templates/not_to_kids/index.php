@@ -33,6 +33,7 @@
 
 	<!-- scripts -->
 	<script type="text/javascript" src="/templates/<?php echo $this->template ?>/scripts/hoverpop.js"></script>
+	<script type="text/javascript" src="/templates/<?php echo $this->template ?>/scripts/QandA.js"></script>
 	
 	<!-- fonts -->
 </head>
