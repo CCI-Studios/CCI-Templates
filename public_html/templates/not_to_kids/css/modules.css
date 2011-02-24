@@ -177,7 +177,7 @@ body.home #header .logo { bottom: 35px; }
 	bottom: 10px;
 	left: 0;
 	text-align: center;
-	width: 237px; /* todo: 100% */
+	width: 100%;
 }
 #bottom .moduleBlock h1, #bottom .moduleBlock h2,
 #bottom .moduleBlock h3, #bottom .moduleBlock h4 { color: white; }
