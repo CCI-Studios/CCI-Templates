@@ -67,13 +67,16 @@ body.home #header { background-position: center bottom; }
 }
 #component.wide { width: 100%; 	margin-right: 0;}
 #sidebar { 
+	background: url(../images/menu_middle.jpg) left repeat-y;
 	float: left;
 	width: 210px;
-	background: url(../images/sidebar_bottom_bg.png) left bottom no-repeat;
-	padding: 0 0 337px;
 }
 #sidebar > div {
-	background: url(../images/sidebar_bg.png) 0 0 repeat-y;
+	background: url(../images/menu_top.jpg) 0 0 no-repeat;
+	padding: 1px 0 0;
+}
+#sidebar > div > div {
+	background: url(../images/menu_bottom.jpg) left bottom no-repeat;
 	padding: 0 0 0 35px;
 	zoom: 1;
 }

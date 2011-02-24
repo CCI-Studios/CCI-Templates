@@ -70,11 +70,11 @@
 					</div>
 					
 					<? if ($this->countModules('sidebar')): ?>
-					<div id="sidebar"><div>
+					<div id="sidebar"><div><div>
 						<jdoc:include type="modules" name="sidebar" style="xhtml" />
 						<div class="clear"></div>
 						<div id="social_spacer"></div>
-					</div></div>
+					</div></div></div>
 					<? endif; ?>
 					
 					<div id="social">
