@@ -22,6 +22,7 @@ h6 { font-size: 12px; }
 .hr { width: 75%; height: 2px; background: #c00; margin: 1em auto; }
 
 img.border { padding: 4px; border: 1px solid #E3242F; }
+ul.spaced li { padding-bottom: 0.5em; }
 /* @end */
 
 /* @group ie6 redirect */
@@ -85,11 +86,17 @@ html[xmlns] .clearfix { display: block; }
 	margin-top: -2em;
 }
 
+.blog .item { margin-top: 3em; }
+.blog .item:first-child { margin-top: 2em; }
+
 /* @end */
 
 /* @group Q and A */
 .QandA {}
 .QandA .question { }
 .QandA .answer { margin-bottom: 1em; }
+/* @end */
 
+/* @group modal popup */
+#sbox-content { background: #000; }
 /* @end */
