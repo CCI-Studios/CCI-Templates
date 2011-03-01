@@ -207,11 +207,11 @@ body.home #header .logo { bottom: 35px; }
 #bottom .moduleBlock.green .title { background-position: -253px 0; }
 #bottom .moduleBlock.yellow .title { background-position: -507px 0; }
 #bottom .moduleBlock.orange .title { background-position: -759px 0; }
-	
-#bottom .moduleBlock.blue:hover .readmore { color: #0030FD; }
-#bottom .moduleBlock.green:hover .readmore { color: #00AA00; }
-#bottom .moduleBlock.yellow:hover .readmore { color: #FDF400; }
-#bottom .moduleBlock.orange:hover .readmore { color: #EC8600; }
+
+#bottom .moduleBlock.blue:hover .readmore, #bottom .moduleBlock.blue:hover .readmore a { color: #0030FD; }
+#bottom .moduleBlock.green:hover .readmore, #bottom .moduleBlock.green:hover .readmore a { color: #00AA00; }
+#bottom .moduleBlock.yellow:hover .readmore, #bottom .moduleBlock.yellow:hover .readmore a { color: #FDF400; }
+#bottom .moduleBlock.orange:hover .readmore, #bottom .moduleBlock.orange:hover .readmore a { color: #EC8600; }
 /* @end */
 
 /* @group footer modules */
