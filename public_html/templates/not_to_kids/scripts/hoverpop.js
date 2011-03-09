@@ -1,6 +1,6 @@
 (function (window, document, undefined) {
 	var menus, images, def;
-	
+
 	var setupImage = function(index) {
 		menus[index].addEvents({
 			mouseenter: function() {
@@ -13,13 +13,13 @@
 			}
 		})
 	}
-	
+
 	window.addEvent('domready', function() {
 		menus	= $$('body.home #menu .menu li');
 		images	= $$('#header .header_image');
-				 
+
 		def = images.shift();
-		
+
 		for (i = menus.length-1; i >= 0; i--) {
 			setupImage(i);
 		}
@@ -27,29 +27,29 @@
 })(this, this.document);
 
 var ItemPop = new Class({
-	
+
 	elements: 	null,
-	settings: 	null, 
+	settings: 	null,
 	toggles:	null,
-	
+
 	initialize: function(container) {
 		var i;
-		
+
 		this.elements	= this.getElements(container);
 		this.settings	= this.getSettings();
 		this.toggles	= new Array();
-		
+
 		for (i = 0; i < this.elements.length; i++) {
 			this.toggles.push(new Fx.Styles(this.elements[i], this.getTransition()));
 		}
-		
+
 		container.addEvents({
 			mouseenter: this.transition.bind(this, 1),
 			mouseleave: this.transition.bind(this, 0)
 		});
 		this.transition(0);
 	},
-	
+
 	getElements: function(container) {
 		return new Array();
 	},
@@ -59,50 +59,31 @@ var ItemPop = new Class({
 	getTransition: function () {
 		return { 'duration': 200 };
 	},
-	
+
 	transition: function(index) {
 		var i;
 		for (i = this.toggles.length - 1; i >= 0; i--) {
 			this.toggles[i].stop();
 			this.toggles[i].start(this.settings[i][index]);
 		}
-	},
-});
-
-var MenuItemPop = ItemPop.extend({
-	getElements: function (container) {
-		var elements = new Array();
-		
-		elements.push(container);
-		elements.push((container.getElement('a') !== null)? container.getElement('a') : container.getElement('span'));
-		elements.push(elements[1].getElement('span'));
-		
-		return elements;
-	},
-	getSettings: function() {
-		return [
-				[ {}, {} ],
-				[ { 'padding-top': 5, 'top': 0 }, { 'padding-top': 9, 'top': -4 } ],
-				[ { 'padding-bottom': 0 }, { 'padding-bottom': 4 } ]
-			   ];
 	}
 });
 
 var MenuItemPop = ItemPop.extend({
 	getElements: function (container) {
 		var elements = new Array();
-		
+
 		elements.push(container);
 		elements.push((container.getElement('a') !== null)? container.getElement('a') : container.getElement('span'));
 		elements.push(elements[1].getElement('span'));
-		
+
 		return elements;
 	},
 	getSettings: function() {
 		return [
 				[ {}, {} ],
-				[ { 'padding-top': 5, 'top': 0 }, { 'padding-top': 9, 'top': -4 } ],
-				[ { 'padding-bottom': 0 }, { 'padding-bottom': 4 } ]
+				[ { 'top': 0 }, { 'top': -5 } ],
+				[ { 'line-height': 32 }, { 'line-height': 41 } ]
 			   ];
 	}
 });
@@ -110,13 +91,13 @@ var MenuItemPop = ItemPop.extend({
 var BottomItemPop = ItemPop.extend({
 	getElements: function (container) {
 		var elements = new Array();
-		
+
 		elements.push(container);
 		elements.push(container.getElement('.title'));
 		elements.push(container.getElement('.inner'));
 		elements.push(container.getElement('.body'));
 		elements.push(container.getElement('h3'));
-		
+
 		return elements;
 	},
 	getSettings: function () {
@@ -132,14 +113,14 @@ var BottomItemPop = ItemPop.extend({
 
 window.addEvent('domready', function() {
 	var menu, bottom;
-	
+
 	menu = $$('#menu .moduletable_menu');
 	if (menu.length) {
 		menu[0].getElements('li').each(function(li) {
 			new MenuItemPop(li);
 		});
 	}
-	
+
 	bottom = $$('#bottom');
 	if (bottom.length) {
 		bottom[0].getElements('.moduleBlock').each(function(li) {

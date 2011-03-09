@@ -19,18 +19,19 @@ body {
 	width: 970px;
 	margin: 0 auto;
 	padding: 0 0 4px;
-	
+
 	background: url(../images/body_bg_bottom.png) bottom no-repeat;
 }
 
 #header {
 	position: relative;
 	background: url(../images/body_bg_top.png) center 130% repeat-x;
+	min-height: 200px;
 	zoom: 1;
 }
 body.home #header { background-position: center bottom; }
 
-#body > .inner { 
+#body > .inner {
 	background: url(../images/body_bg.png) repeat-y;
 	padding: 0 11px;
 	zoom: 1;
@@ -42,7 +43,7 @@ body.home #header { background-position: center bottom; }
 #menu > .inner {
 	background: url(../images/menu_shadow.png) bottom repeat-x;
 	padding: 0 0 8px;
-	height: 49px;
+	height: 32px;
 	width: 100%;
 }
 
@@ -60,13 +61,13 @@ body.home #header { background-position: center bottom; }
 	padding: 1px 10px;
 }
 
-#component { 
+#component {
 	float: left;
 	width: 685px;
 	margin-right: 30px;
 }
 #component.wide { width: 100%; 	margin-right: 0;}
-#sidebar { 
+#sidebar {
 	background: url(../images/menu_middle.jpg) left repeat-y;
 	float: left;
 	width: 210px;

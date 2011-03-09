@@ -62,12 +62,12 @@ body.home #header .logo { bottom: 35px; }
 	display: block;
 	font-size: 16px;
 	left: 0;
-	padding: 5px 0 0;
 	position: absolute;
 	text-align: center;
 	text-transform: uppercase;
 	top: 0;
 	width: 100%;
+	zoom: 1;
 
 	/* apply dummy shadow for IE */
 	-moz-box-shadow: 0 0 0 red;
@@ -78,10 +78,10 @@ body.home #header .logo { bottom: 35px; }
 
 #menu .moduletable_menu li a > span,
 #menu .moduletable_menu li span > span {
-	background: url(../images/menu_strip.png) repeat-x;
+	background: url(../images/footer_bg.png) repeat-x;
 	display: block;
-	line-height: 44px;
-	padding-top: 5px;
+	line-height: 32px;
+	zoom: 1;
 }
 
 #menu .moduletable_menu li a > span,
@@ -100,9 +100,7 @@ body.home #header .logo { bottom: 35px; }
 #menu .moduletable_menu li:hover > a,
 #menu .moduletable_menu li:hover > span {
 	background: #262626 url(../images/menu_bg.png) repeat-x;
-	padding-top: 9px;
 	text-decoration: none;
-	top: -4px;
 
 	-moz-box-shadow: 0 0 15px black;
 	-webkit-box-shadow: 0 0 15px black;
